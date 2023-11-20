@@ -1,0 +1,20 @@
+# Table of contents
+format: jb-book
+root: content/about/introduction
+parts:
+  - caption: COMPUTER SCIENCE
+    chapters:
+    - file: classes/cs300/overview
+      sections:
+      - file: classes/cs300/ostep-30
+    - file: classes/cs301/overview
+      sections:
+      - file: classes/cs301/lecture-37
+  - caption: APPLIED STATISTICS
+    chapters:
+    - file: classes/st554/overview
+      sections:
+      - file: classes/st554/hypergeometric-distribution
+    - file: classes/st560/overview
+      sections:
+       - file: classes/st560/module-12
