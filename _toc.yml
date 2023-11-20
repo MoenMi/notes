@@ -10,7 +10,7 @@ parts:
       - file: classes/cs300/zybooks-10_1
     - file: classes/cs301/overview
       sections:
-      - file: classes/cs301/lecture-37
+      - file: classes/cs301/18-relational-algebra
   - caption: APPLIED STATISTICS
     chapters:
     - file: classes/st554/overview
