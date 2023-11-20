@@ -7,6 +7,7 @@ parts:
     - file: classes/cs300/overview
       sections:
       - file: classes/cs300/ostep-30
+      - file: classes/cs300/zybooks-10_1
     - file: classes/cs301/overview
       sections:
       - file: classes/cs301/lecture-37
