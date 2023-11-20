@@ -1,6 +1,6 @@
 # Table of contents
 format: jb-book
-root: content/about/introduction
+root: introduction
 parts:
   - caption: COMPUTER SCIENCE
     chapters:
