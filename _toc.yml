@@ -11,6 +11,7 @@ parts:
     - file: classes/cs301/overview
       sections:
       - file: classes/cs301/18-relational-algebra
+      - file: classes/cs301/24-nosql
   - caption: APPLIED STATISTICS
     chapters:
     - file: classes/st554/overview
