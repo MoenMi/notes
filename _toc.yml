@@ -20,4 +20,4 @@ parts:
       - file: classes/st554/hypergeometric-distribution
     - file: classes/st560/overview
       sections:
-       - file: classes/st560/module-12
+       - file: classes/st560/mindtap-13
