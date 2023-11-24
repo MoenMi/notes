@@ -14,6 +14,7 @@ parts:
       - file: classes/cs301/24-nosql
       - file: classes/cs301/25-nosql
       - file: classes/cs301/26-mongodb
+      - file: classes/cs301/27-mongodb
   - caption: APPLIED STATISTICS
     chapters:
     - file: classes/st554/overview
