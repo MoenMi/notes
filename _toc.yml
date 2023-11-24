@@ -16,6 +16,7 @@ parts:
       - file: classes/cs301/26-mongodb
       - file: classes/cs301/27-mongodb
       - file: classes/cs301/28-mongodb
+      - file: classes/cs301/29-indexes
   - caption: APPLIED STATISTICS
     chapters:
     - file: classes/st554/overview
