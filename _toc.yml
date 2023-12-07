@@ -23,7 +23,8 @@ parts:
     chapters:
     - file: classes/st554/overview
       sections:
-      - file: classes/st554/hypergeometric-distribution
+      - file: classes/st554/formulas
+      - file: classes/st554/discrete-distributions
     - file: classes/st560/overview
       sections:
        - file: classes/st560/mindtap-13
