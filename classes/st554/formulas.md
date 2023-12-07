@@ -30,6 +30,21 @@ $$ E(X) = \frac{N_1 + N_0}{2} $$
 
 $$ Var(X) = \frac{(N_1 - N_0)(N_1 - N_0 + 2)}{12} $$
 
+### Hypergeometric $(N, M, n)$
+
+$$
+p_X(x) = 
+\begin{cases}
+\frac{\binom{M}{x} \binom{N-M}{n-x}}{\binom{N}{n}} & x=0,1,...,n \\
+0, & \text{otherwise}
+\end{cases}
+$$
+
+$$ E(X) = \frac{nM}{N} $$
+
+$$ Var(X) = n \frac{M}{N}(1 - \frac{M}{N})(\frac{N-n}{N-1}) $$
+
+
 ## Continuous Distributions
 
 ## Summations
@@ -37,3 +52,7 @@ $$ Var(X) = \frac{(N_1 - N_0)(N_1 - N_0 + 2)}{12} $$
 ### Sum of Arithmetic Series
 
 $$ \sum_{x=1}^N x = \frac{N(N+1)}{2} $$
+
+### Pascal's Rule
+
+$$ \binom{n}{r} = \frac{n}{r} \binom{n-1}{r-1} $$
