@@ -26,6 +26,7 @@ parts:
       - file: classes/st554/formulas
       - file: classes/st554/discrete-uniform-distributions
       - file: classes/st554/hypergeometric-distribution
+      - file: classes/st554/bernoulli-distribution
     - file: classes/st560/overview
       sections:
        - file: classes/st560/mindtap-13
