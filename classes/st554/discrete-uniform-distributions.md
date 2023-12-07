@@ -24,8 +24,8 @@ From the pmf, we can derive $E(X)$:
 
 $$
 \begin{align}
-EX &= \sum_{x=1}^{N} \frac{1}{N} * x \\
-&= \frac{1}{N} * \frac{N(N+1)}{2} \\
+EX &= \sum_{x=1}^{N} \frac{1}{N} \ x \\
+&= \frac{1}{N} \ \frac{N(N+1)}{2} \\
 &= \frac{N+1}{2}
 \end{align}
 $$
@@ -40,8 +40,8 @@ Since we've already found $E(X)$, we only need to find $E(X^2)$:
 
 $$
 \begin{align}
-EX^2 &= \sum_{x=1}^N \frac{1}{N} * x^2 \\
-&= \frac{1}{N} * \frac{N(N+1)(2N+1)}{6} \\
+EX^2 &= \sum_{x=1}^N \frac{1}{N} \ x^2 \\
+&= \frac{1}{N} \ \frac{N(N+1)(2N+1)}{6} \\
 &= \frac{(N+1)(2N+1)}{6}
 \end{align}
 $$
