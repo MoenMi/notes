@@ -63,6 +63,20 @@ $$ EX = p $$
 
 $$ Var(X) = p(1-P) $$
 
+### Binomial Distribution $(n, p)$
+
+$$
+p_X(x) = 
+\begin{cases}
+\binom{n}{x}p^x(1-p)^{n-x}, & \text{if } x=0,1,...,n \\
+0, & \text{otherwise}
+\end{cases}
+$$
+
+$$ E(X) = np $$
+
+$$ Var(X) = np(1-p) $$
+
 ## Continuous Distributions
 
 ## Summations
