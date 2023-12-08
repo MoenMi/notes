@@ -77,6 +77,20 @@ $$ E(X) = np $$
 
 $$ Var(X) = np(1-p) $$
 
+### Geometric Distribution $(p)$
+
+$$
+p_X(x) =
+\begin{cases}
+p(1-p)^{x-1}, & \text{if } x=1,2,\dots \\
+0, & \text{otherwise}
+\end{cases}
+$$
+
+$$ E(X) = \frac{1}{p} $$
+
+$$ Var(X) = \frac{1-p}{p^2} $$
+
 ## Continuous Distributions
 
 ## Summations
@@ -87,7 +101,7 @@ $$ \sum_{x=1}^N x = \frac{N(N+1)}{2} $$
 
 ### Sum of Geometric Series
 
-$$ \sum_{n=0}^\infin ar^n = \frac{a}{1-r} $$
+$$ \sum_{n=0}^\infty ar^n = \frac{a}{1-r} $$
 
 ### Pascal's Rule
 

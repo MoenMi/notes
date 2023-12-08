@@ -24,11 +24,11 @@ The expected value of the geometric distribution is derived as follows:
 
 $$
 \begin{align}
-EX &= \sum_{x=1}^\infin xp_X(x) \\
-&= \sum_{x=1}^\infin xp(1-p)^{x-1} \\
-&= p \sum_{x=0}^\infin x(1-p)^{x-1} \\
-&= p \sum_{x=0}^\infin - \frac{d}{dp} (1-p)^{x} \\
-&= - p \frac{d}{dp} \sum_{x=0}^\infin (1-p)^{x} \\
+EX &= \sum_{x=1}^\infty xp_X(x) \\
+&= \sum_{x=1}^\infty xp(1-p)^{x-1} \\
+&= p \sum_{x=0}^\infty x(1-p)^{x-1} \\
+&= p \sum_{x=0}^\infty - \frac{d}{dp} (1-p)^{x} \\
+&= - p \frac{d}{dp} \sum_{x=0}^\infty (1-p)^{x} \\
 &= - p \frac{d}{dp} \frac{1}{1-(1-p)} \\
 &= - p \frac{d}{dp} \frac{1}{p} \\
 &= - p (-\frac{1}{p^2}) \\
@@ -49,11 +49,11 @@ First, we must find $EX(X-1)$:
 
 $$
 \begin{align}
-EX(X-1) &= \sum_{x=1}^\infin x(x-1)p_X(x) \\
-&= \sum_{x=1}^\infin x(x-1)p(1-p)^{x-1} \\
-&= p(1-p) \sum_{x=0}^\infin x(x-1)(1-p)^{x-2} \\
-&= p(1-p) \sum_{x=0}^\infin \frac{d^2}{dx^2} (1-p)^x \\
-&= p(1-p) \frac{d^2}{dx^2} \sum_{x=0}^\infin (1-p)^x \\
+EX(X-1) &= \sum_{x=1}^\infty x(x-1)p_X(x) \\
+&= \sum_{x=1}^\infty x(x-1)p(1-p)^{x-1} \\
+&= p(1-p) \sum_{x=0}^\infty x(x-1)(1-p)^{x-2} \\
+&= p(1-p) \sum_{x=0}^\infty \frac{d^2}{dx^2} (1-p)^x \\
+&= p(1-p) \frac{d^2}{dx^2} \sum_{x=0}^\infty (1-p)^x \\
 &= p(1-p) \frac{d^2}{dx^2} \frac{1}{1-(1-p)} \\
 &= p(1-p) \frac{d^2}{dx^2} \frac{1}{p} \\
 &= p(1-p) (\frac{2}{p^3}) \\
