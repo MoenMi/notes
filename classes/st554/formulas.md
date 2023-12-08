@@ -91,6 +91,23 @@ $$ E(X) = \frac{1}{p} $$
 
 $$ Var(X) = \frac{1-p}{p^2} $$
 
+### Negative Binomial Distribution $(r,p)$
+
+$$
+p_X(x) =
+\begin{cases}
+\binom{x-1}{r-1}p^r(1-p)^{x-r}, & \text{if } x=r, r+1, r+2, \dots \\
+0, & \text{otherwise}
+\end{cases}
+$$
+
+$$ X = W_1 + W_2 + \dots + W_r = \sum_{i=1}^rW_i $$
+$$ W_1, W_2, \dots, W_r \sim \text{Geometric}(p) $$
+
+$$ EX = \frac{r}{p} $$
+
+$$ Var(X) = \frac{r(1-p)}{p^2} $$
+
 ## Continuous Distributions
 
 ## Summations
