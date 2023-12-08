@@ -85,6 +85,10 @@ $$ Var(X) = np(1-p) $$
 
 $$ \sum_{x=1}^N x = \frac{N(N+1)}{2} $$
 
+### Sum of Geometric Series
+
+$$ \sum_{n=0}^\infin ar^n = \frac{a}{1-r} $$
+
 ### Pascal's Rule
 
 $$ \binom{n}{r} = \frac{n}{r} \binom{n-1}{r-1} $$

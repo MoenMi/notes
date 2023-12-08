@@ -24,7 +24,7 @@ The expectation of the binomial distribution can be derived as follows:
 
 $$
 \begin{align}
-EX &= x p_X(x) \\
+EX &= \sum_{x=0}^n x p_X(x) \\
 &= \sum_{x=0}^n x \binom{n}{x}p^x(1-p)^{n-x} \\
 &= n \sum_{x=1}^n \binom{n-1}{x-1}p^x(1-p)^{n-x} \\
 &= np \sum_{x=1}^n \binom{n-1}{x-1}p^{x-1}(1-p)^{n-x} \\

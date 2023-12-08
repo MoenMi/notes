@@ -28,6 +28,7 @@ parts:
       - file: classes/st554/hypergeometric-distribution
       - file: classes/st554/bernoulli-distribution
       - file: classes/st554/binomial-distribution
+      - file: classes/st554/geometric-distribution
     - file: classes/st560/overview
       sections:
        - file: classes/st560/mindtap-13
