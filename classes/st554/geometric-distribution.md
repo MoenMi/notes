@@ -37,7 +37,7 @@ EX &= \sum_{x=1}^\infty xp_X(x) \\
 $$
 
 Notes:
-- In line (6), we apply the sum of geometric series formula: $\sum_{n=0}^\infin ar^n = \frac{a}{1-r}$ 
+- In line (6), we apply the sum of geometric series formula: $\sum_{n=0}^\infty ar^n = \frac{a}{1-r}$ 
 
 ## Variance
 
