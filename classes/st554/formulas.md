@@ -44,6 +44,24 @@ $$ E(X) = \frac{nM}{N} $$
 
 $$ Var(X) = n \frac{M}{N}(1 - \frac{M}{N})(\frac{N-n}{N-1}) $$
 
+### Bernoulli Distribution $(p)$
+
+$$
+p_X(x) =
+\begin{cases}
+p, & \text{if } x = 1 \\
+1-p, & \text{if } x = 0 \\
+0, & \text{otherwise}
+\end{cases}
+=\begin{cases}
+p^x(1-p)^{1-x}, & \text{if } x = 0, 1 \\
+0, & \text{otherwise}
+\end{cases}
+$$
+
+$$ EX = p $$
+
+$$ Var(X) = p(1-P) $$
 
 ## Continuous Distributions
 
