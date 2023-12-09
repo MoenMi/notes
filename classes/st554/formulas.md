@@ -168,6 +168,10 @@ $$ E(X) = \beta $$
 
 $$ Var(X) = \beta^2 $$
 
+### Chi-Squared ($\chi^2$) Distribution
+
+$$ X \sim \text{Gamma}(\frac{p}{2}, 2) $$
+
 ## Other
 
 ### Sum of Arithmetic Series

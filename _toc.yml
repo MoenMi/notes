@@ -33,6 +33,7 @@ parts:
       - file: classes/st554/continuous-uniform-distribution
       - file: classes/st554/gamma-distribution
       - file: classes/st554/exponential-distribution
+      - file: classes/st554/chi-squared-distribution
       - file: classes/st554/formulas
     - file: classes/st560/overview
       sections:
