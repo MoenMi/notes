@@ -168,9 +168,24 @@ $$ E(X) = \beta $$
 
 $$ Var(X) = \beta^2 $$
 
-### Chi-Squared ($\chi^2$) Distribution
+### Chi-Squared ($\chi^2$) Distribution $(p)$
 
 $$ X \sim \text{Gamma}(\frac{p}{2}, 2) $$
+
+### Beta Distribution $(\alpha, \beta)$
+
+$$
+f_X(x) =
+\begin{cases}
+\frac{1}{\Beta(\alpha, \beta)} x^{\alpha-1} (1-x)^{\beta-1}, & \text{if } x \in (0,1) \\
+0, & \text{otherwise}
+\end{cases}
+$$
+
+$$ E(X) = \frac{\alpha}{\alpha + \beta} $$
+
+$$ Var(X) = \frac{\alpha \beta}{(\alpha + \beta)^2 (\alpha + \beta + 1)} $$
+
 
 ## Other
 
@@ -193,3 +208,7 @@ $$ \Gamma(\alpha) = \int_0^\infty t^{\alpha - 1} e^{-t} dt, \ \ \alpha > 0 $$
 $$ \Gamma(\alpha + 1) = \alpha \Gamma({\alpha}) $$
 
 $$ \Gamma\left(\frac{1}{2}\right) = \sqrt{\pi} $$
+
+### Beta Function
+
+$$ B(\alpha, \beta) = \frac{\Gamma(\alpha) \Gamma(\beta)}{\Gamma(\alpha + \beta)} = \int_0^1 x^{\alpha-1} (1-x)^{\beta-1} dx $$
