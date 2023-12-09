@@ -14,11 +14,11 @@ $$ Z \sim \text{Normal}(0,1) $$
 
 The pdf of the standard normal distribution is given as followed:
 
-$$ f_Z(z) = \frac{1}{\sqrt{2\pi}} e^{-\frac{x^2}{2}} \text{ if } z \in \real $$
+$$ f_Z(z) = \frac{1}{\sqrt{2\pi}} e^{-\frac{x^2}{2}} \text{ if } z \in \mathbb{R} $$
 
 The pdf of the normal distribution is:
 
-$$ f_X(x) = \frac{1}{\sigma\sqrt{2\pi}} e^{-\frac{1}{2} \left(\frac{x-\mu}{\sigma} \right)^2} \text{ if } x \in \real $$
+$$ f_X(x) = \frac{1}{\sigma\sqrt{2\pi}} e^{-\frac{1}{2} \left(\frac{x-\mu}{\sigma} \right)^2} \text{ if } x \in \mathbb{R} $$
 
 ## Expectation
 
