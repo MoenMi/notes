@@ -152,6 +152,22 @@ $$ E(X) = \alpha \beta $$
 
 $$ Var(X) = \alpha \beta^2 $$
 
+### Exponential Distribution $(\beta)$
+
+$$
+f_X(x) =
+\begin{cases}
+\frac{1}{\beta^\alpha} e^{-\frac{x}{\beta}} , & \text{if } x>0 \\
+0, & \text{otherwise}
+\end{cases}
+$$
+
+$$ X \sim \text{Gamma}(1, \beta) $$
+
+$$ E(X) = \beta $$
+
+$$ Var(X) = \beta^2 $$
+
 ## Other
 
 ### Sum of Arithmetic Series
