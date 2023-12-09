@@ -19,7 +19,7 @@ The pdf for the beta distribution is given as followed:
 $$
 f_X(x) =
 \begin{cases}
-\frac{1}{\Beta(\alpha, \beta)} x^{\alpha-1} (1-x)^{\beta-1}, & \text{if } x \in (0,1) \\
+\frac{1}{B(\alpha, \beta)} x^{\alpha-1} (1-x)^{\beta-1}, & \text{if } x \in (0,1) \\
 0, & \text{otherwise}
 \end{cases}
 $$
@@ -31,9 +31,9 @@ The expected value of the beta distribution can be derived as followed:
 $$
 \begin{align}
 EX &= \int_0^1 x f_X(x) dx \\
-&= \frac{1}{\Beta(\alpha, \beta)} \int_0^1 x^\alpha (1-x)^{\beta-1} dx \\
-&= \frac{1}{\Beta(\alpha, \beta)} \int_0^1 x^{(\alpha+1)-1} (1-x)^{\beta-1} dx \\
-&= \frac{\Beta(\alpha+1,\beta)}{\Beta(\alpha, \beta)} \\
+&= \frac{1}{B(\alpha, \beta)} \int_0^1 x^\alpha (1-x)^{\beta-1} dx \\
+&= \frac{1}{B(\alpha, \beta)} \int_0^1 x^{(\alpha+1)-1} (1-x)^{\beta-1} dx \\
+&= \frac{B(\alpha+1,\beta)}{B(\alpha, \beta)} \\
 &= \frac{\Gamma(\alpha+1) \Gamma(\beta) \Gamma(\alpha + \beta)}{\Gamma(\alpha + \beta + 1) \Gamma(\alpha) \Gamma(\beta)} \\
 &= \frac{\alpha \Gamma(\alpha) \Gamma(\alpha + \beta)}{(\alpha + \beta) \Gamma(\alpha + \beta) \Gamma(\alpha)} \\
 &= \frac{\alpha}{\alpha + \beta} \\
@@ -45,9 +45,9 @@ This can be generalized to solve for any moment:
 $$
 \begin{align}
 EX^r &= \int_0^1 x^r f_X(x) dx \\
-&= \frac{1}{\Beta(\alpha, \beta)} \int_0^1 x^{\alpha - 1 + r} (1-x)^{\beta-1} dx \\
-&= \frac{1}{\Beta(\alpha, \beta)} \int_0^1 x^{(\alpha+r)-1} (1-x)^{\beta-1} dx \\
-&= \frac{\Beta(\alpha+r,\beta)}{\Beta(\alpha, \beta)} \\
+&= \frac{1}{B(\alpha, \beta)} \int_0^1 x^{\alpha - 1 + r} (1-x)^{\beta-1} dx \\
+&= \frac{1}{B(\alpha, \beta)} \int_0^1 x^{(\alpha+r)-1} (1-x)^{\beta-1} dx \\
+&= \frac{B(\alpha+r,\beta)}{B(\alpha, \beta)} \\
 &= \frac{\Gamma(\alpha+r) \Gamma(\beta) \Gamma(\alpha + \beta)}{\Gamma(\alpha + \beta + r) \Gamma(\alpha) \Gamma(\beta)} \\
 &= \frac{\Gamma(\alpha+r) \Gamma(\alpha + \beta)}{\Gamma(\alpha + \beta + r) \Gamma(\alpha)} \\
 \end{align}

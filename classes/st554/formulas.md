@@ -177,7 +177,7 @@ $$ X \sim \text{Gamma}(\frac{p}{2}, 2) $$
 $$
 f_X(x) =
 \begin{cases}
-\frac{1}{\Beta(\alpha, \beta)} x^{\alpha-1} (1-x)^{\beta-1}, & \text{if } x \in (0,1) \\
+\frac{1}{B(\alpha, \beta)} x^{\alpha-1} (1-x)^{\beta-1}, & \text{if } x \in (0,1) \\
 0, & \text{otherwise}
 \end{cases}
 $$
