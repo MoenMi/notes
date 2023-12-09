@@ -108,7 +108,23 @@ $$ EX = \frac{r}{p} $$
 
 $$ Var(X) = \frac{r(1-p)}{p^2} $$
 
+### Poisson Distribution $(\lambda)$
+
+$$
+p_X(x) =
+\begin{cases}
+\frac{e^{-\lambda} \lambda^x}{x!}, & \text{if } x = 0, 1, 2, \dots \\
+0, & \text{otherwise}
+\end{cases}
+$$
+
+$$ E(X) = \lambda $$
+
+$$ Var(X) = \lambda $$
+
 ## Continuous Distributions
+
+
 
 ## Summations
 
