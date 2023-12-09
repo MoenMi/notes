@@ -138,7 +138,21 @@ $$ E(X) = \frac{a+b}{2} $$
 
 $$ Var(X) = \frac{(b-a)^2}{12} $$
 
-## Summations
+### Gamma Distribution $(\alpha, \beta)$
+
+$$
+f_X(x) =
+\begin{cases}
+\frac{1}{\Gamma(\alpha) \beta^\alpha} x^{\alpha-1} e^{-\frac{x}{\beta}} , & \text{if } x>0 \\
+0, & \text{otherwise}
+\end{cases}
+$$
+
+$$ E(X) = \alpha \beta $$
+
+$$ Var(X) = \alpha \beta^2 $$
+
+## Other
 
 ### Sum of Arithmetic Series
 
@@ -151,3 +165,11 @@ $$ \sum_{n=0}^\infty ar^n = \frac{a}{1-r} $$
 ### Pascal's Rule
 
 $$ \binom{n}{r} = \frac{n}{r} \binom{n-1}{r-1} $$
+
+### Gamma Function
+
+$$ \Gamma(\alpha) = \int_0^\infty t^{\alpha - 1} e^{-t} dt, \ \ \alpha > 0 $$
+
+$$ \Gamma(\alpha + 1) = \alpha \Gamma({\alpha}) $$
+
+$$ \Gamma\left(\frac{1}{2}\right) = \sqrt{\pi} $$
