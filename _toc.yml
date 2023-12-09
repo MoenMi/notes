@@ -23,7 +23,6 @@ parts:
     chapters:
     - file: classes/st554/overview
       sections:
-      - file: classes/st554/formulas
       - file: classes/st554/discrete-uniform-distributions
       - file: classes/st554/hypergeometric-distribution
       - file: classes/st554/bernoulli-distribution
@@ -32,6 +31,8 @@ parts:
       - file: classes/st554/negative-binomial-distribution
       - file: classes/st554/poisson-distribution
       - file: classes/st554/continuous-uniform-distribution
+      - file: classes/st554/gamma-distribution
+      - file: classes/st554/formulas
     - file: classes/st560/overview
       sections:
        - file: classes/st560/mindtap-13
