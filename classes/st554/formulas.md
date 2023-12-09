@@ -124,7 +124,19 @@ $$ Var(X) = \lambda $$
 
 ## Continuous Distributions
 
+### Continuous Uniform $(a, b)$
 
+$$
+f_X(x) =
+\begin{cases}
+\frac{1}{b-a}, & \text{if } a < x < b \\
+0, & \text{otherwise}
+\end{cases}
+$$
+
+$$ E(X) = \frac{a+b}{2} $$
+
+$$ Var(X) = \frac{(b-a)^2}{12} $$
 
 ## Summations
 
