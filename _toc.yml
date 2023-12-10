@@ -36,7 +36,7 @@ parts:
       - file: classes/st554/chi-squared-distribution
       - file: classes/st554/beta-distribution
       - file: classes/st554/normal-distribution
-      - file: classes/st554/marginal-distributions
+      - file: classes/st554/joint-distributions
       - file: classes/st554/formulas
       - file: classes/st554/homework-problems
     - file: classes/st560/overview

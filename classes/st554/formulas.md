@@ -190,7 +190,7 @@ $$ Var(X) = \frac{\alpha \beta}{(\alpha + \beta)^2 (\alpha + \beta + 1)} $$
 
 $$ f_X(x) = \frac{1}{\sigma\sqrt{2\pi}} e^{-\frac{1}{2} \left(\frac{x-\mu}{\sigma} \right)^2} \text{ if } x \in \mathbb{R} $$
 
-## Multivariate Distributions
+## Joint Distributions
 
 ### Marginal Distributions
 
@@ -201,6 +201,12 @@ $$ p_Y(y) = \sum_x p_{X,Y}(x,y) $$
 $$ f_X(x) = \int_{-\infty}^\infty f_{X,Y}(x,y) \ dy $$
 
 $$ f_Y(y) = \int_{-\infty}^\infty f_{X,Y}(x,y) \ dx $$
+
+### Expectations
+
+$$ Eh(X,Y) = \sum_{(x,y)} h(x,y) p_{X,Y}(x,y) $$
+
+$$ Eh(X,Y) = \iint_{\mathbb{R}^2} h(x,y) f_{X,Y}(x,y) dydx $$
 
 ## Other
 
