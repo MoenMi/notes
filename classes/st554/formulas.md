@@ -7,7 +7,7 @@
 $$
 p_X(x) =
 \begin{cases}
-    \frac{1}{N} & \text{if } x = 1, 2, ..., N \\
+    \frac{1}{N} & \text{if } x = 1, 2, \dots, N \\
     0 & \text{otherwise}
 \end{cases}
 $$
@@ -21,7 +21,7 @@ $$ Var(X) = \frac{N^2-1}{12} $$
 $$
 p_X(x) =
 \begin{cases}
-    \frac{1}{N_1 - N_0 + 1} & \text{if } x = N_0, N_0 + 1, ..., N_1 - 1, N_1 \\
+    \frac{1}{N_1 - N_0 + 1} & \text{if } x = N_0, N_0 + 1, \dots, N_1 - 1, N_1 \\
     0 & \text{otherwise}
 \end{cases}
 $$
@@ -35,16 +35,16 @@ $$ Var(X) = \frac{(N_1 - N_0)(N_1 - N_0 + 2)}{12} $$
 $$
 p_X(x) = 
 \begin{cases}
-\frac{\binom{M}{x} \binom{N-M}{n-x}}{\binom{N}{n}} & x=0,1,...,n \\
+\frac{\binom{M}{x} \binom{N-M}{n-x}}{\binom{N}{n}} & \text{if } x=0,1,\dots,n \\
 0, & \text{otherwise}
 \end{cases}
 $$
 
 $$ E(X) = \frac{nM}{N} $$
 
-$$ Var(X) = n \frac{M}{N}(1 - \frac{M}{N})(\frac{N-n}{N-1}) $$
+$$ Var(X) = \frac{nM}{N}\left(1 - \frac{M}{N}\right)\left(\frac{N-n}{N-1}\right) $$
 
-### Bernoulli Distribution $(p)$
+### Bernoulli $(p)$
 
 $$
 p_X(x) =
@@ -63,12 +63,12 @@ $$ EX = p $$
 
 $$ Var(X) = p(1-P) $$
 
-### Binomial Distribution $(n, p)$
+### Binomial $(n, p)$
 
 $$
 p_X(x) = 
 \begin{cases}
-\binom{n}{x}p^x(1-p)^{n-x}, & \text{if } x=0,1,...,n \\
+\binom{n}{x}p^x(1-p)^{n-x}, & \text{if } x=0,1,\dots,n \\
 0, & \text{otherwise}
 \end{cases}
 $$
@@ -77,7 +77,7 @@ $$ E(X) = np $$
 
 $$ Var(X) = np(1-p) $$
 
-### Geometric Distribution $(p)$
+### Geometric $(p)$
 
 $$
 p_X(x) =
@@ -91,7 +91,7 @@ $$ E(X) = \frac{1}{p} $$
 
 $$ Var(X) = \frac{1-p}{p^2} $$
 
-### Negative Binomial Distribution $(r,p)$
+### Negative Binomial $(r,p)$
 
 $$
 p_X(x) =
@@ -108,7 +108,7 @@ $$ EX = \frac{r}{p} $$
 
 $$ Var(X) = \frac{r(1-p)}{p^2} $$
 
-### Poisson Distribution $(\lambda)$
+### Poisson $(\lambda)$
 
 $$
 p_X(x) =
@@ -138,7 +138,7 @@ $$ E(X) = \frac{a+b}{2} $$
 
 $$ Var(X) = \frac{(b-a)^2}{12} $$
 
-### Gamma Distribution $(\alpha, \beta)$
+### Gamma $(\alpha, \beta)$
 
 $$
 f_X(x) =
@@ -152,7 +152,7 @@ $$ E(X) = \alpha \beta $$
 
 $$ Var(X) = \alpha \beta^2 $$
 
-### Exponential Distribution $(\beta)$
+### Exponential $(\beta)$
 
 $$
 f_X(x) =
@@ -168,11 +168,11 @@ $$ E(X) = \beta $$
 
 $$ Var(X) = \beta^2 $$
 
-### Chi-Squared ($\chi^2$) Distribution $(p)$
+### Chi-Squared $(p)$
 
 $$ X \sim \text{Gamma}(\frac{p}{2}, 2) $$
 
-### Beta Distribution $(\alpha, \beta)$
+### Beta $(\alpha, \beta)$
 
 $$
 f_X(x) =
@@ -186,7 +186,7 @@ $$ E(X) = \frac{\alpha}{\alpha + \beta} $$
 
 $$ Var(X) = \frac{\alpha \beta}{(\alpha + \beta)^2 (\alpha + \beta + 1)} $$
 
-### Normal Distribution $(\mu, \sigma)$
+### Normal $(\mu, \sigma)$
 
 $$ f_X(x) = \frac{1}{\sigma\sqrt{2\pi}} e^{-\frac{1}{2} \left(\frac{x-\mu}{\sigma} \right)^2} \text{ if } x \in \mathbb{R} $$
 
