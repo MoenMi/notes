@@ -43,5 +43,6 @@ parts:
     - file: classes/st560/overview
       sections:
        - file: classes/st560/mindtap-8
+       - file: classes/st560/mindtap-9
        - file: classes/st560/mindtap-13
        - file: classes/st560/mindtap-14
