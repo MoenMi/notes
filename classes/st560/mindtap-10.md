@@ -1,4 +1,4 @@
-# MindTap 10 - Inference About Means and Proportions with Two Populations
+# 10 - Inference About Means and Proportions with Two Populations
 
 ## 10.1 Inferences About the Difference Between Two Population Means: $\sigma_1$ and $\sigma_2$ Known
 

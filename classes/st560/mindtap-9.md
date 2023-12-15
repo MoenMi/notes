@@ -1,4 +1,4 @@
-# MindTap 9 - Hypothesis Tests
+# 9 - Hypothesis Tests
 
 In hypothesis testing, we make an assumption about a population parameter. This assumption is called the **null hypothesis ($H_0$)**. In turn, we define the opposite of the null hypothesis as the **alternative hypothesis ($H_a$)**.
 

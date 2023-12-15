@@ -1,4 +1,4 @@
-# MindTap 8 - Interval Estimation
+# 8 - Interval Estimation
 
 A **point estimator** is a sample statistic used to estimate a population parameter. For examples, the sample mean $\bar{x}$ is a point estimator for the population mean $\mu$ and the sample proportion $\bar{p}$ is a point estimator of the population proportion $p$.
 
