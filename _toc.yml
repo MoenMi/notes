@@ -19,8 +19,14 @@ parts:
       - file: classes/cs301/29-indexes
       - file: classes/cs301/37-api
       - file: classes/cs301/39-api
+    - file: classes/cs403/overview
+      sections:
+      - file: classes/cs403/sample
   - caption: APPLIED STATISTICS
     chapters:
+    - file: classes/st540/overview
+      sections:
+      - classes/st540/sample
     - file: classes/st554/overview
       sections:
       - file: classes/st554/discrete-uniform-distributions
@@ -40,6 +46,9 @@ parts:
       - file: classes/st554/covariance-and-correlation
       - file: classes/st554/formulas
       - file: classes/st554/homework-problems
+    - file: classes/st555/overview
+      sections:
+      - file: classes/st555/sample
     - file: classes/st560/overview
       sections:
        - file: classes/st560/mindtap-8
