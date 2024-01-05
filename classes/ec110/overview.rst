@@ -1,4 +1,4 @@
-CS 110: Principles of Microeconomics
+EC 110: Principles of Microeconomics
 %%%%%%%%%%%%%%%%%%%
 
 .. sectionauthor:: Michael T. Moen <moenmichael02@gmail.com>
