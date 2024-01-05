@@ -60,6 +60,6 @@ parts:
       - file: classes/st560/mindtap-11
       - file: classes/st560/mindtap-13
       - file: classes/st560/mindtap-14
-  - caption: GENERAL:
+  - caption: GENERAL
     chapters:
     - file: classes/ec110/chapter-3
