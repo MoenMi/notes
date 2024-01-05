@@ -62,4 +62,6 @@ parts:
       - file: classes/st560/mindtap-14
   - caption: GENERAL
     chapters:
-    - file: classes/ec110/chapter-3
+    - file: classes/ec110/overview
+      sections:
+      - file: classes/ec110/chapter-3
