@@ -25,11 +25,16 @@ parts:
     - file: classes/cs442/overview
       sections:
       - file: classes/cs442/sample
+  - caption: MATHEMATICS
+    chapters:
+    - file: classes/math311/overview
+      sections:
+      - classes/math311/sample
   - caption: APPLIED STATISTICS
     chapters:
-    - file: classes/st540/overview
-      sections:
-      - file: classes/st540/sample
+    # - file: classes/st540/overview
+    #   sections:
+    #   - file: classes/st540/sample
     - file: classes/st554/overview
       sections:
       - file: classes/st554/discrete-uniform-distributions
