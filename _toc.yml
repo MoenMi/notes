@@ -29,7 +29,7 @@ parts:
     chapters:
     - file: classes/math311/overview
       sections:
-      - classes/math311/sample
+      - file: classes/math311/sample
   - caption: APPLIED STATISTICS
     chapters:
     # - file: classes/st540/overview
