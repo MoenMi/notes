@@ -3,6 +3,7 @@
 title: Class Notes
 author: Michael T. Moen
 copyright: "2023"
+logo: jonah_window.jpg
 exclude_patterns: [old, conversion_scripts]
 # Force re-execution of notebooks on each build.
 # See https://jupyterbook.org/content/execute.html
