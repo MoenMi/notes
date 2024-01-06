@@ -1,4 +1,4 @@
-MATH 311: Introduction to Scientific Computing and Problem Solving
+MATH 311: Scientific Computing and Problem Solving
 %%%%%%%%%%%%%%%%%%%
 
 .. sectionauthor:: Michael T. Moen <moenmichael02@gmail.com>
