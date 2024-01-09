@@ -35,5 +35,31 @@ The **open systems interconnection (OSI)** defines a systematic approach to prov
 - **Security mechanisms** are processes that are designed to detect, prevent, or recover from a security attack
 - **Security services** are processing and communication services that enhance the security of the data processing systems and the information transfers of an organization. The services are intended to counter security attacks, and they make use of one or more security mechanisms to provide the service.
 
+The following terms are often used when discussing cybersecurity:
 
+- **Threat**: Any circumstance or event with the potential to adversely impact organization operations (including mission, functions, image, or reputation), organizational assets, individuals, other organizations, or the Nation through an information system via unauthorized access, destruction, disclosure, modification of information, and/or denial of service.
+- **Attack**: Any kind of malicious activity with that attempts to collect, disrupt, deny, degrade, or destroy information system resources or the information itself.
 
+## 1.3 - Security Attacks
+
+### Passive Attacks
+
+**Passive attacks** are in the nature of eavesdropping on transmissions. Two types of passive attacks are as follows:
+
+- **Release of message contents** involves the unauthorized disclosure of information.
+- **Traffic analysis** allows adversaries to observe patterns in information traffic.
+
+Passive attacks are generally more difficult to detect. As such, the emphasis on preventing passive attacks is on prevention.
+
+### Active Attacks
+
+**Active attacks** involve some modification of the data stream or the creation of a false stream and can be divided into four categories:
+
+1. A **masquerade** takes place when one entity pretends to be another entity.
+2. **Replay** involves the passive capture of a data unit and its subsequent retransmission to produce an unauthorized effect.
+3. **Data modification** occurs when some portion of a legitimate message is altered.
+4. The **denial of service** prevents or inhibits the normal use or management of communication facilities.
+
+Active attacks are generally easier to detect but harder to prevent (prevention would require physical protection for all communication facilities and paths at all times).
+
+## 1.4 - Security Services
