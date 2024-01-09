@@ -29,5 +29,11 @@ Some in the security field feel that the following concepts should also be added
 
 ## 1.2 - The OSI Security Architecture
 
-The **open systems interconnection (OSI)** defines a systematic approach to providing security in a system. This abstract view allows 
+The **open systems interconnection (OSI)** defines a systematic approach to providing security in a system. This abstract view allows us to gain a broad understanding of the concepts of cybersecurity. The OSI security architecture focuses on security attacks, mechanisms, and services:
+
+- **Security attacks** are actions that compromise the security of information owned by an organization
+- **Security mechanisms** are processes that are designed to detect, prevent, or recover from a security attack
+- **Security services** are processing and communication services that enhance the security of the data processing systems and the information transfers of an organization. The services are intended to counter security attacks, and they make use of one or more security mechanisms to provide the service.
+
+
 
