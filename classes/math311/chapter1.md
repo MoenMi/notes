@@ -29,5 +29,5 @@ Some in the security field feel that the following concepts should also be added
 
 ## 1.2 - The OSI Security Architecture
 
-
+The **open systems interconnection (OSI)** defines a systematic approach to providing security in a system. This abstract view allows 
 
