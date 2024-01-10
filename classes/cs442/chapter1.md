@@ -63,3 +63,5 @@ Passive attacks are generally more difficult to detect. As such, the emphasis on
 Active attacks are generally easier to detect but harder to prevent (prevention would require physical protection for all communication facilities and paths at all times).
 
 ## 1.4 - Security Services
+
+

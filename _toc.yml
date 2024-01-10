@@ -21,7 +21,7 @@ parts:
       - file: classes/cs301/39-api
     - file: classes/cs403/overview
       sections:
-      - file: classes/cs403/sample
+      - file: classes/cs403/1-intro
     - file: classes/cs442/overview
       sections:
       - file: classes/cs442/chapter1
