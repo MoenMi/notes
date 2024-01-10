@@ -1,7 +1,7 @@
 # 1 - Introduction
 
 ```{image} images/programming-languages-timeline.png
-:width: 400px
+:width: 600px
 :align: center
 ```
 
@@ -16,8 +16,8 @@
 
 Von Neumman architecture:
 
-```{image} images/von-neumann-architecture.png
-:width: 400px
+```{image} images/von-neumann-architecture.jpg
+:width: 600px
 :align: center
 ```
 
