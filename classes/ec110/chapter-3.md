@@ -6,4 +6,5 @@ This parable involves a simple economy where the only goods in the world are mea
 
 ### 3.1.1 - Production Possibilities
 
-Now suppose that Frank and Ruby each work 8 hours per day and can use this time to engage in some combination of growing potatoes or raising cattle. 
+Now suppose that Frank and Ruby each work 8 hours per day and can use this time to engage in some combination of growing potatoes or raising cattle. Note that each of them might produce the two goods at different levels of productivity.
+
