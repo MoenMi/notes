@@ -32,7 +32,7 @@ parts:
     chapters:
     - file: classes/math311/overview
       sections:
-      - file: classes/math311/sample
+      - file: classes/math311/hw1
   - caption: APPLIED STATISTICS
     chapters:
     # - file: classes/st540/overview
@@ -72,4 +72,5 @@ parts:
     chapters:
     - file: classes/ec110/overview
       sections:
+      - file: classes/ec110/chapter-1
       - file: classes/ec110/chapter-3
