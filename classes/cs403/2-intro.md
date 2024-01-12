@@ -133,7 +133,7 @@ The operating system and language implementation are layered over machine interf
 - Significant comeback with some Web scripting languages (e.g. JavaScript, PHP)
 
 ```{image} images/pure-implementation-process.png
-:width: 450px
+:width: 400px
 :align: center
 ```
 
@@ -147,7 +147,7 @@ The operating system and language implementation are layered over machine interf
     - Initial implementations of Java were hybrid; the intermediate form, byte code, provides portability to any machine that has a byte code interpreter and a run-time system (together, these are called *Java Virtual Machine*)
 
 ```{image} images/hybrid-implementation-process.png
-:width: 450px
+:width: 300px
 :align: center
 ```
 
