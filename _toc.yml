@@ -27,9 +27,6 @@ parts:
     # - file: classes/cs442/overview
     #   sections:
     #   - file: classes/cs442/chapter1
-    - file: classes/cs491/overview
-      sections:
-      - file: classes/cs491/sample
   - caption: MATHEMATICS
     chapters:
     - file: classes/math311/overview
