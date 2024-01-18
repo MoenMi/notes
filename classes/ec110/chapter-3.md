@@ -38,7 +38,3 @@ When people produce goods in which they have the comparative advantage, total pr
 ### 3.2.4 - The Price of Trade
 
 For both parties to benefit from trade, the price at which they trade must lie between their opportunity costs.
-
-## 3.3 - Applications of Comparative Advantage
-
-
