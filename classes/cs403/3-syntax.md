@@ -111,7 +111,7 @@ Example derivation:
 - A hierarchical representation of derivation
 
 ```{image} images/parse-tree.JPG
-:width: 250px
+:width: 200px
 :align: center
 ```
 
@@ -129,7 +129,7 @@ A grammar is **ambiguous** if and only if it generates a sentential form that ha
 What is `8-4/2`?
 
 ```{image} images/ambiguous-expression-example.JPG
-:width: 600px
+:width: 500px
 :align: center
 ```
 
@@ -143,7 +143,7 @@ If we use the parse tree to indicate precedence levels of the operators, we cann
 ```
 
 ```{image} images/unambiguous-expression-example.JPG
-:width: 250px
+:width: 200px
 :align: center
 ```
 
@@ -156,8 +156,8 @@ Operator associativity can also be indicated by a grammar.
 <expr> → <expr> + const | const (unambiguous)
 ```
 
-```{image} images/operator-associativty.JPG
-:width: 250px
+```{image} images/operator-associativity.JPG
+:width: 200px
 :align: center
 ```
 
