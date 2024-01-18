@@ -111,7 +111,7 @@ Example derivation:
 - A hierarchical representation of derivation
 
 ```{image} images/parse-tree.JPG
-:width: 450px
+:width: 250px
 :align: center
 ```
 
@@ -143,7 +143,7 @@ If we use the parse tree to indicate precedence levels of the operators, we cann
 ```
 
 ```{image} images/unambiguous-expression-example.JPG
-:width: 400px
+:width: 250px
 :align: center
 ```
 
@@ -156,8 +156,8 @@ Operator associativity can also be indicated by a grammar.
 <expr> → <expr> + const | const (unambiguous)
 ```
 
-```{image} images/operator-associativty-example.JPG
-:width: 400px
+```{image} images/operator-associativty.JPG
+:width: 250px
 :align: center
 ```
 
