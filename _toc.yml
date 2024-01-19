@@ -24,6 +24,7 @@ parts:
       - file: classes/cs403/1-intro
       - file: classes/cs403/2-intro
       - file: classes/cs403/3-syntax
+      - file: classes/cs403/copl-3
     # - file: classes/cs442/overview
     #   sections:
     #   - file: classes/cs442/chapter1
