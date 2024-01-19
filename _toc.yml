@@ -33,6 +33,7 @@ parts:
     - file: classes/math311/overview
       sections:
       - file: classes/math311/hw1
+      - file: classes/math311/hw2
   - caption: APPLIED STATISTICS
     chapters:
     # - file: classes/st540/overview
