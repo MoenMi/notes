@@ -80,7 +80,7 @@ There are several needs for a methodology and notation for semantics:
 
 C statement:
 ```C
-for (expr1; expr2; expr3){
+for (expr1; expr2; expr3) {
     . . .
 }
 ```
@@ -117,18 +117,77 @@ $$ \text{VARMAP}(i_j, s) = v_j $$
 
 #### Decimal Numbers
 
+```
+<dec_num> -> '0' | '1' | '2' | '3' | '4' |
+             '5' | '6' | '7' | '8' | '9' |
+             <dec_num> ('0' | '1' | '2' | '3' |
+                        '4' | '5' | '6' | '7' |
+                        '8' | '9')
 
+M_dec('0') = 0, M_dec('1') = 1, ..., M_dec('9') = 9
+M_dec(<dec_num> '0') = 10 * M_dec(<dec_num>)
+M_dec(<dec_num> '1') = 10 * M_dec(<dec_num>) + 1
+...
+M_dec(<dec_num> '9') = 10 * M_dec(<dec_num>) + 9
+```
 
 #### Expressions
 
+Map expressions onto Z $\cup$ {error}
 
+```
+<expr> -> <dec_num> | <var> | <binary_expr>
+<binary_expr> -> <left_expr> <operator> <right_expr>
+<left_expr> -> <dec_num> | <var>
+<right_expr> -> <dec_num> | <var>
+<operator> -> + | *
+```
+
+```
+M_e(<expr>, s) delta =
+    case <expr> of
+        <dec_num> => M_dec(<dec_num>, s)
+        <var> =>
+            if VARMAP(<var>, s) == undef
+                then error
+                else VARMAP(<var>, s)
+        <binary_expr> =>
+            if M_e(<binary_expr>.<left_expr>, s) == '+' then
+                M_e(<binary_expr>.<left_expr>, s)
+                    + M_e(<binary_expr>.<right_expr>, s)
+            else M_e(<binary_expr>.<left_expr>, s)
+                * M_e(<binary_expr>.<right_expr>, s)
+```
 
 #### Assignment Statements
 
+Map state sets to state sets $\cup$ {error}
 
+```
+M_a(x = E, s) delta =
+    if M_e(E, s) == error
+        then error
+    else s' = {<i1, v1'>, <i2, v2'>, ..., <in, vn'>}, where
+        for j = 1, 2, ..., n
+            if ij == x
+                then vj' = M_e(E, s)
+                else vj' = VARMAP(ij, s)
+```
 
 #### Logical Pretest Loops
 
+Map state sets to state sets $\cup$ {error}
+
+```
+M_1(while B do L, s) delta =
+    if M_b(B, s) == undef
+        then error
+    else if M_b(B, s) == false
+        then s
+        else if M_sl(L, s) == error
+            then error
+            else M_1(while B do L, M_sl(L, s))
+```
 
 ### Axiomatic Semantics
 
@@ -142,22 +201,60 @@ In **axiomatic semantics**, the meaning of a specific statement is defined by it
 
 #### Form
 
+Pre-, post-form: `{P} statement {Q}`
 
+An example:
+- `a = b + 1 {a > 1}`
+- One possible precondition: `{b > 10}`
+- Weakest precondition: `{b > 0}`
 
 #### Assignment
 
-
+An axiom for assignment statements ($x = E$): $Q_{x \rightarrow E} x = E \{Q\}$
+- `a = b + 1 {a > 1}`
+- $Q$: $a > 1$
+- $P$ or $Q_{x \rightarrow E}$: $a > 1$ or $b + 1 > 1$ or $b > 0$
 
 #### Sequences
 
+An inference rule for sequences of the form S1; S2
 
+```
+{P1} S1 {P2}
+{P2} S2 {P3}
+```
+
+$$ \frac{\{P1\}S1\{P2\}, \{P2\}S2\{P3\}}{\{P1\}S1; S2\{P3\}} $$
 
 #### Selection
 
+An inference rule for selection: `if B then S1 else S2`
 
+$$ \frac{\{\text{B and P}\} \text{ S1 } \{\text{Q}\}, \{ \text{(not B) and P} \} \text{ S2 } \{Q\}}{\{\text{P}\} \text{ if B then S1 else S2 } \{Q\}} $$
+
+- If $x>0$ then $y=y-1$ else $y=y+1 \ \{y>0\}$
+- $y=y-1 \ \{y>0\} \ $, $\text{P:} \{y>1\}$
+- $y=y+1 \ \{y>0\} \ $, $\text{P:} \{y>-1\}$
+- $\text{P:} \{y>-1\}$ for the if statement
 
 #### Loops
 
+An inference test for logical pretest loops: `{P} while B do S end {Q}`
 
+$$ \frac{\text{(I and B) S } \{\text{I}\}}{\{I\} \text{ while B do S } \{ \text{I and (not B)} \} } $$
+
+where I is the loop invariant (the key is to find the loop invariant)
 
 #### Loop Invariant
+
+Characteristics of the loop invariant: I must meet the following conditions:
+- $P \Rightarrow I$: the loop invariant must be true initially
+- $\{ \text{I and B} \} \text{ S } \{ \text{I} \}$: I is not changed by executing the body of the loop
+- $\text{(I and (not B))} \Rightarrow \text{Q}$: if I is true and B is false, Q is implied
+- The loop terminates: can be difficult to prove
+
+```
+while y != x do y=y+1 {y==x}
+I: y <= x
+P: y <= x
+```
