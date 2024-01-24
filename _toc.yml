@@ -26,6 +26,7 @@ parts:
       - file: classes/cs403/3-syntax
       - file: classes/cs403/4-semantics
       - file: classes/cs403/5-parser
+      - file: classes/cs403/6-variables
       - file: classes/cs403/copl-3
     # - file: classes/cs442/overview
     #   sections:
@@ -77,3 +78,4 @@ parts:
       sections:
       - file: classes/ec110/chapter-1
       - file: classes/ec110/chapter-3
+      - file: classes/ec110/chapter-4
