@@ -27,6 +27,7 @@ parts:
       - file: classes/cs403/4-semantics
       - file: classes/cs403/5-parser
       - file: classes/cs403/6-variables
+        title: "Chapter 6"
       - file: classes/cs403/copl-3
     # - file: classes/cs442/overview
     #   sections:
