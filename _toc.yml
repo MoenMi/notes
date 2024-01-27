@@ -27,6 +27,7 @@ parts:
       - file: classes/cs403/4-semantics
       - file: classes/cs403/5-parser
       - file: classes/cs403/6-variables
+      - file: classes/cs403/7-types
       - file: classes/cs403/copl-3
     # - file: classes/cs442/overview
     #   sections:
@@ -37,6 +38,7 @@ parts:
       sections:
       - file: classes/math311/hw1
       - file: classes/math311/hw2
+      - file: classes/math311/3-class
   - caption: APPLIED STATISTICS
     chapters:
     # - file: classes/st540/overview
