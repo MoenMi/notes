@@ -28,6 +28,9 @@ parts:
       - file: classes/cs403/5-parser
       - file: classes/cs403/6-variables
       - file: classes/cs403/7-types
+      - file: classes/cs403/8-types
+      - file: classes/cs403/9-assign
+      - file: classes/cs403/10-selection
       - file: classes/cs403/copl-3
     # - file: classes/cs442/overview
     #   sections:
@@ -36,9 +39,11 @@ parts:
     chapters:
     - file: classes/math311/overview
       sections:
+      - file: classes/math311/2-class
+      - file: classes/math311/3-class
       - file: classes/math311/hw1
       - file: classes/math311/hw2
-      - file: classes/math311/3-class
+      - file: classes/math311/hw3
   - caption: APPLIED STATISTICS
     chapters:
     # - file: classes/st540/overview
