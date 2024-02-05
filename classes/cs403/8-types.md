@@ -102,7 +102,37 @@ A **union** is a type whose variables are allows to store difference type values
 
 ### Discriminated vs. Free Unions
 
+C and C++ provide union constructs where there is no language support for type checking; the union in these languages is called **free union**.
 
+Type checking of unions require that each union include a type indicator called a **discriminator/tag**. These are are supported in ML, Haskell, and F#.
+
+### Union Types in C/C++
+
+```C
+typedef struct tagINPUT {
+    DWORD type;
+    union {
+        MOUSEINPUT mi;
+        KEYBDINPUT ki;
+        HARDWAREINPUT hi;
+    } DUMMYUNIONNAME;
+} INPUT, *PINPUT, *LPINPUT
+```
+
+### Union Types in F#
+
+```F#
+type Shape =
+    | Rectangle of width : float * length : float
+    | Circle of radius : float
+    | Prism of width : float * length : float * height : float;;
+
+let getShapeWidth shape =
+    match shape with
+    | Rectangle(width = w) -> w
+    | Circle(radius = r) -> 2. * r
+    | Prism(width = w) -> w;;
+```
 
 ## Pointer and Reference Types
 
@@ -155,7 +185,7 @@ x = p + 5;  // Equal to stuff[5] and p[5]
 y = p + i;  // Equal to stuff[i] and p[i]
 ```
 
-### Refernce Types
+### Reference Types
 
 C++ includes a special type kind of pointer type called a **reference type** that is used primarily for formal parameters. This allows for the advantages of both pass-by-reference and pass-by-value.
 
@@ -169,4 +199,35 @@ C# includes both the references of Java and the pointers of C++.
 - Pointers are like `goto`s, in that they widen the range of cells that can be accessed by a variable
 - Pointers or references are necessary for dynamic data structures, so we can't design a language without them
 
+### Dangling Pointer Problem
 
+A **tombstone** is an extra heap cell that is a pointer to the heap-dynamic variable.
+- The actual pointer variable points only at tombstones
+- When the heap-dynamic variable is deallocated, the tombstone remains set to nil
+- Costly in time and space
+
+**Locks-and-keys** are pointer values that are represented as (key, address) pairs.
+- Heap-dynamic variables are represented as variable plus cell for integer lock value
+- When heap-dynamic variables are deallocated, the lock value is created and placed in the lock cell and key cell of the pointer
+
+### Heap Management
+
+- A very complex run-time process
+- Single-size cells vs. variable-size cells
+- Two approaches to reclaim garbage:
+    - Reference counters (eager approach): reclamation is gradual
+    - Mark-sweep (lazy approach): reclamation occurs when the list of variable space becomes empty
+
+#### Reference Counter
+
+**Reference counters** are counters in every cell that that store the number of pointers currently pointing at the cell.
+- Disadvantages: space required, execution time required, complications for cells connected circularly
+- Advantage: it is intrinsically incremental, so significant delays in the application execution are avoided
+
+#### Mark-Sweep
+
+In the **mark-sweep** approach, the run-time system allocates storage cells as requested and disconnects pointers from cells as necessary. Then, the mark-sweep begins:
+- Every heap cell has an extra bit used by collection algorithm
+- All cells initially set to garbage
+- All pointers traced into heap, and reachable cells are *marked* as not garbage
+- Disadvantages: in its original form, it was done too infrequently. When done, it caused significant delays in application execution. Contemporary mark-sweep algorithms avoid this by doing it more often, often called *incremental mark-sweep*
