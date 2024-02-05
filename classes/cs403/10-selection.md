@@ -155,3 +155,7 @@ General form of a call to `COND`:
     [(ELSE expression)]
 )
 ```
+
+- The `ELSE` clause is optional; `ELSE` is a synonym for true
+- Each predicate-expression pair is a parameter
+- Semantics: The value of the evaluation of `COND` is the value of the expression associated with the first predicate expression that is true
