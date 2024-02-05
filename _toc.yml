@@ -31,6 +31,7 @@ parts:
       - file: classes/cs403/8-types
       - file: classes/cs403/9-assign
       - file: classes/cs403/10-selection
+      - file: classes/cs403/11-loop
       - file: classes/cs403/copl-3
     # - file: classes/cs442/overview
     #   sections:
