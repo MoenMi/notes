@@ -37,3 +37,5 @@ The line on a graph denoting the relationship between price and quantity demande
 A **demand schedule** is a chart that shows how much of a good consumers will consume at a given price. The sum of this value for all consumers determines the market demand curve.
 
 ### Shifts in the Demand Curve
+
+
