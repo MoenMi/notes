@@ -10,23 +10,23 @@ The word 'economy' is derived from the Greek *oikonomos*, which means "one who m
 
 The first four principles concern individual decision making.
 
-### 1.1.1 - Principle 1: People Face Trade-Offs
+### Principle 1: People Face Trade-Offs
 
 **Efficiency** means that society is geting the greatest benefits from its scarce resources.
 
 **Equality** means that benefits are distributed uniformly among society's members.
 
-### 1.1.2 - Principle 2: The Cost of Something is What You Give Up to Get It
+### Principle 2: The Cost of Something is What You Give Up to Get It
 
 The **opportunity cost** of an item is what you give up to get it.
 
-### 1.1.3 - Principle 3: Rational People Think at the Margin
+### Principle 3: Rational People Think at the Margin
 
 **Rational people** systematically and purposefully do the best they can to achieve their goals, given the available opportunities.
 
 **Marginal change** describes the incremental adjustment to an existing plan of action. Decision making involves **marginal benefits** and **marginal costs**.
 
-### 1.1.4 - Principle 4: People Respong to Incentives
+### Principle 4: People Respong to Incentives
 
 An **incentive** is something that induces a person to act, such as a punishment or reward.
 
@@ -34,15 +34,15 @@ An **incentive** is something that induces a person to act, such as a punishment
 
 The next 3 principles concern how people interact with one another.
 
-### 1.2.1 - Principle 5: Trade Can Make Everyone Better Off
+### Principle 5: Trade Can Make Everyone Better Off
 
 Trade improves individual economies because it can allow each economy to specialize.
 
-### 1.2.2 - Principle 6: Markets Are Usually a Good Way to Organize Economic Activity
+### Principle 6: Markets Are Usually a Good Way to Organize Economic Activity
 
 A **market economy** is an economy that allocates resources through the decentralized decisions of many firms and households as they interact in markets for goods and services.
 
-### 1.2.3 - Principle 7: Governments Can Sometimes Improve Market Outcomes
+### Principle 7: Governments Can Sometimes Improve Market Outcomes
 
 **Property rights** is the ability of an individual to own and exercise control over scarce resource.
 
@@ -52,15 +52,15 @@ A **market economy** is an economy that allocates resources through the decentra
 
 The last 3 principles concern the workings of the economy as a whole.
 
-### 1.3.1 - Principle 8: A Country's Standard of Living Depends on Its Ability to Produce Goods and Services
+### Principle 8: A Country's Standard of Living Depends on Its Ability to Produce Goods and Services
 
 **Productivity** measures the quantity of goods and services produced from each unit of labor input. Standard of living in different countries is generally closely correlated with productivity.
 
-### 1.3.2 - Principle 9: Prices Rise When the Government Prints Too Much Money
+### Principle 9: Prices Rise When the Government Prints Too Much Money
 
 **Inflation** is an increase in the overall level of prices in the economy.
 
-### 1.3.3 - Principle 10: Society Faces a Short-Run Trade-Off between Inflation and Unemployment
+### Principle 10: Society Faces a Short-Run Trade-Off between Inflation and Unemployment
 
 The short-term effects of an increase in the money supply are generally as follows:
 

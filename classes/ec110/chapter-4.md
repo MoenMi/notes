@@ -2,11 +2,11 @@
 
 ## 4.1 - Markets and Competition
 
-### 4.1.1 - What Is a Market?
+### What Is a Market?
 
 A **market** is a group of buyers and sellers of a good or service.
 
-### 4.1.2 - What Is Competition?
+### What Is Competition?
 
 The term **competitive market** describes a market in which there are so many buyers and sellers that each has little effect on the market price.
 
@@ -20,7 +20,7 @@ A market where there is only one seller and the seller sets the price is called 
 
 ## 4.2 - Demand
 
-### 4.2.1 - The Demand Curve: The Relationship between Price and Quantity Demanded
+### The Demand Curve: The Relationship between Price and Quantity Demanded
 
 The **quantity demanded** of any good is the amount that buyers are willing and able to purchase.
 
@@ -30,8 +30,10 @@ A **demand schedule** is a table that shows the relationship between the price o
 
 The line on a graph denoting the relationship between price and quantity demanded is the **demand curve**. By convention, the y-axis is price and the x-axis is quantity demanded.
 
-### 4.2.2 - Market Demand vs. Individual Demand
+### Market Demand vs. Individual Demand
 
 **Market demand** is the sum of all the individual demands for a particular good or service.
 
+A **demand schedule** is a chart that shows how much of a good consumers will consume at a given price. The sum of this value for all consumers determines the market demand curve.
 
+### Shifts in the Demand Curve
