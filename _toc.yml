@@ -47,6 +47,7 @@ parts:
       - file: classes/math311/hw1
       - file: classes/math311/hw2
       - file: classes/math311/hw3
+      - file: classes/math311/hw4
   - caption: APPLIED STATISTICS
     chapters:
     # - file: classes/st540/overview
