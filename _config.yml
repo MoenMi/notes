@@ -2,11 +2,20 @@ title: Class Notes
 author: Michael T. Moen
 copyright: "2024"
 logo: jonah_window.jpg
-exclude_patterns: [*.cpp, *.py, *.rb, *.exe]
+exclude_patterns: 
+- "*.cpp"
+- "*.py"
+- "*.rb"
+- "*.exe"
 # Force re-execution of notebooks on each build.
 # See https://jupyterbook.org/content/execute.html
 execute:
   execute_notebooks: off
+  exclude_patterns: 
+    - "*.cpp"
+    - "*.py"
+    - "*.rb"
+    - "*.exe"
 
 # Define the name of the latex output file for PDF builds
 latex:
