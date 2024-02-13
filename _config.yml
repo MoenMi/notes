@@ -2,11 +2,6 @@ title: Class Notes
 author: Michael T. Moen
 copyright: "2024"
 logo: jonah_window.jpg
-exclude_patterns: 
-- "*.cpp"
-- "*.py"
-- "*.rb"
-- "*.exe"
 # Force re-execution of notebooks on each build.
 # See https://jupyterbook.org/content/execute.html
 execute:
