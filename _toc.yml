@@ -94,3 +94,4 @@ parts:
       - file: classes/ec110/chapter-3
       - file: classes/ec110/chapter-4
       - file: classes/ec110/chapter-5
+      - file: classes/ec110/chapter-7
