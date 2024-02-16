@@ -40,7 +40,7 @@ parts:
     #   - file: classes/cs442/chapter1
     - file: classes/cs491/overview
       sections:
-      - file: classes/cs491/ros-topics
+      - file: classes/cs491/ros-tutorials
       - file: classes/cs491/xbox-controller-setup
   - caption: MATHEMATICS
     chapters:
