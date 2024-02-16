@@ -34,6 +34,7 @@ parts:
       - file: classes/cs403/12-subprogram
       - file: classes/cs403/13-subprogram
       - file: classes/cs403/14-implementation
+      - file: classes/cs403/16-implementation
       - file: classes/cs403/copl-3
     # - file: classes/cs442/overview
     #   sections:
