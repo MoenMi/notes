@@ -80,7 +80,8 @@ parts:
       - file: classes/st554/homework-problems
     - file: classes/st555/overview
       sections:
-      - file: classes/st555/sample
+      - file: classes/st555/multivariate-distributions
+      - file: classes/st555/homework-1
     - file: classes/st560/overview
       sections:
       - file: classes/st560/mindtap-8
