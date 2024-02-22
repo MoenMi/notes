@@ -47,6 +47,7 @@ parts:
     chapters:
     - file: classes/math311/overview
       sections:
+      - file: classes/math311/1-class
       - file: classes/math311/2-class
       - file: classes/math311/3-class
       - file: classes/math311/hw1
