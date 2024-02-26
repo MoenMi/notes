@@ -36,6 +36,8 @@ parts:
       - file: classes/cs403/14-implementation
       - file: classes/cs403/16-implementation
       - file: classes/cs403/copl-3
+      - file: classes/cs403/18-adt
+      - file: classes/cs403/19-adt
     # - file: classes/cs442/overview
     #   sections:
     #   - file: classes/cs442/chapter1
