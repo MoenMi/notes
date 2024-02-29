@@ -35,10 +35,10 @@ parts:
       - file: classes/cs403/13-subprogram
       - file: classes/cs403/14-implementation
       - file: classes/cs403/16-implementation
-      - file: classes/cs403/copl-3
       - file: classes/cs403/18-adt
       - file: classes/cs403/19-adt
       - file: classes/cs403/20-oop
+      - file: classes/cs403/copl-3
     # - file: classes/cs442/overview
     #   sections:
     #   - file: classes/cs442/chapter1
@@ -53,6 +53,8 @@ parts:
       - file: classes/math311/1-class
       - file: classes/math311/2-class
       - file: classes/math311/3-class
+      - file: classes/math311/4-class
+      - file: classes/math311/5-class
       - file: classes/math311/hw1
       - file: classes/math311/hw2
       - file: classes/math311/hw3
