@@ -55,6 +55,8 @@ parts:
       - file: classes/math311/3-class
       - file: classes/math311/4-class
       - file: classes/math311/5-class
+      - file: classes/math311/6-class
+      - file: classes/math311/7-class
       - file: classes/math311/hw1
       - file: classes/math311/hw2
       - file: classes/math311/hw3
