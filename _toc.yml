@@ -38,6 +38,8 @@ parts:
       - file: classes/cs403/18-adt
       - file: classes/cs403/19-adt
       - file: classes/cs403/20-oop
+      - file: classes/cs403/21-oop
+      - file: classes/cs403/22-smalltalk
       - file: classes/cs403/copl-3
     # - file: classes/cs442/overview
     #   sections:
