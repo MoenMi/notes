@@ -177,6 +177,7 @@ n timesRepeat: [
 #### Interval and Iteration
 
 ```Smalltalk
+| anArray |
 anArray := #('one' 'deux' 'drei' 'quatro' 5 6.0).
 
 1 to: 6 do: [:idx | (anArray at: idx) printNl].
@@ -187,5 +188,41 @@ anArray := #('one' 'deux' 'drei' 'quatro' 5 6.0).
 This uses the following form: `aCollection do: aOneArgBlock`.
 
 ```Smalltalk
+| anArray |
+anArray := #('one' 'deux' 'drei' 'quatro' 5 6.0).
+
 anArray do:[:eachElement | eachElement printNl].
+```
+
+#### Collection Methods
+
+Detect:
+
+```Smalltalk
+#(4 7 10 3 17) detect: [ :each | each > 7 ]
+```
+
+Select, reject:
+```Smalltalk
+'now is the time' select: [ :each | each isVowel ]
+```
+
+Collect
+```Smalltalk
+#(1 2 3 4 5) collect: [ :i | i * i ]
+```
+
+## Non-Interactive Mode
+
+```Smalltalk
+"first.st"
+"A program to print 'Hello World!' to the terminal."
+
+'Hello World!' printNl
+```
+
+This can be run with:
+
+```bash
+gst first.st
 ```
