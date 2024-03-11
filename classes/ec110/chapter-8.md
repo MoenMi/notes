@@ -10,6 +10,13 @@ $$ \text{Tax Revenue} = T \times Q $$
 
 As such, the tax revenue is equal to the area of the tax wedge created by instituting the tax.
 
+Taxes have the following effects on welfare:
+
+```{image} images/figure8-1-1.png
+:width: 450px
+:align: center
+```
+
 ### Deadweight Losses and the Gains from Trade
 
 
