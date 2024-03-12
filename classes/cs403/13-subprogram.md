@@ -253,18 +253,18 @@ Coroutines provide **quasi-concurrent execution** of program units (the coroutin
 Possible execution controls:
 
 ```{image} images/execution-control1.png
-:width: 450px
+:width: 300px
 :align: center
 ```
 
 ```{image} images/execution-control2.png
-:width: 450px
+:width: 300px
 :align: center
 ```
 
 Possible execution controls with loops:
 
 ```{image} images/execution-control3.png
-:width: 450px
+:width: 300px
 :align: center
 ```
