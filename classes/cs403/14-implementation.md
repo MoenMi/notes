@@ -113,3 +113,76 @@ Epilogue actions of the called:
 - Restore the stack pointer by setting it to the value of the current EP-1 and set the EP to the old dynamic link
 - Restore the execution status of the caller
 - Transfer control back to the caller
+
+### An Example without Recursion
+
+```C++
+void fun1(float r) {
+    int s, t;
+    ...
+    fun2(s);
+    ...
+}
+void fun2(int x) {
+    int y;
+    ...
+    fun3(y);
+    ...
+}
+void fun3(int q) {
+    ...
+}
+void main() {
+    float p;
+    ...
+    fun1(p);
+    ...
+}
+```
+
+`main` -> `fun1` -> `fun2` -> `fun3`
+
+```{image} images/complex-activation-record.jpg
+:width: 700px
+:align: center
+```
+
+### Dynamic Chain and Local Offset
+
+The collection of dynamic links in the stack at a given time is called the **dynamic chain**, or **call chain**.
+
+Local variables can be accessed by their offset from the beginning of the activation record, whose address is in the EP. The offset is called the `local_offset`. The `local_offset` of a local variable can be determined by the compiler at compile time.
+
+### An Example with Recursion
+
+```C++
+int factorial(int n) {
+    if (n <= 1) return 1;
+    else return (n * factorial(n - 1));
+}
+void main() {
+    int value;
+    value = factorial(3);
+}
+```
+
+Activation record:
+
+```{image} images/factorial-activation-record.jpg
+:width: 500px
+:align: center
+```
+
+Stacks for calls to `factorial`:
+
+```{image} images/factorial-stack-calls.jpg
+:width: 700px
+:align: center
+```
+
+Stacks for returns to `factorial`:
+
+```{image} images/factorial-stack-returns.jpg
+:width: 60px
+:align: center
+```
