@@ -28,7 +28,13 @@ Taxes cause deadweight losses because they prevent buyers and sellers from reali
 
 ## 8.2 - The Determinants of the Deadweight Loss
 
+The greater the elasticities of supply and demand, the larger the deadweight loss of a tax.
 
+There exists debate on the elasticity of labor. Some economists argue that the supply of labor is inelastic, since they believe that most workers would work a full-time job regardless of the tax rate. Other economists point out that many aspects of the labor market respond to incentives:
+- Some people may adjust hour worked
+- Second earners in a household may choose to stay home or work part- or full-time based
+- Workers can choose to retire
+- Some people may evade taxes by working under the table in the **underground economy**
 
 ## 8.3 - Deadweight Loss and Tax Revenue as Taxes Vary
 
