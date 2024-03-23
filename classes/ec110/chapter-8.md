@@ -38,4 +38,6 @@ There exists debate on the elasticity of labor. Some economists argue that the s
 
 ## 8.3 - Deadweight Loss and Tax Revenue as Taxes Vary
 
+The **Laffer curve** demonstrates that raising the tax rate may lead to a decline in total tax revenue since deadweight loss increases quadratically with respect to tax rates while tax revenue increases linearly.
 
+The economic view of Reagan and Laffer that cutting the tax rate would encourage people to increase the quantity supplied of their labor and thereby increase the overall tax revenue is called **supply-side economics**.
