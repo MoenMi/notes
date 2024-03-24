@@ -17,12 +17,6 @@ latex:
   latex_documents:
     targetname: book.tex
 
-sphinx:
-  config:
-    rediraffe_branch: master
-    rediraffe_redirects:
-      classes/cs503/overview.rst: classes/cs403/overview.rst
-
 # Add a bibtex file so that we can create citations
 #bibtex_bibfiles:
 #  - references.bib
