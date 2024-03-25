@@ -44,6 +44,8 @@ parts:
       - file: classes/cs403/24-smalltalk
       - file: classes/cs403/25-smalltalk
       - file: classes/cs403/26-functional
+      - file: classes/cs403/27-functional
+      - file: classes/cs403/29-functional
       - file: classes/cs403/copl-3
     # - file: classes/cs442/overview
     #   sections:
