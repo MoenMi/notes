@@ -125,3 +125,4 @@ parts:
       - file: classes/ec110/chapter-8
       - file: classes/ec110/chapter-9
       - file: classes/ec110/chapter-10
+      - file: classes/ec110/chapter-14
