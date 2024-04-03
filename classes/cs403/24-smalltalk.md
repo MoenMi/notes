@@ -21,8 +21,8 @@ There are 5 main classes in the Smalltalk class hierarchy:
 - `printString, displayString`
 - `printOn: aString`
 - `displayOn: aStream`
-- `display, displayN1`
-- `print, printN1`
+- `display, displayNl`
+- `print, printNl`
 
 ### Testing Membership
 
