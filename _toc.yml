@@ -69,6 +69,8 @@ parts:
       - file: classes/math311/9-class
       - file: classes/math311/10-class
       - file: classes/math311/11-class
+      - file: classes/math311/12-class
+      - file: classes/math311/13-class
       - file: classes/math311/hw1
       - file: classes/math311/hw2
       - file: classes/math311/hw3
@@ -77,6 +79,7 @@ parts:
       - file: classes/math311/hw6
       - file: classes/math311/hw7
       - file: classes/math311/hw8
+      - file: classes/math311/hw9
   - caption: APPLIED STATISTICS
     chapters:
     # - file: classes/st540/overview
