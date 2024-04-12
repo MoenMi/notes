@@ -50,6 +50,8 @@ parts:
       - file: classes/cs403/32-functional
       - file: classes/cs403/33-functional
       - file: classes/cs403/34-logical
+      - file: classes/cs403/35-logical
+      - file: classes/cs403/36-logical
       - file: classes/cs403/copl-3
     # - file: classes/cs442/overview
     #   sections:
