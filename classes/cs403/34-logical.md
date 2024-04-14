@@ -95,12 +95,51 @@ For example: `likes(bob, trout)` $\subset$ `likes(bob, fish)` $\cap$ `fish(trout
 
 ## A Brief Introduction to Predicate Calculus
 
+Predicate calculus provides a way to represent collections of propositions. A use of propositions is to discover new theorems that can be inferred from known axioms and theorems.
 
+**Resolution**: an inference to allow inferred propositions to be computed from given propositions.
 
-## Predicate Calculus and Proving Theorems
+### Resolution
 
+**Unification**: finding values for variables in propositions that allows matching process to proceed.
 
+**Instantiation**: assigning temporary values to variables to allow unification to succeed.
+
+After instantiating a variable with a value, if matching fails, may need to **backtrack** and instantiate with a different value.
+
+### Proof by Contradiction
+
+**Hypotheses**: a set of pertinent propositions.
+
+**Goal**: negation of theorem stated as a proposition.
+
+Theorem is proved by finding an inconsistency.
+
+### Theorem Proving -> Logical Programming
+
+Theorem proving is the basis for logical programming.
+
+When propositions are used for resolution, only the restricted form can be used.
+
+**Horn clause**: can have only two forms.
+- **Headed**: single atomic proposition on the left side
+- **Headless**: empty left side (used to state facts)
+
+Most propositions can be stated as Horn clauses.
 
 ## An Overview of Logic Programming
 
+Declarative semantics:
+- Each statement in a logical program is declarative
+- Simpler that the semantics of imperative languages.
 
+Programming is nonprocedural:
+- Programs do not state how a result is to be computed, but rather the form of the result.
+
+### Example: Sorting a List
+
+Describe the characteristics of a sorted list, not the process of rearranging a list.
+
+`sort(old_list, new_list)` $\subset$ `permute(old_list, new_list)` $\cap$ `sorted(new_list)`
+
+`sorted(list)` $\subset \forall j$ such that $1 \leq j < n$, `list(j)` $\leq$ `list(j+1)` 
