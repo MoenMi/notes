@@ -52,6 +52,9 @@ parts:
       - file: classes/cs403/34-logical
       - file: classes/cs403/35-logical
       - file: classes/cs403/36-logical
+      - file: classes/cs403/37-concurrency
+      - file: classes/cs403/38-concurrency
+      - file: classes/cs403/39-exception-handling
       - file: classes/cs403/copl-3
     # - file: classes/cs442/overview
     #   sections:
