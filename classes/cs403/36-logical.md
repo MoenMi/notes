@@ -70,7 +70,7 @@ max(X, Y, Z) :-
     ; Avg is 0).
 ```
 
-Multi-way selectionL
+Multi-way selection:
 
 ```prolog
 (
