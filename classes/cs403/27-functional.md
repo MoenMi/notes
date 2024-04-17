@@ -9,7 +9,7 @@
 
 List representation and functions:
 
-```{image} images/scheme-list-represenation.png
+```{image} images/scheme-list-representation.png
 :width: 500px
 :align: center
 ```
