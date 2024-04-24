@@ -63,6 +63,41 @@ $$ \text{Enter if } P > ATC $$
 
 The competitive firm's long-run supply curve is the portion of its marginal-cost curve that lies above the average-total-cost curve.
 
+### Measuring Profit in Our Graph for the Competitive Firm
+
+$$ \text{Profit} = TR - TC $$
+
+$$ \text{Profit} = (\frac{TR}{Q} - \frac{TC}{Q}) \times Q $$
+
+$$ \text{Profit} = (P - ATC) \times Q $$
+
+```{image} images/figure15-2-1.png
+:width: 550px
+:align: center
+```
+
+This can be used to calculate the firm's profit when given the $ATC$ and $P$ on a price-supply curve.
+
 ## 15.3 - The Supply Curve in a Competitive Market
 
+### The Short Run: Market Supply with a Fixed Number of Firms
 
+In the short run, market supply of firms is fixed.
+
+### The Long Run: Supply with Entry and Exit
+
+In the long run, firms enter and exit the market. As a result, at the end of the process firms and entering and exiting the market, the firms remaining in the market must be making zero economic profit. This is because the process of entry and exit ends only when price and average total cost are driven to equality.
+
+In the long-run equilibrium of a competitive market with free entry and exit, firms operate at their efficient scale.
+
+### Why Do Competitive Firms Stay in Business If They Make Zero Profit?
+
+Competitive firms seek to make zero accounting profit, but they do make economic profit.
+
+### A Shift in Demand in the Short Run and Long Run
+
+When demand increases, price increases to account for the increased demand. In the long run, new firms join the market seeking profit, which in turn increases the quantity supplied, restoring equilibrium.
+
+### Why the Long-Run Supply Curve Might Slope Upward
+
+Because firms can enter and exit more easily in the long run than the short run, the long-run supply curve is typically more elastic than the short-run supply curve.
