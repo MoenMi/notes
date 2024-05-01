@@ -85,6 +85,7 @@ parts:
       - file: classes/math311/16-class
       - file: classes/math311/17-class
       - file: classes/math311/18-class
+      - file: classes/math311/final-review
       - file: classes/math311/hw1
       - file: classes/math311/hw2
       - file: classes/math311/hw3
