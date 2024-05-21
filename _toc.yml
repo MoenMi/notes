@@ -151,6 +151,7 @@ parts:
   - caption: LEETCODE
     chapters:
     - file: leetcode/217-contains-duplicates
+    - file: leetcode/242-valid-anagram
   - caption: OTHER
     chapters:
     - file: classes/other/youtube-to-mp3
