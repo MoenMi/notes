@@ -150,9 +150,7 @@ parts:
       - file: classes/ec110/chapter-17
   - caption: LEETCODE
     chapters:
-    - caption: Arrays & Hashing
-      sections:
-      - file: leetcode/217-contains-duplicates
+    - file: leetcode/217-contains-duplicates
   - caption: OTHER
     chapters:
     - file: classes/other/youtube-to-mp3
