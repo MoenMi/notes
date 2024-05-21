@@ -153,6 +153,7 @@ parts:
     - file: leetcode/217-contains-duplicates
     - file: leetcode/242-valid-anagram
     - file: leetcode/1-two-sum
+    - file: leetcode/49-group-anagrams
   - caption: OTHER
     chapters:
     - file: classes/other/youtube-to-mp3
