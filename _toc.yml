@@ -155,6 +155,7 @@ parts:
     - file: leetcode/1-two-sum
     - file: leetcode/49-group-anagrams
     - file: leetcode/347-top-k-frequent-elements
+    - file: leetcode/238-product-of-array-except-self
   - caption: OTHER
     chapters:
     - file: classes/other/youtube-to-mp3
