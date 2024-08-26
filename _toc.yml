@@ -100,6 +100,10 @@ parts:
     # - file: classes/st540/overview
     #   sections:
     #   - file: classes/st540/sample
+    - file: classes/st552/overview
+      sections:
+      - file: classes/st552/1-intro
+      - file: classes/st552/2-slr
     - file: classes/st554/overview
       sections:
       - file: classes/st554/discrete-uniform-distributions
