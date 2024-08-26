@@ -156,17 +156,7 @@ parts:
       - file: classes/ec110/chapter-15
       - file: classes/ec110/chapter-16
       - file: classes/ec110/chapter-17
-    - file: leetcode/leetcode
-      sections:
-      - file: leetcode/217-contains-duplicates
-      - file: leetcode/242-valid-anagram
-      - file: leetcode/1-two-sum
-      - file: leetcode/49-group-anagrams
-      - file: leetcode/347-top-k-frequent-elements
-      - file: leetcode/238-product-of-array-except-self
-      - file: leetcode/36-valid-sudoku
-      - file: leetcode/128-longest-consecutive-sequence
   - caption: OTHER
     chapters:
-    - file: classes/other/youtube-to-mp3
+    # - file: classes/other/youtube-to-mp3
     - file: congress
