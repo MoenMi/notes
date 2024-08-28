@@ -161,5 +161,4 @@ parts:
       - file: classes/ec110/chapter-17
   - caption: OTHER
     chapters:
-    # - file: classes/other/youtube-to-mp3
-    - file: congress
+    - file: classes/other/youtube-to-mp3
