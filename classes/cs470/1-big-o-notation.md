@@ -1,26 +1,29 @@
-# 1 - Big O Notation
+# 1 - Growth of Functions
 
-**Big O Notation** describes the upper bound
+## Big-O Notation
+
+**Big-O Notation** describes the tight upper bound:
 $$
 O(g(n)) = 
 \begin{cases}
-	f(n): \exists \text{ positive constants} \\
-	c, n_0 \text{ s.t. } 0 \leq f(n) \leq c g(n), \forall n \geq n_0
+	f(n): \exists \text{ positive constants } c, n_0 \text{ s.t. } 0 \leq f(n) \leq c g(n), \forall n \geq n_0
 \end{cases}
 $$
-The lower bound
+
+$f(n)$ is $O(g(n))$ iff $\exists$ positive constants $c$, $n_0$ such that $f(n) \leq cg(n) \ \forall n \geq n_0$.
+- This just means that $27n^2 + 10n - 5$ is $O(n^2)$
+
+Note that **Little-o Notation** describes the loose upper bound.
+
+## Big-Omega Notation
+
+**Big-Omega Notation** describes the tight lower bound:
 $$
 \Omega(g(n)) = 
 \begin{cases}
 	f(n) : \exists \text{ positive constants } c, n_0 \text{ s.t. } 0 \leq cg(n) \leq f(n), \forall n \geq n_0
 \end{cases}
 $$
-
-The tight bound
-
-
-$f(n)$ is $O(g(n))$ iff $\exists$ positive constants $c$, $n_0$ such that $f(n) \leq cg(n) \ \forall n \geq n_0$.
-- This just means that $27n^2 + 10n - 5$ is $O(n^2)$
 
 $$
 \begin{align*}
@@ -29,6 +32,8 @@ $$
 	28 &\leq c
 \end{align*}
 $$
+
+Note that **Little-omega Notation** describes the loose lower bound.
 
 $27n^2 + 10n - 5$ is $\Omega(n^2)$
 $$

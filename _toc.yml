@@ -59,6 +59,9 @@ parts:
     # - file: classes/cs442/overview
     #   sections:
     #   - file: classes/cs442/chapter1
+    - file: classes/cs460/overview
+      sections:
+      - file: classes/cs460/1-intro
     - file: classes/cs470/overview
       sections:
       - file: classes/cs470/1-big-o-notation
