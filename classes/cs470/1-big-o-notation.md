@@ -3,6 +3,7 @@
 ## Big-O Notation
 
 **Big-O Notation** describes the tight upper bound:
+
 $$
 O(g(n)) = 
 \begin{cases}
@@ -18,6 +19,7 @@ Note that **Little-o Notation** describes the loose upper bound.
 ## Big-Omega Notation
 
 **Big-Omega Notation** describes the tight lower bound:
+
 $$
 \Omega(g(n)) = 
 \begin{cases}
@@ -36,6 +38,7 @@ $$
 Note that **Little-omega Notation** describes the loose lower bound.
 
 $27n^2 + 10n - 5$ is $\Omega(n^2)$
+
 $$
 \begin{align*}
 	27n^2 + 10n - 5 &\geq cn^2 \\
@@ -45,6 +48,7 @@ $$
 $$
 
 $13n + 8$ is $O(n^2)$
+
 $$
 \begin{align*}
 	13n + 8 &\leq cn^2 \\
@@ -53,12 +57,14 @@ $$
 $$
 
 $13n + 8$ is $\Omega(n^2)$
+
 $$
 \begin{align*}
 	13n + 8 &\geq cn^2 \\
 	13 + \frac{8}{n} &\geq cn
 \end{align*}
 $$
+
 This is not true, hence why it is important to care about both the upper and lower bounds.
 
 $$
