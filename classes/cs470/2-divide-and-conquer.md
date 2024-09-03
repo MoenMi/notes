@@ -79,7 +79,29 @@ $$
 
 ### Karatsuba's Algorithm
 
+As before,
 
+$$ P*Q = (Ax^{n/2} + B)(Cx^{n/2} + D) = (AC)x^n + (BC + AD)x^{n/2} + (BD) $$
+
+This time, we write
+
+$$ (BC + AD) = (A + B)(C + D) - (AC) - (BD) $$
+
+As such, we only need three recursive calls:
+- $A*C$
+- $B*D$
+- $(A+B)(C+D)$
+
+Again, stop the recursion when when $n=1$.
+
+Analysis of Karratsuba's algorithm:
+
+$$
+T(n) = 3T(\frac{n}{2}) + \theta(n) \\
+a=3, b=2, k=1 \\
+\log_2 3 > 1 \\
+T(n) = \theta(n^{\log_b a}) = \theta(n^{\lg 3}) \approx \theta(n^{1.58})
+$$
 
 ## Matrix Multiplication Problem
 
@@ -238,3 +260,79 @@ T(n) = \theta(n^k) = \theta(n)
 $$
 
 ## Selection Problem
+
+Given an array `A[1...n]` and value $k$ where $1 \leq k \leq n$, find and return the $k$th smallest element in `A`.
+- If $k=1$, minimum element
+- If $k=n$, maximum element
+- If $k=\frac{1+n}{2}$, median element
+
+### Algorithm 1
+
+- Sort `A` into ascending order
+- return `A[k]`
+
+This algorithm takes $\theta(n \lg n)$ time using mergre sort or heap sort.
+
+This can be improved by not sorting the entire array.
+
+### Algorithm 2
+
+- Choose pivot element that is hopefully near the median of `A`
+  - Can be anything, but random is generally the best to avoid the worst case scenario
+
+```
+Select(A, k) {
+	pivot = ...;
+	create 3 empty lists: L, E, G;
+	for each x in A:
+		if (x < pivot)
+			add x to L;
+		else if (x == pivot)
+			add x to E;
+		else
+			add x to G;
+		if (k <= L.size)
+			return Select(L, k);
+		else if (k <= L.size + E.size)
+			return pivot
+		else
+			return Select(G, k - L.size - E.size)
+}
+```
+
+Analysis of Algorithm 2:
+- Best case: $\theta(n)$, if pivot happens to be the $k$th smallest element
+- Worst case: $\theta(n^2)$, if pivot is always near the maximum or minimum value
+- Average case: $\theta(n)$, if sometimes pivot yields a good split and sometimes a bad split, based on probabilities
+
+Recurrence for worst case: $T(n) = T(n-1) + \theta(n)$ or $T(n) = T(n-2) + \theta(n)$
+
+Recurrence for average case (assuming no duplicates):
+
+$$ T(n) = \frac{1}{n} \sum_{1 \leq k \leq n} \left[\frac{k-1}{n}T(k-1) + \frac{n-k}{n}T(n-k) \right] + \theta(n) $$
+
+Since this doesn't conform to the Master Recurrence Theorem, it is difficult to solve.
+
+Note: If we could be very lucky to always guess the median element as the pivot, then
+
+$$ T(n) = T(\frac{n}{2}) + \theta(n) \Rightarrow T(n) = \theta(n) $$
+
+### Algorithm 3
+
+- Same as Algorithm 2, except for a new pivot strategy:
+  - Choose an odd number $g$ (later we'll see that $g=5$ is best)
+  - Partition the $n$ elements into groups of size $g$ each (so the number of groups is $\frac{n}{g}$)
+  - Find the median of each group (Note that we can sort each group in $\theta(g^2) = \theta(1)$ time)
+  - Let $M$ be a list of all these group medians, so size of $M$ is $\frac{n}{g}$
+  - Find the median of $M$ by calling Algorithm 3 recursively (Note: because we can't sort $M$ in $\theta(n)$ time)
+  - Let pivot be the median of $M=\text{Select}(M, \frac{1 + \frac{n}{g}}{2})$
+
+Stop the recursion when $n$ is below some threshold (such as $n < 3g$ or $n < g^2$), and solve using Algorithm 1 or 2.
+
+Analysis of Algorithm 3:
+
+Two recursive calls:
+- Pivot - $\text{Select}(M, \frac{1 + \frac{n}{g}}{2})$
+- Only one of $\text{Select}(L, k)$ or $\text{Select}(G, k - L.size - E.size)$
+
+$$ T(n) = T(M.\text{size}) + T(\max(L.\text{size}, G.\text{size})) + \theta(n) $$

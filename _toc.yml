@@ -159,6 +159,9 @@ parts:
       - file: classes/ec110/chapter-15
       - file: classes/ec110/chapter-16
       - file: classes/ec110/chapter-17
+    - file: classes/gy101/overview
+      sections:
+      - file: classes/gy101/chapter-1
   - caption: OTHER
     chapters:
     - file: classes/other/youtube-to-mp3
