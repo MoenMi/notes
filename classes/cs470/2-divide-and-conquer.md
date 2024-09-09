@@ -74,7 +74,7 @@ $$
 T(n) = 4T(\frac{n}{2}) + \theta(n) \\
 a = 4, b = 2, k = 1 \\
 \log_2 4 = 2 > 1 \\
-T(n) = \theta(n^{\log_b a}) = \theta(n^2)
+\text{So } T(n) = \theta(n^{\log_b a}) = \theta(n^2)
 $$
 
 ### Karatsuba's Algorithm
@@ -100,7 +100,7 @@ $$
 T(n) = 3T(\frac{n}{2}) + \theta(n) \\
 a=3, b=2, k=1 \\
 \log_2 3 > 1 \\
-T(n) = \theta(n^{\log_b a}) = \theta(n^{\lg 3}) \approx \theta(n^{1.58})
+\text{So } T(n) = \theta(n^{\log_b a}) = \theta(n^{\lg 3}) \approx \theta(n^{1.58})
 $$
 
 ## Matrix Multiplication Problem
@@ -145,7 +145,7 @@ for i = 1 to n {
 }
 ```
 
-### Divide-and-Conquer Algorithm
+### Naive Divide-and-Conquer Algorithm
 
 Assume $n$ is even. Otherwise, add an extra row and column of all 0s. Stop the recursion when $n=1$.
 
@@ -190,7 +190,15 @@ C = A*B = \begin{bmatrix}
 \end{bmatrix}
 $$
 
-This requires 8 recursive calls: $S*W, S*X, U*W, U*X, T*Y, T*Z, V*Y, V*Z$.
+This requires 8 recursive calls:
+- $S*W$
+- $S*X$
+- $U*W$
+- $U*X$
+- $T*Y$
+- $T*Z$
+- $V*Y$
+- $V*Z$
 
 Analysis of the algorithm:
 
@@ -198,14 +206,41 @@ $$
 T(n) = 8T(\frac{n}{2}) + \theta(n^2) \\
 a=8, b=2, k=2 \\
 \log_2 8 = 3 > 2 \\
-T(n) = \theta(n^3)
+\text{So } T(n) = \theta(n^3)
 $$
 
 Note that this is the same runtime as the naive algorithm.
 
 ### Strassen's Algorithm
 
+Again, we write $A =\begin{bmatrix} S & T \\ U & V \end{bmatrix}$ and $B =\begin{bmatrix} W & X \\ Y & Z \end{bmatrix}$.
 
+This requires 7 recursive calls:
+- $P_1 = S * (X - Z)$
+- $P_2 = (S + T) * Z$
+- $P_3 = (U + V) * W$
+- $P_4 = V * (Y - W)$
+- $P_5 = (S + V) * (W + Z)$
+- $P_6 = (T - V) * (Y + Z)$
+- $P_7 = (U - S) * (W + X)$
+
+$$
+C = \begin{bmatrix}
+	P_5 + P_4 - P_2 + P_6 & P_1 + P_2 \\
+	P_3 + P_4 & P_5 + P_1 - P_3 + P_7
+\end{bmatrix}
+$$
+
+Analysis of Strassen's algorithm:
+
+$$
+T(n) = 7 T(\frac{n}{2}) + \theta(n^2) \\
+a = 7, b = 2, k = 2 \\
+\log_2 7 > 2 \\
+\text{So } T(n) = \theta(n^{\lg 7}) \approx \theta(n^{2.81})
+$$
+
+The current best known algorithm for matrix multiplication is about $\theta(n^{2.37})$ time. This is achieved by further extending the this divide-and-conquer approach, but the formulas are very complex.
 
 ## Majority Element Problem
 
@@ -256,7 +291,7 @@ $$
 T(n) = T(\frac{n}{2}) + \theta(n) \\
 a=1, b=2, k=1 \\
 \log_2 1 = 0 < 1 \\
-T(n) = \theta(n^k) = \theta(n)
+\text{So } T(n) = \theta(n^k) = \theta(n)
 $$
 
 ## Selection Problem

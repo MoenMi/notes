@@ -162,6 +162,7 @@ parts:
     - file: classes/gy101/overview
       sections:
       - file: classes/gy101/chapter-1
+      - file: classes/gy101/chapter-2
   - caption: OTHER
     chapters:
     - file: classes/other/youtube-to-mp3

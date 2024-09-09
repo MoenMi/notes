@@ -115,6 +115,11 @@ We commonly call each map in a GIS system a **layer**.
 
 GIS can be used for **spatial interpolation**, which involves comparing data at a location to known values at nearby locations.
 
-## 1.13 - What is the Role of Time in Geography?
+## 1.14 - How Do Concept Sketches Help us Portray and Understand Features and Processes?
 
+A **concept sketch** is simple sketch accompanied by complete sentences that describe the features, processes, and interrelationships within a system.
 
+The procedure for making a concept sketch is as follows:
+1. Make a list of what to discuss
+2. Decide what to sketch
+3. Annotate your sketch
