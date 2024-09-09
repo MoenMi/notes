@@ -7,39 +7,49 @@ What is **regression**?
 - Supervised learning with binary responses is called Logistic Regression
 - Estimation, inference, and prediction
 
+Procedure of regression analysis:
+
+1. Model specification
+2. Parameter estimation ($\beta_0$, $\beta_1$, $\sigma^2$)
+3. Model assessment (all models are wrong, some are useful)
+4. Model validation (diagnostics)
+5. Prediction
+
 ## 2.1 - SLR Models
 
 A standard simple linear regression model:
 
-$$ y_i = \beta_0 + \beta_1 x_i + e_i $$
+$$ y_i = \beta_0 + \beta_1 x_i + \epsilon_i $$
 
 - $(y_i, x_i)$ is the $i$th observation from a random sample $\{(y_i, x_i), i = 1, \dots, n\}$
 - $\beta_0$ and $\beta_1$ are the regression coefficients: intercept and slope, respectively
-- $e_i$ is the random error
+- $\epsilon_i$ is the random error
 
-Random error $e_i$:
+Note that in this model, $y_i$ is called the **response** and $x_i$ is called the **predictor**.
+
+Random error $\epsilon_i$:
 - Unexplained variation in the response $y$
-- $e_i$ is independent of $x_i$
-- Mean $E(e_i | x_i) = 0$, and variance $\text{Var}(e_i | x_i) = \sigma^2$
-- $e_i$ and $e_j$ are uncorrelated for $i \ne j$
+- $\epsilon_i$ is iid (independent identically distributed) of $x_i$
+- Mean $E(\epsilon_i | x_i) = 0$, and variance $\text{Var}(\epsilon_i | x_i) = \sigma^2$
+- $\epsilon_i$ and $\epsilon_j$ are uncorrelated for $i \ne j$
 - For all $i, j = 1, \dots, n$
 
 $E(y_i | x_i) = \beta_0 + \beta_1 x_i$
 
-$y_i = E(y_i | x_i) + e_i = \beta_0 + \beta_1 x_i + e_i$
+$y_i = E(y_i | x_i) + \epsilon_i = \beta_0 + \beta_1 x_i + \epsilon_i$
 
 ## 2.2 - Parameter Estimation
 
 - Parameters: $\beta_0$ and $\beta_1$
 - Sample estimates: $b_0$ and $b_1$
 - Estimated model: $\hat{y}_i = b_0 + b_1 x_i$
-- Residuals: $\hat{e}_i = y_i - \hat{y}_i$
+- Residuals: $\hat\epsilon_i = y_i - \hat{y}_i$
 
 ### Least Squares
 
 **Residual Sum of Squares (RSS)**, or **Sum of Squared Residuals (SSR)**:
 
-$$ RSS = \sum^n_{i=1} \hat{e}_i^2 = \sum^n_{i=1} (y_i - \hat{y}_i)^2 = \sum^n_{i=1} (y_i - b_0 - b_1 x_i)^2 $$
+$$ RSS = \sum^n_{i=1} \hat\epsilon_i^2 = \sum^n_{i=1} (y_i - \hat{y}_i)^2 = \sum^n_{i=1} (y_i - b_0 - b_1 x_i)^2 $$
 
 For RSS to be a minimum with respect to $b_0$ and $b_1$, we require
 
@@ -69,7 +79,7 @@ $$ \hat\beta_1 = \frac{\sum^n_{i=1} x_i y_i - n \overline{xy}}{\sum^n_{i=1} x_i^
 
 The residual variance $\sigma^2$ can be estimated by
 
-$$ s^2 = \frac{RSS}{n -2} = \frac{\sum^n_{i=1} \hat e_i^2}{n-2} $$
+$$ s^2 = \frac{RSS}{n -2} = \frac{\sum^n_{i=1} \hat \epsilon_i^2}{n-2} $$
 
 ## 2.3 - Model Inference
 
@@ -77,11 +87,11 @@ $$ s^2 = \frac{RSS}{n -2} = \frac{\sum^n_{i=1} \hat e_i^2}{n-2} $$
 
 - $y$ is related to $x$ by the simple linear regression model
   
-  $$ y_i = \beta_0 + \beta_1 x_i + e_i $$
+  $$ y_i = \beta_0 + \beta_1 x_i + \epsilon_i $$
 
-- Errors $\{ e_i, i=1, \dots, n \}$ are independent of each other
-- Constant variance $\text{Var}(e_i | x_i) = \sigma^2$
-- The errors are normally distributed with mean 0 and variance $\sigma^2$, $e \sim N(0, \sigma^2)$
+- Errors $\{ \epsilon_i, i=1, \dots, n \}$ are independent of each other
+- Constant variance $\text{Var}(\epsilon_i | x_i) = \sigma^2$
+- The errors are normally distributed with mean 0 and variance $\sigma^2$, $\epsilon \sim N(0, \sigma^2)$
 
 ### Inference on the Slope $\beta_1$
 
