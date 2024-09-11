@@ -36,4 +36,13 @@ Consider the walks from $p_1$ to $p_2$ to $p_3$, from $p_1$ to $p_2$ to $p_4$, f
 
 ## Determining Whether Any Pair of Segments Intersect
 
+Consider the problem above, but we have a collection of line segments rather than just one pair.
 
+To solve this, we utilize a vertical **sweep line**.
+- Imagine that this sweep line moves left to right through the space with the line segments.
+- Whenever we hit the the beginning or end of a line segment, we find the vertical order of the line segments going through that point (or rather, we add/delete the new/old point and check whether the order of the pairs have changed).
+- 
+
+## Finding the Convex Hull
+
+The **convex hull** is a set $Q$ of points, denoted by $\text{CH}(Q)$, is the smallest convex polygon $P$ for which each point in $Q$ is either on the boundary of $P$ or in its interior.

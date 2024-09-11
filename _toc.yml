@@ -112,6 +112,7 @@ parts:
       sections:
       - file: classes/st552/1-intro
       - file: classes/st552/2-slr
+      - file: classes/st552/tb1-intro
     - file: classes/st554/overview
       sections:
       - file: classes/st554/discrete-uniform-distributions
