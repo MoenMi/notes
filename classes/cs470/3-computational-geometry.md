@@ -17,6 +17,8 @@ $$
 \end{align*}
 $$
 
+If $p_1 \times p_2$ is positive, then $p_1$ is clockwise from $p_2$ with respect to the origin. If the cross product is negative, then $p_1$ is counterclockwise from $p_2$.
+
 ADD MORE DETAIL FROM BOOK HERE
 
 ## Left/Right Turn Problem
