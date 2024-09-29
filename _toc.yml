@@ -67,6 +67,7 @@ parts:
       - file: classes/cs470/1-big-o-notation
       - file: classes/cs470/2-divide-and-conquer
       - file: classes/cs470/3-computational-geometry
+      - file: classes/cs470/4-dynamic-programming
     - file: classes/cs491/overview
       sections:
       - file: classes/cs491/ros-tutorials
@@ -112,6 +113,7 @@ parts:
       sections:
       - file: classes/st552/1-intro
       - file: classes/st552/2-slr
+      - file: classes/st552/3-mlr
       - file: classes/st552/tb1-intro
     - file: classes/st554/overview
       sections:
