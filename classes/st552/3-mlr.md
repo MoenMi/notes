@@ -26,6 +26,63 @@ $$ y_i = E(y_i | x_i) + \epsilon_i = \beta_0 + \beta_1 x_{1i} + \beta_2 x_{2i} +
 - Parameters: $\beta_0$ and $\beta_1, \beta_2, \dots, \beta_p$
 - Sample estimates: $b_0$ and $b_1, b_2, \dots, b_p$
 - Estimated model: $\hat y_i = b_0 + b_1 x_{1i} + b_2 x_{2i} + \dots + b_p x_{pi}$
+- Residuals: $\hat\epsilon_i = y_i - \hat y_i$
+
+### Least Squares
+
+The least squares estimates of $\beta_0, \beta_1, \beta_2, \dots, \beta_p$ are the values of $b_0, b_1, b_2, \dots, b_p$ for which the sum of the squared residuals,
+
+$$ RSS = \sum^n_{i=1} \hat\epsilon_i^2 = \sum^n_{i=1} (y_i - \hat y_i)^2 = \sum^n_{i=1} (y_i - b_0 - b_1 x_{1i} - b_2 x_{2i} - \dots - b_p x_{pi})^2 $$
+
+is a minimum. For RSS to be a minimum with respect to $b_0, b_1, b_2, \dots, b_p$, we require
+
+$$ \frac{\delta RSS}{\delta b_0} = -2 \sum^n_{i=1} (y_i - b_0 - b_1 x_{1i} - b_2 x_{2i} - \dots - b_p x_{pi}) = 0 $$
+
+$$ \frac{\delta RSS}{\delta b_1} = -2 \sum^n_{i=1} x_{1i} (y_i - b_0 - b_1 x_{1i} - b_2 x_{2i} - \dots - b_p x_{pi}) = 0 $$
+
+$$ \frac{\delta RSS}{\delta b_p} = -2 \sum^n_{i=1} x_{pi} (y_i - b_0 - b_1 x_{1i} - b_2 x_{2i} - \dots - b_p x_{pi}) = 0 $$
+
+### Matrix Formulation of Least Squares
+
+A convenient way to study the properties of the least squares estimates $\hat\beta_0, \hat\beta_1, \hat\beta_2, \dots, \hat\beta_p$ is to use matrix and vector notation. Define the $n \times 1$ vector $\textbf{Y}$, the $n \times (p + 1)$ matrix $\textbf{X}$, the $(p + 1) \times 1$ vector $\beta$ of unknown regression parameters and the $n \times 1$ vector $\textbf{e}$ of random errors by
+
+$$
+\textbf{Y} = \begin{pmatrix}
+    y_1 \\ y_2 \\ \vdots \\ y_n
+\end{pmatrix},
+
+\textbf{X} = \begin{pmatrix}
+    1 & x_{11} & \dots & x_{1p} \\
+    1 & x_{21} & \dots & x_{2p} \\
+    \vdots & \vdots & \ddots & \vdots \\
+    1 & x_{n1} & \dots & x_{np}
+\end{pmatrix},
+
+\beta = \begin{pmatrix}
+    \beta_0 \\ \beta_1 \\ \vdots \\ \beta_p
+\end{pmatrix}
+
+\textbf{e} = \begin{pmatrix}
+    \epsilon_1 \\ \epsilon_2 \\ \vdots \\ \epsilon_n
+\end{pmatrix}
+$$
+
+We can write the multiple linear regression model in matrix notation as
+
+$$ \textbf{Y} = \textbf{X} \beta + \textbf{e} $$
+
+The residual sum of squares as a function of $\beta$ can be written in matrix form as
+
+$$ RSS(\beta) = (\textbf{Y} - \textbf{X}\beta)'(\textbf{Y} - \textbf{X}\beta) $$
+
+Noting that $(\textbf{A} \textbf{B})' = \textbf{B}' \textbf{A}'$ and that $\textbf{B}' \textbf{A} = \textbf{A}' \textbf{B}$ when the result is $1 \times 1$, expanding this last equation gives
+
+$$
+\begin{align*}
+    RSS(\beta) &= \textbf{Y}' \textbf{Y} + (\textbf{X} \beta)' \textbf{X} \beta - \textbf{Y}' \textbf{X} \beta - (\textbf{X} \beta)' \textbf{Y} \\
+    &= \textbf{Y}' \textbf{Y} + \beta' (\textbf{X}' \textbf{X}) \beta - 2 \textbf{Y}' \textbf{X} \beta
+\end{align*}
+$$
 
 ## 3.3 - Model Inference
 
