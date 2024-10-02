@@ -1,5 +1,34 @@
 # 3 - MLR
 
+Interpretation of slopes in MLR:
+- Type I SS (sequential SS)
+  ```
+  Price ~ Food + Decor + Service + Speed
+    SS(Food)
+    SS(Decor | Food)
+    SS(Service | Food + Decor)
+    SS(Speed | Food + Decor + Service)
+  ```
+  - ANOVA analyzes Type I SS
+- Type II SS (conditional/marginal effect)
+  ```
+  Price ~ Food + Decor + Service + Speed
+    SS(Food | Decor + Service + Speed)
+    SS(Decor | Food + Service + Speed)
+    SS(Service | Food + Decor + Speed)
+    SS(Speed | Food + Decor + Service)
+  ```
+  - Can be retrieved via R's `summary()`
+
+Interpretation of $\beta_j$ (the slope of $x_j$):
+- Change in the response $y$ with 1 unit increase in the predictor $x_j$, while the rest of the predictors remain unchanged
+
+Multiple and adjusted $R^2$:
+
+$$ R^2_{adj} = 1 - \frac{\text{SSE} / (n - p - 1)}{\text{SST} / (n - 1)} $$
+
+- Adjusts for both sample size $n$ and model size $p$
+
 ## 3.1 - MLR Model
 
 A standard multiple linear regression model:

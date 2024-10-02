@@ -81,6 +81,14 @@ The residual variance $\sigma^2$ can be estimated by
 
 $$ s^2 = \frac{RSS}{n -2} = \frac{\sum^n_{i=1} \hat \epsilon_i^2}{n-2} $$
 
+### Model Assessment (In-Class Only, Not in Slides)
+
+The $R^2$ coefficient of determination determines the percentage of the variance in $y$ explained by the model:
+
+$$ R^2 = \frac{\text{SSreg}}{\text{SST}} = \frac{\text{Variance explained}}{\text{Total variance}} = 1 - \frac{\text{SSE}}{\text{SST}} $$
+
+Pearson's correlation coefficient ($r$) also indicates a positive or negative relationship between the variables. Note that in SLR, $r^2 = R^2$.
+
 ## 2.3 - Model Inference
 
 ### Assumptions for Inference

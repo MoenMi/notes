@@ -107,8 +107,55 @@ $$ T = \frac{\hat\beta_0 - \beta_0}{S \sqrt{\frac{1}{n} + \frac{\bar x^2}{SXX}}}
 
 ## 2.3 - Confidence Intervals for the Population Regression Line
 
+The population regression line at $X = x^*$ is given by
 
+$$ E(Y | X = x^*) = \beta_0 + \beta_1 x^* $$
+
+An estimator of this unknown quantity is the value of the estimated regression equation at $X = x^*$, namely,
+
+$$ \hat y^* = \hat\beta_0 + \hat\beta_1 x^* $$
+
+$$ \text{Var}(\hat y^*) = \text{Var}(\hat y | X = x^*) = \sigma^2 \left( \frac{1}{n} + \frac{(x^* - \bar x)^2}{SXX} \right) $$
+
+$$ \hat y^* = \hat y | X = x^* \sim N \left( \beta_0 + \beta_1 x^*, \sigma^2 \left( \frac{1}{n} + \frac{(x^* - \bar x)^2}{SXX} \right) \right) $$
+
+We can use the following $t$-distribution to perform hypothesis tests and create confidence intervals:
+
+$$ T = \frac{\hat y^* - (\beta_0 + \beta_1 x^*)}{S \sqrt{\frac{1}{n} + \frac{(x^* - \bar x)^2}{SXX}}} \sim t_{n-2} $$
 
 ## 2.4 - Prediction Intervals for the Actual Values of $Y$
 
+The following $t$-distribution for a prediction interval for $Y^*$ is given by
 
+$$ T = \frac{Y^* - \hat y^*}{S \sqrt{1 + \frac{1}{n} + \frac{(x^* - \bar x)^2}{SXX}}} \sim t_{n-2} $$
+
+Note that the prediction interval is significantly wider than the confidence interval since it is meant to include specific values of single values $Y^*$.
+
+## 2.5 - Analysis of Variance (ANOVA)
+
+To test whether there is a linear relationship between $Y$ and $X$, we have to test $H_0 : \beta_1 = 0$ against $H_A : \beta_1 \ne 0$.
+
+We can perform this test using the following $t$-statistic:
+
+$$ T = \frac{\hat\beta_1 - 0}{\text{se}(\hat\beta_1)} \sim t_{n-2} \text{ when } H_0 \text{ is true} $$
+
+We can use the corrected sum of squares of the $Y$'s as a test statistic when there is more than one predictor variable (multiple regression):
+
+$$ \text{SST} = SYY = \sum^n_i (y_i - \bar y)^2 $$
+
+The regression sum of squares is given by the following:
+
+$$ \text{SSreg} = \sum^n_i (\hat y_i - \bar y)^2 $$
+
+It can be shown that
+
+$$
+\begin{align*}
+    \text{SST} &= \text{SSreg} &+ \text{RSS} \\
+    \text{Total sample variability} &= \text{Variability explained by model} &+ \text{Error}
+\end{align*}
+$$
+
+To test $H_0 : \beta_1 = 0$ against $H_A : \beta_1 \ne 0$, we can use the test statistic
+
+$$ F = \frac{\text{SSreg} / 1}{\text{RSS} / (n-2)} $$
