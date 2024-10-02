@@ -33,6 +33,6 @@ SLR and MLR have continuous response, but logistic regression has a binary (yes/
     - Variability: variance, standard deviation
     - Relative standing: quartiles, percentiles
 - Inferential statistics (statistical inference): Infer population from sample
-  - Confidence interval
+  - Confidence interval $(\bar X - t_{\alpha/2, n-1} \frac{s}{n}, \bar X + t_{\alpha/2, n-1} \frac{s}{n})$
   - Hypothesis test
     - p-value

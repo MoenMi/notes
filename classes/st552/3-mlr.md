@@ -84,6 +84,30 @@ $$
 \end{align*}
 $$
 
+To find the least squares estimates, we differentiate this equation with respect to $\beta$, equate the result to zero, then cancel out the 2 common to both sides. This gives the following matrix form of the normal equations:
+
+$$ (\textbf{X}' \textbf{X}) \beta = \textbf{X}' \textbf{Y} $$
+
+Assuming that the inverse of the matrix $(\textbf{X}' \textbf{X})$ exists, the least squares estimates are given by
+
+$$ \hat\beta = (\textbf{X}' \textbf{X})^{-1} \textbf{X}' \textbf{Y} $$
+
+The fitted or predicted values are given by
+
+$$ \hat{\textbf{Y}} = \textbf{X} \hat\beta $$
+
+and the residuals are given by
+
+$$ \hat{\textbf{e}} = \textbf{Y} - \hat{\textbf{Y}} = \textbf{Y} - \textbf{X} \hat\beta $$
+
+### Estimating the Error Variance
+
+It can be shown that
+
+$$ S^2 = \frac{RSS}{n-p-1} = \frac{1}{n - p - 1} \sum^n_{i=1} \hat\epsilon^2_i $$
+
+is an unbiased estimator of $\sigma^2$.
+
 ## 3.3 - Model Inference
 
 

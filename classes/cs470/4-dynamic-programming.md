@@ -1,5 +1,262 @@
 # 4 - Dynamic Programming
 
+Format of dynamic programming algorithms:
+- Use a recursive formula
+- But recursion can be inefficient because it might repeat the same computations multiple times
+- So use an array to store and lookup the subproblem results as needed
+
+## Fibonacci Numbers
+
+$$ 1, 1, 2, 3, 5, 8, 13, 21, 34, \dots $$
+
+- $F(0) = 1$
+- $F(1) = 1$
+- $F(n) = F(n - 2) + F(n - 1)$, when $n \geq 2$
+
+### Recursive (Naive) Approach
+
+```
+int F(int n) {
+    if (n == 0 || n == 1)
+        return 1
+    else
+        return F(n-2) + F(n-1)
+}
+```
+
+Recursion as in the example above yields repeated subproblems, so its runtime is exponential.
+
+### Bottom-Up Approach (Table, No Recursion)
+
+```
+Allocate array A[0..n]
+for (k = 0; k <= n; k++)
+    if (k == 0 || k == 1)
+        A[k] = 1
+    else
+        A[k] = A[k-2] + A[k-1]
+return A[n]
+```
+
+Runtime: $\Theta(n)$
+
+### Top-Down Approach (Table and Recursion)
+
+```
+Allocate array A[0..n]
+for (k = 0; k <= n; k++)
+    A[k] = null
+return F(n)
+
+int F(int n) {
+    if (A[n] != null)
+        return A[n]
+    if (n == 0 || n == 1)
+        A[n] = 1
+    else
+        A[n] = F(n-2) + F(n-1)
+    return A[n]
+}
+```
+
+Runtime: $\Theta(n)$
+
+## Combinations
+
+$$ _nC_k = \binom{n}{k} = \frac{n!}{k! (n-k)!} $$
+
+Pascal's recursive formula for combinations:
+
+```
+C(n, 0) = 1
+C(n, n) = 1
+C(n, k) = C(n-1, k-1) + C(n-1, k), when 0 < k < n
+```
+
+```
+int C(int n, int k) {
+    if (k == 0 || k == n)
+        return 1
+    else
+        return C(n-1, k-1) + C(n-1, k)
+}
+```
+
+Again, recursion yields repeated subproblems, so runtime is exponential.
+
+### Pascal's Triangle (DP Approach)
+
+```
+Allocate array C[0..n][0..k]
+for(m=0; m<=n; m++)
+    for(j=0; j<=k; j++)
+        if (j == 0 || j == m)
+            C[m][j] = 1
+        else
+            C[m][j] = C[m-1][j-1] + C[m-1][j]
+return C[n][k]
+```
+
+Runtime: $\Theta(nk) = \Theta(n^2)$, because $k \leq n$
+
+## 0-1 Knapsack Problem
+
+- Objects $\{ 1 \dots n \}$
+- Profits $P[ 1 \dots n ]$
+- Weights $W[ 1 \dots n ]$
+- Maximum weight capacity $M$
+
+0-1 Constraint: Must take none (0) or all (1) of each of object.
+
+Goal: Determine the amounts $X[1 \dots n]$ for each object so that $\sum_{1 \leq k \leq n} X[k] * W[k] \leq M$, and $\sum_{1 \leq k \leq n} X[k] * P[k]$ is as large as possible. Each $X[j]$ must be either $0$ or $1$.
+
+### Recursive Function
+
+- $T(n, M)$ is the max possible total profit such that we choose any subset of objects $\{ 1 \dots n \}$ and maximum weight capacity is $M$.
+- $T(j, k)$ is the max possible total profit such that we can only choose from objects $\{ 1 \dots j \}$ and maximum weight capacity is $k$.
+  - $(0 \leq j \leq n, 0 \leq k \leq M)$
+
+Formulation:
+- $T(j, k) = 0$, if $j == 0$
+- $T(j, k) = T(j-1, k)$, if $j > 0$ and $k < W[j]$
+- $T(j, k) = \max \{ T(j-1, k), T(j-1, k-W[j]) + P[j] \}$ if $j > 0$ and $k \geq W[j]$
+
+```
+int T(int j, int k) {
+    if (j == 0)
+        return 0
+    if (k < W[j])
+        return T(j-1, k)
+    return max{T(j-1, k), T(j-1, k-W[j]) + P[j]}
+}
+```
+
+### Dynamic Programming Algorithm
+
+```
+Allocate array T[0..n][0..M]
+for j = 0 to n
+    for k = 0 to M
+        if (j == 0)
+            T[j][k] = 0
+        else if (k < W[j])
+            T[j][k] = T[j-1][k]
+        else
+            T[j][k] = max{T[j-1][k], T[j-1][k-W[j]] + P[j]}
+```
+
+Runtime: $\Theta(nM)$
+
+### Example
+
+- $n = 4$
+- $M = 8$
+
+|  | 1 | 2 | 3 | 4 |
+| - | - | - | - | - |
+| P | 12 | 15 | 16 | 18 |
+| W | 2 | 3 | 4 | 6 |
+
+| T | k=0 | k=1 | k=2 | k=3 | k=4 | k=5 | k=6 | k=7 | k=8 |
+| - | - | - | - | - | - | - | - | - | - |
+| $j=0$ | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 |
+| $j=1$ | 0 | 0 | 12 | 12 | 12 | 12 | 12 | 12 | 12 |
+| $j=2$ | 0 | 0 | 12 | 15 | 15 | 27 | 27 | 27 | 27 |
+| $j=3$ | 0 | 0 | 12 | 15 | 16 | 27 | 28 | 31 | 31 |
+| $j=4$ | 0 | 0 | 12 | 15 | 16 | 27 | 28 | 31 | 31 |
+
+So the max total profit is 31, but which objects do we need to choose? We still need to assign each $X[j]$ with either 0 or 1.
+
+```
+k = M
+for (j=n; j>0; j--)
+    if (T[j-1][k] == T[j][k])
+        X[j] = 0
+    else
+        { X[j] = 1 }
+        { k -= W[j] }
+```
+
+This takes $\Theta(n)$ additional time.
+
+## Longest Common Subsequence (LCS)
+
+Given two strings:
+- $X[1 \dots m]$
+- $Y[1 \dots n]$
+
+Goal: Find a string that is a subsequence of both $X$ and $Y$, and that has the largest possible length.
+
+Example:
+- $X=$ "bdacbea", $m=7$
+- $Y=$ "dcbaecba", $n=8$
+- $\text{LCS}(X, Y) =$ "dacba"
+
+### Recursive Function for LCS
+
+- $\text{L}(m, n) =$ length of the LCS of $X[1 \dots m]$ and $Y[1 \dots n]$
+- $\text{L}(j, k) =$ length of the LCS of $X[1 \dots j]$ and $Y[1 \dots k] (0  \leq j \leq m, 0 \leq k \leq n)$
+
+Formulation:
+- $\text{L}(m, n) = 0$ if $j = 0$ or $k = 0$
+- $\text{L}(m, n) = \text{L}(j-1, k-1) + 1$ if $j > 0, k > 0,$ and $X[j] = Y[k]$
+- $\text{L}(m, n) = \max \{ \text{L}(j-1, k), \text{L}(j, k-1) \}$ if $j > 0, k > 0,$ and $X[j] \ne Y[k]$
+
+```
+int L(int j, int k) {
+    if (j == 0 || k == 0)
+        return 0
+    if (X[j] == Y[k])
+        return L(j-1, k-1) + 1
+    return max{L(j-1, k), L(j, k-1)}
+}
+```
+
+The runtime of this function is exponential due to repeated subproblems.
+
+### Dynamic Programming Algorithm
+
+```
+Allocate array L[0..m][0..n]
+for j = 0 to m
+    for k = 0 to n
+        if (j == 0 || k == 0)
+            L[j][k] = 0
+        else if (X[j] == Y[k])
+            L[j][k] = L[j-1][k-1] + 1
+        else
+            L[j][k] = max{L[j-1][k], L[j][k-1]}
+```
+
+Runtime: $\Theta(mn)$
+
+### Example
+
+- $X=$ "bdacbea", $m=7$
+- $Y=$ "dcbaecba", $n=8$
+
+| L | 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 |
+| - | - | - | - | - | - | - | - | - | - |
+| **0** | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 |
+| **1** | 0 | 0 | 0 | 1 | 1 | 1 | 1 | 1 | 1 |
+| **2** | 0 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 |
+| **3** | 0 | 1 | 1 | 1 | 2 | 2 | 2 | 2 | 2 |
+| **4** | 0 | 1 | 2 | 2 | 2 | 2 | 3 | 3 | 3 |
+| **5** | 0 | 1 | 2 | 3 | 3 | 3 | 3 | 4 | 4 |
+| **6** | 0 | 1 | 2 | 3 | 3 | 4 | 4 | 4 | 4 |
+| **7** | 0 | 1 | 2 | 3 | 4 | 4 | 4 | 4 | 5 |
+
+How can we find an LCS that has length 5?
+
+```
+string buildLCS(j, k) {
+    if (L[j][k] == 0)
+        return ""
+    else if (X[j] == Y[k])
+        return buildLCS(j-1, k-1) + X[j]
+}
+```
+
 ## All-Pairs Shortest Paths
 
 Given a weighted (undirected or directed) graph, find a minimum-distance path from each start vertex to each destination vertex.
