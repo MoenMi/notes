@@ -254,8 +254,21 @@ string buildLCS(j, k) {
         return ""
     else if (X[j] == Y[k])
         return buildLCS(j-1, k-1) + X[j]
+    else if (L[j][k-1] == L[j][k])
+        return buildLCS(j, k-1)
+    else
+        return buildLCS(j-1, k)
 }
 ```
+
+Runtime: $\Theta(m+n)$
+- Assumes we append characters in $\Theta(1)$ time.
+- This is possible because we know the final string length $\text{L}(m, n)$ in advance.
+- Can allocate an array of size $\text{L}(m, n)$ chars in advance, or replace recursion by iteration.
+
+## Optimal Binary Search Tree (BST)
+
+
 
 ## All-Pairs Shortest Paths
 
