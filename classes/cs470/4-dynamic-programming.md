@@ -268,14 +268,124 @@ Runtime: $\Theta(m+n)$
 
 ## Optimal Binary Search Tree (BST)
 
+Construct a BST with Key$_1$ < Key$_2$ < Key$_3$ < $\dots$ < Key$_n$. The frequency of searching for each Key$_i$ is $\text{F}[i]$.
 
+Example: Key$[1..3] = \{ a, b, c \}$ and $\text{F}[1..3] = \{ 0.3, 0.5, 0.2 \}$.
+
+Goal: Construct the BST with the minimum expected search cost.
+
+Let $\text{Cost}[i][j]$ be the minimum expected search cost for a BST with Key$[i..j]$.
+1. Find the best choice Key$[r]$ for the root node.
+2. Left subtree has Key$[i..r-1]$.
+3. Right subtree has Key$[r+1..j]$
+
+Formulation:
+- $\text{Cost}[i][j] = 0$ when $i > j$
+- $\text{Cost}[i][j] = \text{F}[i]$ when $i = j$
+- $\text{Cost}[i][j] = \min \{ \text{Cost}[i][r-1] + \text{Cost}[r+1][j] + \sum_{i \leq k \leq j} \text{F}[k] \ \ | \ \ i \leq r \leq j \}$ when $i < j$
+
+For efficiency, define $\text{W}[i][j] = \sum_{i \leq k \leq j} \text{F}[k]$
+- $\text{Cost}[i][j] = \min \{ \text{Cost}[i][r-1] + \text{Cost}[r+1][j] + \text{W}[i][j] \ \ | \ \ i \leq r \leq j \}$ when $i < j$
+
+### Dynamic Programming Algorithm
+
+```
+Allocate arrays Cost[1..n+1][0..n], W[1..n+1][0..n], and Root[1..n+1][0..n]
+
+for i = 0 to n
+    Cost[i+1][i] = 0
+    W[i+1][i] = 0
+for L = 1 to n
+    for i = 1 to n-L+1
+        j = i+L-1
+        Cost[i][j] = infinity
+        W[i][j] = W[i][j-1] F[j]
+        for r = i to j
+            t = Cost[i][r-1] + Cost[r+1][j] + W[i][j]
+            if (t < Cost[i][j])
+                Cost[i][j] = t
+                Root[i][j] = r
+```
+
+Runtime: $\Theta(n^3)$
+
+Example: $n=3, \text{F}[1..3] = \{ 0.3, 0.5, 0.2 \}$
+
+Next build the BST to achieve the minimum expected search cost.
+
+```
+BuildBST(i, j) {
+    if (i > j)
+        return null
+    r = Root[i][j]
+    left = BuildBST(i, r-1)
+    right = BuildBST(r+1, j)
+    return new Node(Key[r], left, right)
+}
+
+tree = BuildBST(1, n)
+```
 
 ## All-Pairs Shortest Paths
 
 Given a weighted (undirected or directed) graph, find a minimum-distance path from each start vertex to each destination vertex.
 - Restriction: We allow edges with negative weights, but not any cycle with negative total weight.
 
+### Floyd's Algorithm
 
+```
+// initialize D0 = weighted adjacency matrix
+for X = 1 to n
+    for Y = 1 to n
+        if (X == Y)
+            D0[X, Y] = 0
+        else if (edge (X, Y) exists)
+            D0[X, Y] = weight(X, Y)
+        else
+            D0[X, Y] = infinity
+
+// compute each Dz matrix values in the D_{z-1} matrix
+for Z = 1 to n
+    for X = 1 to n
+        for Y = 1 to n
+            if (D_{z-1}[X, Z] + D_{z-1}[Z, Y] < D_{z-1} matrix)
+                Dz[X, Y] = D_{z-1}[X, Z] + D_{z-1}[Z, Y]
+            else
+                Dz[X, Y] = D_{z-1}[X, Y]
+```
+
+Runtime: $\Theta(n^3)$
+
+Memory usage: $\Theta(n^3)$
+- The memory usage can be improved to $\Theta(n^2)$ by letting $D$ be a 2-D array
+
+```
+for X = 1 to n
+    for Y = 1 to n
+        if (X == Y)
+            D[X, Y] = 0
+        else if (edge (X, Y) exists)
+            D[X, Y] = weight(X, Y)
+        else
+            D[X, Y] = infinity
+
+for Z = 1 to n
+    for X = 1 to n
+        for Y = 1 to n
+            if (D[X, Z] + D[Z, Y] < D[X, Y])
+                D[X, Y] = D[X, Z] + D[Z, Y]
+```
+
+To determine if the graph has a negative cycle:
+
+```
+boolean hasNegativeCycle() {
+    for X = 1 to n
+        if (D[X, Y] < 0)
+            return true
+    return false
+}
+```
 
 ## World Series Problem
 
@@ -297,6 +407,26 @@ X(n, j) = X(n-1, j) * p[n+j], for j<n
 X(i, n) = X(i, n-1) * (1 - p[i+n]), for i<n
 X(i, j) = X(i-1, j) * p[i+j] + X(i, j-1) * (1 - p[i+j]), for 0<i<n and 0<j<n
 ```
+
+### Dynamic Programming Algorithm
+
+```
+Allocate array X[0..n][0..n]
+for (i=0; i<=n; i++)
+    for (j=0; j<=n; j++)
+        if (i == 0 && j == 0)
+            X[i][j] = 1
+        else if (i == n && j == n)
+            X[i][j] = 0
+        else if ((i > 0 && j == 0) || (i == n && j < n))
+            X[i][j] = X[i-1][j] * p[i+j]
+        else if ((i == 0 && j > 0) || (i < n && j == n))
+            X[i][j] = X[i][j-1] * (1 - p[i+j])
+        else
+            X[i][j] = X[i-1][j] * p[i+j] + X[i][j-1] * (1 - p[i+j])
+```
+
+Runtime: $\Theta(n^2)$
 
 ## Matrix Chain Product (MCP)
 
