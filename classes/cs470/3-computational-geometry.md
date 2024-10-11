@@ -1,4 +1,4 @@
-# 33 - Computational Geometry
+# 3 - Computational Geometry
 
 ## 33.1 - Line-Segment Properties
 
