@@ -68,6 +68,7 @@ parts:
       - file: classes/cs470/2-divide-and-conquer
       - file: classes/cs470/3-computational-geometry
       - file: classes/cs470/4-dynamic-programming
+      - file: classes/cs470/5-graph-algorithms
     - file: classes/cs491/overview
       sections:
       - file: classes/cs491/ros-tutorials
