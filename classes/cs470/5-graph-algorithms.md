@@ -141,10 +141,28 @@ MST-PRIM(G, w, r)
 
 The algorithms in this chapter use a technique called **relaxation**. For each vertex $v \in V$, we maintain a **shortest-path estimate** $v.d$. We initialize all shortest-path estimates to infinity.
 
-### Dijkstra's Algorithm
+The process of relaxing an edge $(u, v)$ consists of checking whether we can improve the shortest path to $v$ by going through $u$. If so, we update $v.\pi$ and $v.d$.
 
+### 24.1 - Bellman-Ford Algorithm
 
+The **Bellman-Ford algorithm** returns a boolean value indicating that there are negative cycles if there is one, and a single-source shortest-path tree if there isn't. The algorithm relaxes edges until it achieves the actual shortest-path weight for each vertex.
 
-### Bellman-Ford Algorithm
+```
+BELLMAN-FORD(G, w, s)
+    INITIALIZE-SINGLE-SOURCE(G, s)
+    for i = 1 to |G.V| - 1
+        for each edge (u, v) in G.E
+            RELAX(u, v, w)
+    for each edge (u, v) in G.E
+        if v.d > u.d + w(u, v)
+            return False
+    return True
+```
 
+Runtime: $\Theta(VE)$
 
+### 24.3 - Dijkstra's Algorithm
+
+Dijkstra's algorithm is just Prim's algorithm but you relax edges.
+
+## 26 - Maximum Flow
