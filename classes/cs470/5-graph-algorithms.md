@@ -166,3 +166,69 @@ Runtime: $\Theta(VE)$
 Dijkstra's algorithm is just Prim's algorithm but you relax edges.
 
 ## 26 - Maximum Flow
+
+A **flow network** $G = (V, E)$ is a directed graph in which each edge $(u, v) \in E$ has a nonnegative capacity $c(u, v) \geq 0$. We further require that if $E$ contains an edge $(u, v)$, then there is no edge $(v, u)$ in the reverse direction. We distinguish two vertices in a flow network: a **source** $s$ and a **sink** $t$.
+
+In the **maximum-flow problem**, we are given a flow network $G$ and a source $s$ and sink $t$.
+
+## 26.2 - The Ford-Fulkerson Method
+
+The Ford-Fulkerson method iteratively increases the value of the flow. We start at $f(u, v) = 0 \ \forall \ u, v \in V$, giving an intial flow of value 0.
+
+```
+FORD-FULKERSON-METHOD(G, s, t)
+    intialize flow f to 0
+    while there exists an augmenting path p in the residual network Gf
+        augment flow f along p
+    return f
+```
+
+### Residual Networks
+
+Given a flow network $G$ and a flow $f$, the **residual network** $G_f$ consists of edges with capacities that represent how we can change the flow on edges of $G$. An edge of the flow network can admit an amount of additional flow equal to that of its capacity minus the flow on that edge. If that value is positive, we place that edge into $G_f$ with a residual capacity of $c_f(u, v) = c(u, v) - f(u, v)$. The only edges of $G$ that are in $G_f$ are those that can admit more flow.
+
+In order to represent a possible decrease of a positive flow $f(u, v)$ on an edge in $G$, we place an edge $(v, u)$ into $G_f$ with residual capacity $c_f(v, u) = f(u, v)$. These reverse edges represent how we can decrease the flow.
+
+Given a flow network $G = (V, E)$ and a flow $f$, an **augmenting path** $p$ is a simple path from $s$ to $t$ in the residual network $G_f$.
+
+### Cuts of Flow Networks
+
+A **cut** $(S, T)$ of a flow network $G = (V, E)$ is a partition of $V$ into $S$ and $T = V - S$ such that $s \in S$ and $t \in T$.
+
+A **minimum cut** of a network is a cut whose capacity is minimum over all cuts of the network. For a give flow $f$, the net flow across any cut is the same, and it equals $|f|$, the value of the flow.
+
+The **max-flow min-cut theorem** states that the following conditions are equivalent:
+1. $f$ is a maximum flow in $G$.
+2. The residual network $G_f$ contains no augmenting paths.
+3. $|f| = c(S, T)$ for some cut $(S, T)$ of $G$.
+
+### The Basic Ford-Folkerson Algorithm
+
+In each iteration of the Ford-Fulkerson method, we find some augmenting path $p$ and use $p$ to modify the flow $f$.
+
+```
+FORD-FULKERSON(G, s, t)
+    for each edge (u, v) in G.E
+        (u, v).f = 0
+    while there exists a path p from s to t in the residual network Gf
+        cf(p) = min{cf(u, v) : (u, v) is in p}
+        for each edge (u, v) in p
+            if (u, v) in E
+                (u, v).f = (u, v).f + cf(p)
+            else
+                (v, u).f = (v, u).f - cf(p)
+```
+
+The runtime of Ford-Fulkerson depends on how we find the augmenting path. If we use breadth-first search, it runs in polynomial time.
+
+If we implement Ford-Fulkerson using a directed graph as our data structure, then we can find an augmenting path in $O(E)$, so the runtime of the algorithm is $O(E |f^*|)$, where $|f^*|$ is the value of the maximum flow.
+
+### The Edmonds-Karp Algorithm
+
+We can improve the bound of the Ford-Fulkerson method by using a breadth-first search to find the shortest path from $s$ to $t$ in the residual network. This **Edmunds-Karp** algorithm can be shown to run in $O(VE^2)$.
+
+## 26.3 - Maximum Bipartite Matching
+
+Given an undirected graph $G = (V, E)$, a **matching** is a subset of edges $M \subseteq E$ such that for all vertices $v \in V$, at most one edge of $M$ is incident on $v$. A **maximum matching** is a matching of maximum cardinality.
+
+Runtime: $O(VE)$
