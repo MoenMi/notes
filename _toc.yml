@@ -118,6 +118,7 @@ parts:
       - file: classes/st552/3-mlr
       - file: classes/st552/tb1-intro
       - file: classes/st552/tb2-slr
+      - file: classes/st552/tb7-variable-selection
     - file: classes/st554/overview
       sections:
       - file: classes/st554/discrete-uniform-distributions
