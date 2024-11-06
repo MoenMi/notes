@@ -1,6 +1,6 @@
 # 5 - Graph Algorithms
 
-These graph algorithms are covered in Chapters 22-24 of the textbook.
+The basic graph algorithms are covered in Chapters 22-24 of the textbook. The max flow problem is covered in Chapter 26.
 
 A **graph** is a set of vertices and edges.
 - Edges may be directed or undirected.
