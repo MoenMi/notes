@@ -111,6 +111,13 @@ parts:
     # - file: classes/st540/overview
     #   sections:
     #   - file: classes/st540/sample
+    - file: classes/st531/overview
+      sections:
+      - file: classes/st531/ml1-intro
+      - file: classes/st531/ml2-data-preprocessing
+      - file: classes/st531/ml3-decisions-trees
+      - file: classes/st531/ml4-neural-networks
+      - file: classes/st531/ml6-assessment-deployment
     - file: classes/st552/overview
       sections:
       - file: classes/st552/1-intro
