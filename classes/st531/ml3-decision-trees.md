@@ -6,13 +6,18 @@ Decision trees require little data preparation and are easy to interpret.
 
 The leaf nodes in a decision tree provide the predictions.
 
+Each leaf node contains a decision and an estimate (percent confidence).
+
+Regression trees are built to handle continuous target variables, as opposed to regular decision trees, which handle categorical target variables.
+- Regular decision trees use metrics like Gini impurity, entropy, or misclassification error to choose splits. Regression trees use Mean Squared Error (MSE), or similar metrics.
+
 ## 3.2 - Modifying the Model: Tree Structure
 
 A decision tree can have more than 2-way splits.
 
 ## 3.3 - Modifying the Model: Recursive Partitioning
 
-The recursive partitioning method is a greedy, top-down partitioning method that makes locally optimal choices. At each node, the algorithm decides the best split. This continues until a stopping rule prevents further growth.
+The recursive partitioning method is a greedy, top-down partitioning method that makes locally optimal choices. At each node, the algorithm decides the best split, which is one that reduces variability and increases purity. This continues until a stopping rule prevents further growth.
 
 The Gini index measures the probability that any two elements of a group, chosen at random and with replacement, are different. This can be used as a criterion for determining whether to split.
 

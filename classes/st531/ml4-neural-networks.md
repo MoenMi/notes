@@ -30,7 +30,7 @@ The optimal number of hidden units is roughly twice the number of input dimensio
 
 To optimize the complexity of a neural network, the magnitude of the weights should be controlled, and we should minimize the addition or more terms or rules.
 
-The penalty term in a neural network be either the decay parameter $\lambda$ multiplied by the sum of absolute weights, or the $\lambda$ times the sum of squared weights.
+The penalty term in a neural network be either the decay parameter $\lambda$ multiplied by the sum of absolute weights (L1 regularization), or the $\lambda$ times the sum of squared weights (L2 regularization).
 
 When early stopping is used, the final model comes from one of the models before the final iteration.
 
