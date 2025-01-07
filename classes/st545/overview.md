@@ -1,4 +1,4 @@
-# ST 545: Introduction to Statistical Learning and Data Mining
+# ST 545: Statistical Learning and Data Mining
 
 This course offers an introduction to the field of statistical learning, an essential toolkit for making sense of vast and complex data sets.
 
