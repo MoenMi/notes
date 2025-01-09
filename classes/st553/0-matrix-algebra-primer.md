@@ -57,6 +57,26 @@ $$ \boldsymbol{A} = \begin{bmatrix} 1 & 4 \\ 2 & 5 \\ 3 & 6 \end{bmatrix}, \bold
 
 Two matrices can be added or subtracted iff they are the same order.
 
-### Products of Matrices
+### Matrix Multiplication
+
+We write the multiplication of two matrices $\boldsymbol{A}$ and $\boldsymbol{B}$ as $\boldsymbol{AB}$. This is referred to as either **pre-multiplying** $\boldsymbol{B}$ by $\boldsymbol{A}$ or **post-multiplying** $\boldsymbol{A}$ by $\boldsymbol{B}$.
+- In other words, $\boldsymbol{A}$ is referred to as the **premultiplier** and $\boldsymbol{B}$ is referred to as the **postmultiplier**.
+
+In order to multiply matrices, they must be **conformable** (i.e., the number of columns in the premultiplier must equal the number of rows in the postmultiplier).
+- If an $m \times n$ matrix is multiplied by an $n \times p$ matrix, the product is an $m \times p$ matrix.
+- An $m \times n$ matrix cannot be multiplied by an $p \times n$ matrix.
+
+$$ \boldsymbol{AB} =
+\begin{bmatrix} a_{11} & a_{12} & a_{13} \\ a_{21} & a_{22} & a_{23} \\ a_{31} & a_{32} & a_{33} \end{bmatrix}
+\begin{bmatrix} b_{11} & b_{12} \\ b_{21} & b_{22} \\ b_{31} & b_{32} \end{bmatrix} =
+\begin{bmatrix}
+    a_{11}b_{11} + a_{12}b_{21} + a_{13}b_{31} & a_{11}b_{11} + a_{12}b_{22} + a_{13}b_{32} \\
+    a_{21}b_{11} + a_{22}b_{21} + a_{23}b_{31} & a_{21}b_{11} + a_{22}b_{22} + a_{23}b_{32} \\
+    a_{31}b_{11} + a_{32}b_{21} + a_{33}b_{31} & a_{31}b_{11} + a_{32}b_{22} + a_{33}b_{32}
+\end{bmatrix}
+$$
+
+Note that the transpose of a product is equal to the product of the transposes in reverse order: $(\boldsymbol{ABC})' = \boldsymbol{C'B'A'}$.
+- If $\boldsymbol{AA'} = \boldsymbol{A}$ then $\boldsymbol{A'}$ is idempotent (and $\boldsymbol{A'} = \boldsymbol{A}$).
 
 
