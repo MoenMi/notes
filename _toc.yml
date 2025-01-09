@@ -112,6 +112,8 @@ parts:
     - file: classes/st545/overview
       sections:
       - file: classes/st545/1-intro
+      - file: classes/st545/2-statistical-learning
+      - file: classes/st545/3-linear-regression
     - file: classes/st552/overview
       sections:
       - file: classes/st552/1-intro
@@ -122,6 +124,9 @@ parts:
       - file: classes/st552/tb6-diagnostics-mlr
       - file: classes/st552/tb7-variable-selection
       - file: classes/st552/tb8-logistic-regression
+    - file: classes/st553/overview
+      sections:
+      - file: classes/st553/0-matrix-algebra-primer
     - file: classes/st554/overview
       sections:
       - file: classes/st554/discrete-uniform-distributions
