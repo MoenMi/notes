@@ -79,4 +79,6 @@ $$
 Note that the transpose of a product is equal to the product of the transposes in reverse order: $(\boldsymbol{ABC})' = \boldsymbol{C'B'A'}$.
 - If $\boldsymbol{AA'} = \boldsymbol{A}$ then $\boldsymbol{A'}$ is idempotent (and $\boldsymbol{A'} = \boldsymbol{A}$).
 
+### The Dot (or Inner) Product
+
 

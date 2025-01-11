@@ -56,6 +56,9 @@ parts:
       - file: classes/cs403/38-concurrency
       - file: classes/cs403/39-exception-handling
       - file: classes/cs403/copl-3
+    - file: classes/cs438/overview
+      sections:
+      - file: classes/cs438/1-intro
     - file: classes/cs470/overview
       sections:
       - file: classes/cs470/1-big-o-notation
