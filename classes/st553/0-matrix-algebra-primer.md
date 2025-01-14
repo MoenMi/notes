@@ -27,6 +27,8 @@ A vector $\boldsymbol{x}$ can be represented geometrically as a directed line in
 - A vector $\boldsymbol{x}$ can start at any point in $n$-space. A vector $\overrightarrow{pq}$ starts at point $p$ and terminates at point $q$.
 - A vector $\boldsymbol{x}$ has two characteristics: **magnitude** and **direction**.
 
+
+
 ## Matrices
 
 A **matrix** is a rectangular array of numbers (called **elements**) arranged in orderly rows and columns:
@@ -81,4 +83,36 @@ Note that the transpose of a product is equal to the product of the transposes i
 
 ### The Dot (or Inner) Product
 
+Premultiplication of a column vector $\boldsymbol{a}$ by conformable row vector $\boldsymbol{b}$ yields a single value called the **dot product** or **inner product**.
 
+$$ \boldsymbol{a} \cdot \boldsymbol{b} = \begin{bmatrix} 3 & 4 & 6 \end{bmatrix} \begin{bmatrix} 5 \\ 2 \\ 8 \end{bmatrix} = 3(5) + 4(2) + 6(8) = 71 $$
+
+### The Outer Product
+
+Postmultiplication of a column vector $\boldsymbol{a}$ by a conformable row vector $\boldsymbol{b}$ yields a matrix containing the products of each pair of elements from the two matrices, called the **outer product**.
+
+$$ \boldsymbol{ba} = \begin{bmatrix} 5 \\ 2 \\ 8 \end{bmatrix} \begin{bmatrix} 3 & 4 & 6 \end{bmatrix} = \begin{bmatrix} 15 & 20 & 30 \\ 6 & 8 & 12 \\ 24 & 32 & 48 \end{bmatrix} $$
+
+### Determining If Two Vectors are Orthogonal
+
+Two conformable vectors $\boldsymbol{a}$ and $\boldsymbol{b}$ are **orthogonal** if and only if
+
+$$ \boldsymbol{a'b} = 0 $$
+
+### Linear Independence and Rank
+
+Any subset of columns (or rows) of a matrix $\boldsymbol{A}$ are said to be **linearly independent** if no column (or row) in the subset can be expressed as a linear combination of other columns (or rows) in the subset.
+
+If such a combination does exist, then the columns (rows) are said to be **linearly dependent**.
+
+The **rank** of a matrix is defined to be the number of linearly independent columns (or rows) of the matrix.
+
+A **nonsingular matrix**, or a **full rank matrix**, is any matrix that has no linear dependencies among its columns (or rows). For a square matrix $\boldsymbol{A}$ this implies that $\boldsymbol{Ax} = \boldsymbol{0}$ iff $\boldsymbol{x} = \boldsymbol{0}$.
+
+A **singular matrix**, or a **matrix not of full rank**, is any matrix that has at least one linear dependency among its columns (or rows).
+
+For example, the following matrix $\boldsymbol{A}$ is singular because the third column is equal to three times the first column:
+
+$$ \boldsymbol{A} = \begin{bmatrix} 1 & 2 & 3 \\ 3 & 4 & 9 \\ 4 & 5 & 12 \end{bmatrix} $$
+
+This result implies that there is either no unique solution or no existing solution to the system of equations $\boldsymbol{Ax} = \boldsymbol{0}$.
