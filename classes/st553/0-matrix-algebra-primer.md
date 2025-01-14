@@ -27,8 +27,6 @@ A vector $\boldsymbol{x}$ can be represented geometrically as a directed line in
 - A vector $\boldsymbol{x}$ can start at any point in $n$-space. A vector $\overrightarrow{pq}$ starts at point $p$ and terminates at point $q$.
 - A vector $\boldsymbol{x}$ has two characteristics: **magnitude** and **direction**.
 
-
-
 ## Matrices
 
 A **matrix** is a rectangular array of numbers (called **elements**) arranged in orderly rows and columns:
@@ -42,6 +40,7 @@ A **null matrix** is a matrix for which all the elements are 0.
 A **square matrix** is a matrix for which the number of rows is equal to the number of columns.
 
 A **symmetric matrix** is a matrix for which $a_{ij} = a_{ji} \forall i, j$.
+- If a matrix is symmetric, it must also be square
 
 **Diagonal elements** are the elements of a square matrix for which the row and column locations equal.
 
@@ -66,15 +65,14 @@ We write the multiplication of two matrices $\boldsymbol{A}$ and $\boldsymbol{B}
 
 In order to multiply matrices, they must be **conformable** (i.e., the number of columns in the premultiplier must equal the number of rows in the postmultiplier).
 - If an $m \times n$ matrix is multiplied by an $n \times p$ matrix, the product is an $m \times p$ matrix.
-- An $m \times n$ matrix cannot be multiplied by an $p \times n$ matrix.
+- An $m \times n$ matrix cannot be multiplied by an $p \times n$ matrix if $n \ne p$.
 
 $$ \boldsymbol{AB} =
-\begin{bmatrix} a_{11} & a_{12} & a_{13} \\ a_{21} & a_{22} & a_{23} \\ a_{31} & a_{32} & a_{33} \end{bmatrix}
+\begin{bmatrix} a_{11} & a_{12} & a_{13} \\ a_{21} & a_{22} & a_{23} \end{bmatrix}
 \begin{bmatrix} b_{11} & b_{12} \\ b_{21} & b_{22} \\ b_{31} & b_{32} \end{bmatrix} =
 \begin{bmatrix}
     a_{11}b_{11} + a_{12}b_{21} + a_{13}b_{31} & a_{11}b_{11} + a_{12}b_{22} + a_{13}b_{32} \\
-    a_{21}b_{11} + a_{22}b_{21} + a_{23}b_{31} & a_{21}b_{11} + a_{22}b_{22} + a_{23}b_{32} \\
-    a_{31}b_{11} + a_{32}b_{21} + a_{33}b_{31} & a_{31}b_{11} + a_{32}b_{22} + a_{33}b_{32}
+    a_{21}b_{11} + a_{22}b_{21} + a_{23}b_{31} & a_{21}b_{11} + a_{22}b_{22} + a_{23}b_{32}
 \end{bmatrix}
 $$
 
@@ -116,3 +114,21 @@ For example, the following matrix $\boldsymbol{A}$ is singular because the third
 $$ \boldsymbol{A} = \begin{bmatrix} 1 & 2 & 3 \\ 3 & 4 & 9 \\ 4 & 5 & 12 \end{bmatrix} $$
 
 This result implies that there is either no unique solution or no existing solution to the system of equations $\boldsymbol{Ax} = \boldsymbol{0}$.
+
+## Vector Spaces
+
+The space of all real $m$-tuples, with scalar multiplication and vector addition as we have defined, is called **vector space**.
+
+The vector
+
+$$ \boldsymbol{y} = a_1 \boldsymbol{x}_1 + a_2 \boldsymbol{x}_2 + \dots + a_k \boldsymbol{x}_k $$
+
+is a **linear combination** of the vectors $\boldsymbol{x}_1, \boldsymbol{x}_2, \dots, \boldsymbol{x}_k$.
+
+The set of all linear combinations of the vectors $\boldsymbol{x}_1, \boldsymbol{x}_2, \dots, \boldsymbol{x}_k$ is called their **linear span**.
+
+A set of vectors $\boldsymbol{x}_1, \boldsymbol{x}_2, \dots, \boldsymbol{x}_k$ is said to be **linearly dependent** if there exist $k$ numbers $a_1, a_2, \dots, a_k$, at least one of which is nonzero, such that
+
+$$ a_1 \boldsymbol{x}_1 + a_2 \boldsymbol{x}_2 + \dots + a_k \boldsymbol{x}_k = 0 $$
+
+Otherwise, the set of vectors $\boldsymbol{x}_1, \boldsymbol{x}_2, \dots, \boldsymbol{x}_k$ is said to be **linearly independent**.
