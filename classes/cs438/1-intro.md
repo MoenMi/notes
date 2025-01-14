@@ -1,10 +1,8 @@
-# 1 - Introduction
+# 1 - Computer Networks and the Internet
 
-`ipconfig` is a command in Windows and MacOS that displays all current TCP/IP network values.
+## 1.1 - What is the Internet?
 
-## What is the Internet?
-
-### The "Nuts and Bolts" View
+### 1.1.1 - A "Nuts and Bolts" Description
 
 - Billions of connected computing devices:
   - Hosts = end systems/nodes
@@ -25,7 +23,7 @@
   - RFC: Request for Comments
   - IETF: Internet Engineering Task Fore
 
-### The "Services" View
+### 1.1.2 - A "Services" Description
 
 - Infrastructure that provides services to applications
   - Web, streaming video, multimedia teleconferencing, email, games, e-commerce, social media, interconnected appliances, etc.
@@ -33,13 +31,11 @@
   - "Hooks" allowing sending/receiving apps to "connect" to, use Internet transport service
   - Provides service options, analogous to postal service
 
-## What is a Protocol?
+### 1.1.3 - What is a Protocol?
 
 **Protocols** define the format, order of messages sent and received among network entities, and actions taken on message transmission and receipt.
 
-## Network Edge: Hosts, Access Network, and Physical Media
-
-### Internet Structure
+## 1.2 - The Network Edge
 
 Network edge:
 - Hosts: clients and servers
@@ -52,14 +48,14 @@ Network core:
 - Interconnected routers
 - Network of networks
 
-### Access Networks and Physical Media
+### 1.2.1 - Access Networks
 
 How to connect end systems to edge router?
 - Residential access nets
 - Institutional access networks (school, company)
 - Mobile access networks (WiFi, 4G,/5G)
 
-### Access Networks: Cable-Based Access
+#### Cable-Based Access
 
 **Frequency division multiplexing (FDM)**: Different channels transmitted in different frequency bands.
 
@@ -70,13 +66,13 @@ How to connect end systems to edge router?
 - Network of cable and fiber attaches homes to ISP router
   - Homes share access network to cable headend
 
-### Access Networks: Digital Subscriber Line (DSL)
+#### Digital Subscriber Line (DSL)
 
 DSL uses an existing phone line, where data goes to the Internet and voice goes to the telephone network.
 - 24-52 Mbps dedicated downstream transmission rate
 - 3.5-16 Mbps dedicated upstream transmission rate
 
-### Wireless Access Networks
+#### Wireless Access Networks
 
 Shared **wireless access network** connects end system to router via base station
 - **Wireless local area networks (WLAN)**
@@ -87,17 +83,19 @@ Shared **wireless access network** connects end system to router via base statio
   - 10s of Mbps
   - 4G/5G cellular networks
 
-### Access Networks: Enterprise Networks
+#### Enterprise Networks
 
 Mix of wired, wireless link technologies, connecting a mix of switches and routers.
 - Ethernet: wired access at 100Mbps, 1Gbps, 10Gbps
 - WiFi: wireless access points at 11, 54, 450 Mbps
 
-### Access Networks: Data Center Networks
+#### Data Center Networks
 
 High-bandwidth links (10s to 100s Gbps) connect hundreds to thousands of servers together and to the Internet.
 
-### Hosts
+### 1.2.2 - Physical Media
+
+#### Hosts
 
 Hosts send packets of data:
 - Takes application message
@@ -107,7 +105,7 @@ Hosts send packets of data:
 
 $$ \text{Packet transmission delay} = \text{Time needed to transmit } L \text{-bit packet into link} = \frac{L}{R} $$
 
-### Links: Physical Media
+#### Links
 
 - **Bit**: Propagates between transmitter/receiver pairs
 - **Physical link**: What lies between transmitter and receiver
@@ -149,7 +147,7 @@ $$ \text{Packet transmission delay} = \text{Time needed to transmit } L \text{-b
 - **Terrestrial microwave**: Point-to-point, 45 Mbps channels
 - **Satellite**: Up to 45 Mbps per channel (270 msec end-to-end delay)
 
-## Network Core: Packet/Circuit Switching, Internet Structure
+## 1.3 - The Network Core
 
 The **network core** is a mesh of interconnected routers.
 
@@ -160,12 +158,14 @@ Two key network-core functions:
 - **Forwarding** (switching): A local action that moves arriving packets from the router's input link to appropriate router output link.
 - **Routing**: A global action that determines source-destination paths taken by packets.
 
-### Packet-switching: Store-and-Forward
+### 1.3.1 - Packet Switching
+
+#### Store-and-Forward
 
 - **Packet transmission delay**: takes $L$/$R$ seconds to transmit (push out) $L$-bit packet into link at $R$ bps
 - **Store and forward**: Entire packet must arrive at router before it can be transmitted on the next link
 
-### Packet-switching: Queueing
+#### Queueing
 
 **Queueing** occurs when work arrives faster than it can be serviced.
 
@@ -173,7 +173,7 @@ If the arrival rate (in bps) to link exceeds transmission rate (bps) of link for
 - Packets will queue, waiting to be transmitted on output link
 - Packets can be dropped (lost) if memory (buffer) in router fills up
 
-### Alternative to Packet-switching: Circuit Switching
+### 1.3.2 - Circuit Switching
 
 End-to-end resources are allocated to and reserved for "call" between source and destination.
 - Commonly used in traditional telephone networks
@@ -181,3 +181,67 @@ End-to-end resources are allocated to and reserved for "call" between source and
 - Circuit segment sits idle if unused by call
 
 **Frequency Division Multiplexing (FDM)**:
+- Optical, electromagnetic frequencies divided into narrow frequency bands.
+- Each call allocated at its own band, can transmit at max rate of that narrow band.
+
+**Time Division Multiplexing (TDM)**:
+- Time divided into slots.
+- Each call allocated periodic slots, can transmit at maximum rate of wider frequency band during its time slot.
+
+### 1.3.3 - A Network of Networks
+
+
+
+## 1.4 - Delay, Loss, and Throughput in Packet-Switched Networks
+
+### 1.4.1 - Overview of Delay in Packet-Switched Networks
+
+
+
+### 1.4.2 - Queueing Delay and Packet Loss
+
+
+
+### 1.4.3 - End-to-End Delay
+
+
+
+### 1.4.4 - Throughput in Computer Networks
+
+
+
+## 1.5 - Protocol Layers and Their Service Models
+
+### 1.5.1 - Layered Architecture
+
+
+
+### 1.5.2 - Encapsulation
+
+
+
+## 1.6 - Networks Under Attack
+
+
+
+## 1.7 - History of Computer Networking and the Internet
+
+### 1.7.1 - The Development of Packet Switching: 1961-1972
+
+
+
+### 1.7.2 - Proprietary Networks and Internetworking: 1972-1980
+
+
+
+### 1.7.3 - A Proliferation of Networks: 1980-1990
+
+
+
+### 1.7.4 - The Internet Explosion: The 1990s
+
+
+
+### 1.7.5 - The New Millenium
+
+
