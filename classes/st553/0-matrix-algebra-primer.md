@@ -79,13 +79,37 @@ $$
 Note that the transpose of a product is equal to the product of the transposes in reverse order: $(\boldsymbol{ABC})' = \boldsymbol{C'B'A'}$.
 - If $\boldsymbol{AA'} = \boldsymbol{A}$ then $\boldsymbol{A'}$ is idempotent (and $\boldsymbol{A'} = \boldsymbol{A}$).
 
-### The Dot (or Inner) Product
+## Special Uses for Matrix Multiplication
+
+### Sum Column Elements
+
+This is useful when taking the average for an observation in a dataset.
+
+Premultiply a matrix $\boldsymbol{A}$ by a conformable row vector of 1s.
+
+$$ \boldsymbol{1A} =
+\begin{bmatrix} 1 & 1 & 1 \end{bmatrix}
+\begin{bmatrix} 1 & 4 & 7 \\ 2 & 5 & 8 \\ 3 & 6 & 9 \end{bmatrix}
+= \begin{bmatrix} 6 & 15 & 24 \end{bmatrix}
+$$
+
+### Sum Row Elements
+
+Postmultiply a matrix $\boldsymbol{A}$ by a conformable row vector of 1s.
+
+$$ \boldsymbol{A1} =
+\begin{bmatrix} 1 & 4 & 7 \\ 2 & 5 & 8 \\ 3 & 6 & 9 \end{bmatrix}
+\begin{bmatrix} 1 & 1 & 1 \end{bmatrix}
+= \begin{bmatrix} 12 \\ 15 \\ 18 \end{bmatrix}
+$$
+
+### The Dot (or Inner) Product of Two Vectors
 
 Premultiplication of a column vector $\boldsymbol{a}$ by conformable row vector $\boldsymbol{b}$ yields a single value called the **dot product** or **inner product**.
 
 $$ \boldsymbol{a} \cdot \boldsymbol{b} = \begin{bmatrix} 3 & 4 & 6 \end{bmatrix} \begin{bmatrix} 5 \\ 2 \\ 8 \end{bmatrix} = 3(5) + 4(2) + 6(8) = 71 $$
 
-### The Outer Product
+### The Outer Product of Two Vectors
 
 Postmultiplication of a column vector $\boldsymbol{a}$ by a conformable row vector $\boldsymbol{b}$ yields a matrix containing the products of each pair of elements from the two matrices, called the **outer product**.
 
@@ -93,15 +117,32 @@ $$ \boldsymbol{ba} = \begin{bmatrix} 5 \\ 2 \\ 8 \end{bmatrix} \begin{bmatrix} 3
 
 ### Determining If Two Vectors are Orthogonal
 
-Two conformable vectors $\boldsymbol{a}$ and $\boldsymbol{b}$ are **orthogonal** if and only if
+Two conformable vectors $\boldsymbol{a}$ and $\boldsymbol{b}$ are **orthogonal** iff
 
 $$ \boldsymbol{a'b} = 0 $$
 
+### Representing Systems of Simultaneous Equations
+
+Suppose we have the following system of simultaneous equations:
+
+$$ \begin{align*}
+px_1 + qx_2 + rx_3 = M \\
+dx_1 + ex_2 + fx_3 = N
+\end{align*} $$
+
+If we let
+
+$$
+\boldsymbol{A} = \begin{bmatrix} p & q & r \\ d & e & f \end{bmatrix},
+\boldsymbol{x} = \begin{bmatrix} x_1 \\ x_2 \\ x_3 \end{bmatrix},
+\boldsymbol{b} = \begin{bmatrix} M \\ N \end{bmatrix}
+$$
+
+then we can represent the system as $\boldsymbol{Ax} = \boldsymbol{b}$.
+
 ### Linear Independence and Rank
 
-Any subset of columns (or rows) of a matrix $\boldsymbol{A}$ are said to be **linearly independent** if no column (or row) in the subset can be expressed as a linear combination of other columns (or rows) in the subset.
-
-If such a combination does exist, then the columns (rows) are said to be **linearly dependent**.
+Any subset of columns (or rows) of a matrix $\boldsymbol{A}$ are said to be **linearly independent** if no column (or row) in the subset can be expressed as a linear combination of other columns (or rows) in the subset. If such a combination does exist, then the columns (rows) are said to be **linearly dependent**.
 
 The **rank** of a matrix is defined to be the number of linearly independent columns (or rows) of the matrix.
 
@@ -109,11 +150,29 @@ A **nonsingular matrix**, or a **full rank matrix**, is any matrix that has no l
 
 A **singular matrix**, or a **matrix not of full rank**, is any matrix that has at least one linear dependency among its columns (or rows).
 
-For example, the following matrix $\boldsymbol{A}$ is singular because the third column is equal to three times the first column:
+#### Examples
 
-$$ \boldsymbol{A} = \begin{bmatrix} 1 & 2 & 3 \\ 3 & 4 & 9 \\ 4 & 5 & 12 \end{bmatrix} $$
+The following matrix $\boldsymbol{A}$ is singular because the third column is equal to three times the first column:
+
+$$ \boldsymbol{A} = \begin{bmatrix} 1 & 2 & 3 \\ 3 & 4 & 9 \\ 6 & 5 & 18 \end{bmatrix} $$
 
 This result implies that there is either no unique solution or no existing solution to the system of equations $\boldsymbol{Ax} = \boldsymbol{0}$.
+
+The following matrix is singular because the third column is equal to the first column plus two times the second column.
+
+$$ \boldsymbol{A} = \begin{bmatrix} 1 & 2 & 5 \\ 3 & 4 & 11 \\ 6 & 5 & 16 \end{bmatrix} $$
+
+Note that the number of linearly independent rows will always be equal to the number of linearly independent columns in a matrix.
+
+## More Vector Geometry
+
+Vectors have geometric properties of length and direction.
+
+$$ \boldsymbol{x} = \begin{bmatrix} x_1 \\ x_2 \end{bmatrix} $$
+
+Consider that the length is
+
+$$ L_x = \sqrt{x_1^2 + x_2^2 + \dots + x_p^2} = \sqrt{\boldsymbol{x'x}} $$
 
 ## Vector Spaces
 
