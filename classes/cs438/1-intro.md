@@ -188,6 +188,18 @@ End-to-end resources are allocated to and reserved for "call" between source and
 - Time divided into slots.
 - Each call allocated periodic slots, can transmit at maximum rate of wider frequency band during its time slot.
 
+#### Packet Switching vs. Circuit Switching
+
+Consider a system with 10 users with a total capacity of 1 Gb/s for its link. Each user uses 100 Mb/s when active, and each user is active 10% of the time. How many users can use this network under circuit-switching and packet-switching?
+
+- Circuit-switching: 10 users
+- Packet-switching: With 35 users, the probability that more than 10 users are active at the same time is less than 0.0004.
+
+Packet-switching is great for "bursty" data, because it is better at resource sharing and simpler, with no call setup.
+- Excessive congestion possible: packet delay and loss due to buffer overflow
+- Protocols are needed for reliable data transfer
+- There are ways of providing circuit-like behavior with packet-switching that will be covered later in the course
+
 ### 1.3.3 - A Network of Networks
 
 
@@ -196,11 +208,37 @@ End-to-end resources are allocated to and reserved for "call" between source and
 
 ### 1.4.1 - Overview of Delay in Packet-Switched Networks
 
-
+How do packets delay and loss occur?
+- Packets queue in router buffers, waiting for turn in transmission
+  - Queue length grows when arrival rate to link (temporarily) exceeds output link capacity
+- Packet loss occurs when memory to hold queued packets fills up
 
 ### 1.4.2 - Queueing Delay and Packet Loss
 
+Four sources of packet delay:
 
+$$ d_{\text{nodal}} = d_{\text{proc}} + d_{\text{queue}} + d_{\text{trans}} + d_{\text{prop}} $$
+
+- $d_{\text{proc}}$: **Nodal processing**
+  - Check bit errors
+  - Determine output link
+  - Typically fewer than microseconds
+- $d_{\text{queue}}$: **Queueing delay**
+  - Time waiting at output link for transmission
+  - Depends on congestion level of router
+- $d_{\text{trans}}$: **Transmission delay**
+  - $L$: packet length (bits)
+  - $R$: link transmission rate (bps)
+  - $d_{\text{trans}} = L/R$
+- $d_{\text{prop}}$: **Propagation delay**
+  - $d$: length of physical link
+  - $s$: propagation speed (about $2 \times 10^8$ m/s)
+
+#### Packet Loss
+
+- Queue (aka buffer) preceding link in buffer has finite capacity.
+- Packet arriving to full queue dropped (aka lost).
+- Lost packet may be retransmitted by previous node, by source end system, or not at all.
 
 ### 1.4.3 - End-to-End Delay
 
@@ -208,13 +246,27 @@ End-to-end resources are allocated to and reserved for "call" between source and
 
 ### 1.4.4 - Throughput in Computer Networks
 
-
+**Throughput** is the rate (bits/time) at which bits are being sent from sender to receiver.
+- **Instantaneous**: Rate at given point in time
+- **Average**: Rate over long period of time
 
 ## 1.5 - Protocol Layers and Their Service Models
 
 ### 1.5.1 - Layered Architecture
 
+**Layers** are actions taken at a certain step, which rely on previous steps.
 
+Layered Internet protocol stack:
+
+1. **Application Layer**: supporting network applications
+   - HTTP, IMAP, SMTP, DNS
+2. **Transport Layer**: process-process data transfer
+    - TCP, UDP
+3. **Network Layer**: routing of datagrams from source to destination
+    - IP, routing protocols
+4. **Link Layer**: data transfer between neighboring network elements
+    - Ethernet, 802.11 (WiFi), PPP
+5. **Physical Layer**: bits "on the wire"
 
 ### 1.5.2 - Encapsulation
 
@@ -222,7 +274,8 @@ End-to-end resources are allocated to and reserved for "call" between source and
 
 ## 1.6 - Networks Under Attack
 
-
+The Internet was not originally designed with much security in mind.
+- Original vision: "A group of mutually trusting users attached to a transparent network"
 
 ## 1.7 - History of Computer Networking and the Internet
 
