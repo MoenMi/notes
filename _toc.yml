@@ -71,8 +71,8 @@ parts:
       sections:
       - file: classes/cs491/ros-tutorials
       - file: classes/cs491/xbox-controller-setup
-  # - caption: MATHEMATICS
-  #   chapters:
+  - caption: MATHEMATICS
+    chapters:
   #   - file: classes/math311/overview
   #     sections:
   #     - file: classes/math311/1-class
@@ -103,6 +103,10 @@ parts:
   #     - file: classes/math311/hw7
   #     - file: classes/math311/hw8
   #     - file: classes/math311/hw9
+    - file: classes/math457/overview
+      sections:
+      - file: classes/math457/1-intro
+      - file: classes/math457/2-review
   - caption: APPLIED STATISTICS
     chapters:
     - file: classes/st531/overview
@@ -127,6 +131,7 @@ parts:
       - file: classes/st552/tb6-diagnostics-mlr
       - file: classes/st552/tb7-variable-selection
       - file: classes/st552/tb8-logistic-regression
+      - file: classes/st552/hw1
     - file: classes/st553/overview
       sections:
       - file: classes/st553/0-matrix-algebra-primer
