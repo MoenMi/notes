@@ -6,8 +6,6 @@ jupyter:
     name: python3
 ---
 
-(file-types:custom)=
-
 The dataset analyzed in this report examines several categories of statistics for the 131 college football teams competing in NCAA D-I FBS during the 2022 season. The data comes from a [Kaggle dataset](https://www.kaggle.com/datasets/jeffgallini/college-football-team-stats-2019/data), which is a collection of data scraped from the [NCAA's website](https://www.ncaa.com/stats/football/fbs) for more convenient access.
 
 ## Reading in the Data
