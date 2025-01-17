@@ -131,7 +131,6 @@ parts:
       - file: classes/st552/tb6-diagnostics-mlr
       - file: classes/st552/tb7-variable-selection
       - file: classes/st552/tb8-logistic-regression
-      - file: classes/st552/hw1
     - file: classes/st553/overview
       sections:
       - file: classes/st553/0-matrix-algebra-primer
