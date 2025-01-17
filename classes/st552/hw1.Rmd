@@ -1,9 +1,9 @@
 ---
-title: "Homework 1 Test"
-author: "Michael T. Moen" 
-date: "`r Sys.Date()`"
-output: html_document
-knitr::opts_chunk$set(echo = True, results = 'markup', fig.width = 6, fig.height = 4)
+jupyter:
+  kernelspec:
+    display_name: Python
+    language: python
+    name: python3
 ---
 
 # Homework 1 Test
