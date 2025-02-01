@@ -134,6 +134,7 @@ parts:
     - file: classes/st553/overview
       sections:
       - file: classes/st553/0-matrix-algebra-primer
+      - file: classes/st553/1-sample-geometry-and-random-sampling
     - file: classes/st554/overview
       sections:
       - file: classes/st554/discrete-uniform-distributions
@@ -188,6 +189,9 @@ parts:
       - file: classes/gy101/chapter-2
       - file: classes/gy101/chapter-3
       - file: classes/gy101/chapter-4
+    - file: classes/gy102/overview
+      sections:
+      - file: classes/gy102/chapter-10
   - caption: OTHER
     chapters:
     - file: classes/other/youtube-to-mp3
