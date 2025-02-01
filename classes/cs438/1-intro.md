@@ -4,24 +4,20 @@
 
 ### 1.1.1 - A "Nuts and Bolts" Description
 
-- Billions of connected computing devices:
-  - Hosts = end systems/nodes
-  - Running network apps Internet's edge
-- Packet switches: forward packets (chunks of data)
-  - Routers, switches
-- Communication links
-  - Fiber, copper, radio, satellite
-  - Transmission rate: bandwidth
-- Networks
-  - Collection of devices, routers, and links managed by an organization
-- The **Internet** is a network of networks
-  - Interconnected ISPs
-- Protocols are everywhere
-  - Control sending and receiving of messages
-  - e.g., HTTP, streaming video, Skype, TCP, IP, WiFi, 4G, Ethernet
-- Internet Standards
-  - RFC: Request for Comments
-  - IETF: Internet Engineering Task Fore
+The **Internet** is a computer network that connects billions of devices across the world.
+
+The devices, including computer, phones, TVs, gaming consoles, thermostats, and others, that are connected to the Internet are called **hosts** or **end systems/nodes**.
+
+The end systems in the network are connected together through a network of **communication links** and packet switches. Different links transmit data at different rates, with the **transmission rate** of each link measured in bits/second. The packages of information exchanged are known as **packets**.
+- A **packet switch** takes a packet arriving on one of its incoming communication links and forwards that packet on one of its outgoing communication links.
+  - The most prominent type of packet switches are **routers** and **link-layer switches**.
+- The sequence of communication links and packet switches traversed by a packet from the sending end system to the receiving end system is known as its **route** or **path** through a network.
+
+End systems access the Internet through **Internet Service Providers (ISPs)**. Each ISP is itself a network of packet switches and communication links.
+
+End systems, packet switches, and other pieces of the Internet run protocols that control the sending and receiving of information within the Internet.
+- The **Transmission Control Protocol (TCP)** and the **Internet Protocol (IP)** are two of the most important protocols in the Internet. The IP protocol specifies the format of the packets that are sent and received amoung routers and end systems. These two protocols are collectively known as **TCP/IP**.
+- The **Internet standards** that define these protocols are developed by the **Internet Engineering Task Force (IETF)** in documents called **requests for comments (RFCs)**. 
 
 ### 1.1.2 - A "Services" Description
 
@@ -37,9 +33,9 @@
 
 ## 1.2 - The Network Edge
 
-Network edge:
-- Hosts: clients and servers
-- Servers often in data centers
+End systems, which are the network edges in the Internet, are commonly divided into two categories:
+- Hosts: desktops, smartphones, laptops, etc.
+- Servers: often in large **data centers**
 
 Access networks, physical media:
 - Wired, wireless communications links
@@ -55,22 +51,25 @@ How to connect end systems to edge router?
 - Institutional access networks (school, company)
 - Mobile access networks (WiFi, 4G,/5G)
 
-#### Cable-Based Access
-
-**Frequency division multiplexing (FDM)**: Different channels transmitted in different frequency bands.
-
-- **Hybrid fiber coax (HFC)** is asymmetric:
-  - 40 Mbps - 1.2 Gbps downstream transmission rate
-  - 30-100 Mbps upstream transmission rate
-
-- Network of cable and fiber attaches homes to ISP router
-  - Homes share access network to cable headend
-
 #### Digital Subscriber Line (DSL)
 
-DSL uses an existing phone line, where data goes to the Internet and voice goes to the telephone network.
-- 24-52 Mbps dedicated downstream transmission rate
-- 3.5-16 Mbps dedicated upstream transmission rate
+**Digital subscriber line (DSL)** uses an existing phone line, where data goes to the Internet and voice goes to the telephone network. For DSL, the ISP is typically the local telephone company (telco).
+
+A residence that is  connected to DSL will have the telephone and Internet run through the same wire, and the telephone and Internet data is separated with a **DSL access multiplexer (DSLAM)** located in the telco's local central office (CO).
+
+The DSL standards define multiple transmission rates:
+- 24 or 52 Mbps dedicated downstream transmission rate
+- 3.5 or 16 Mbps dedicated upstream transmission rate
+
+DSL is designed for residences to be within 5-10 miles of their CO. Residences outside of this range typically must resort to other means of Internet access.
+
+#### Cable-Based Access
+
+**Cable internet access** makes use of existing cable infrastructure from television companies. Both fiber obtic and coaxial cables are used in the development of these networks, so the system is called **hybrid fiber coax (HFC)**.
+
+**Frequency division multiplexing (FDM)**: Different channels transmitted in different frequency bands.
+- 40 Mbps - 1.2 Gbps downstream transmission rate
+- 30-100 Mbps upstream transmission rate
 
 #### Wireless Access Networks
 
@@ -82,6 +81,10 @@ Shared **wireless access network** connects end system to router via base statio
   - Provided by mobile, cellular network operator (10s of kilometers)
   - 10s of Mbps
   - 4G/5G cellular networks
+
+#### Wide-Area Access Networks
+
+Telecommunications companies manage fourth-generation (4G) wireless networks, which provide real-world download speeds of up to 60 Mbps.
 
 #### Enterprise Networks
 
@@ -162,16 +165,20 @@ Two key network-core functions:
 
 #### Store-and-Forward
 
-- **Packet transmission delay**: takes $L$/$R$ seconds to transmit (push out) $L$-bit packet into link at $R$ bps
-- **Store and forward**: Entire packet must arrive at router before it can be transmitted on the next link
+- **Packet transmission delay**: takes $L/R$ seconds to transmit (push out) $L$-bit packet into link at $R$ bps
+- **Store and forward**: Entire packet must arrive at router before it can be transmitted on the next link. This makes the transmission rate $2L/R$ when there is one packet switch that employs store-and-forward transmission.
+
+If we consider there to be $N$ routers between source and destination:
+
+$$ d_{\text{end-to-end}} = (N + 1) \frac{L}{R} $$
 
 #### Queueing
 
-**Queueing** occurs when work arrives faster than it can be serviced.
+**Queueing** occurs when work arrives faster than it can be serviced. Each packet switch has an **output buffer** or **output queue**, which stores packets that the
 
 If the arrival rate (in bps) to link exceeds transmission rate (bps) of link for some period of time:
-- Packets will queue, waiting to be transmitted on output link
-- Packets can be dropped (lost) if memory (buffer) in router fills up
+- There will be a **queueing delay**, since packets will wait to be serviced
+- **Packet loss** will occur if memory (buffer) in router fills up
 
 ### 1.3.2 - Circuit Switching
 
