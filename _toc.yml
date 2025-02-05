@@ -59,6 +59,8 @@ parts:
     - file: classes/cs438/overview
       sections:
       - file: classes/cs438/1-intro
+      - file: classes/cs438/2-application-layer
+      - file: classes/cs438/3-transport-layer
     - file: classes/cs470/overview
       sections:
       - file: classes/cs470/1-big-o-notation
