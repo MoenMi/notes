@@ -209,7 +209,21 @@ Packet-switching is great for "bursty" data, because it is better at resource sh
 
 ### 1.3.3 - A Network of Networks
 
+End systems connect to the Internet via access ISPs, which can be a telco, cable company, university, or company among others. To connect every end system to each other, these access ISPs must also be connected, which is called the **network of networks**.
 
+A naive approach to connect ISPs would be to have a mesh, i.e., to connect every ISP to each other through a physical connection.
+
+In *Network Structure 1*, a single global transit ISP is constructed that connects all ISPs to each other. Each access ISP would then pay the global transit ISP based on the amount of traffic it exchanges with the global ISP.
+
+In *Network Structure 2*, there are multiple global transit ISPs that compete with each other on price. Note that the global transit ISPs must also connect with each other.
+
+*Network Structure 4*: In any given city, there is typically one **regional ISP** to which the access ISPs connect. These regional ISPs then connect to **tier-1 ISPs**, of which there are about a dozen in the world including AT&T, Sprint, and others. To more accurately approximate today's Internet, we must consider the following:
+- A **point of presence (PoP)** is a group of one or more routers in the provider's network where customer ISPs can connect to the provider ISP.
+- Any ISP can choose to **multi-home**, i.e., to connect to two or more provider ISPs. This allows the ISP to send and receive packets even if one of the provider ISPs fails.
+- Two ISPs of the same tier can **peer** with each other. This means that they directly connect their networks and can access each other's resources without paying a fee. Note that tier-1 ISPs peer with each other.
+  - An **Internet Exchange Point (IXP)** is a meeting point where multiple ISPs peer with each other.
+
+*Network Structure 5* describes today's Internet. It works similarly to Network Structure 4, but includes **content-provider networks**. For example, Google has 19 major data centers (and many more smaller data centers) around the world that connect to each other through a private TCP/IP network that is separate from the Internet. Google can then peer with lower-tier ISPs, typically at IXPs, allowing them to pay fewer fees to higher-tier ISPs and gain more control over the way they send data to end systems.
 
 ## 1.4 - Delay, Loss, and Throughput in Packet-Switched Networks
 
@@ -226,7 +240,7 @@ Four sources of packet delay:
 
 $$ d_{\text{nodal}} = d_{\text{proc}} + d_{\text{queue}} + d_{\text{trans}} + d_{\text{prop}} $$
 
-- $d_{\text{proc}}$: **Nodal processing**
+- $d_{\text{proc}}$: **Nodal processing delay**
   - Check bit errors
   - Determine output link
   - Typically fewer than microseconds

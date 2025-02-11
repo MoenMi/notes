@@ -137,6 +137,7 @@ parts:
       sections:
       - file: classes/st553/0-matrix-algebra-primer
       - file: classes/st553/1-sample-geometry-and-random-sampling
+      - file: classes/st553/2-multivariate-normal-distribution
     - file: classes/st554/overview
       sections:
       - file: classes/st554/discrete-uniform-distributions

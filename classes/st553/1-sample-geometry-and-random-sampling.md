@@ -114,4 +114,30 @@ $$ \bm{\bar x} = \begin{bmatrix}
 
 ## 1.5 - Sample Values of Linear Combinations of Variables
 
+For some linear combination of $p$ variables
 
+$$ \bm{c'X} = \sum^p_{i=1} c_i X_i $$
+
+whose observed value on the $j$th trial is
+
+$$ \bm{c'x_j} = \sum^p_{i=1} c_{ji} x_{ji}, j = 1, \dots, n $$
+
+the $n$ derived observations have
+- Sample mean = $\bm{c'\bar x}$
+- Sample variance = $\bm{c'Sc}$
+
+If we have a second linear combination of these $p$ variables,
+
+$$ \bm{b'X} = \sum^p_{i=1} b_i x_i $$
+
+whose observed value on the $j$th trial is
+
+$$ \bm{b'x_j} = \sum^p_{i=1} b_{ji} x_{ji}, j = 1, \dots, n $$
+
+The two linear combinations have
+
+$$ \text{sample variance} = \text{covariance} = \bm{b'Sc} = \bm{c'Sb} $$
+
+If we have a $q \times p$ matrix $A$ whose $k$th row contains the coefficients of a linear combination of these $p$ variables, then these $q$ linear combinations have
+- Sample mean = $\bm{A \bar x}$
+- Sample variance - covariance = $\bm{ASA'}$
