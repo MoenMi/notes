@@ -194,6 +194,7 @@ parts:
       - file: classes/gy101/chapter-4
     - file: classes/gy102/overview
       sections:
+      - file: classes/gy102/chapter-9
       - file: classes/gy102/chapter-10
   - caption: OTHER
     chapters:
