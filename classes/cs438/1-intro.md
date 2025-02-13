@@ -299,12 +299,20 @@ Layered Internet protocol stack:
 
 ### 1.5.2 - Encapsulation
 
-
+**Encapsulation** allows developers to abstract away lower levels of the protocol stack, so long as the messages from the higher levels contain all the information needed at the lower levels.
 
 ## 1.6 - Networks Under Attack
 
 The Internet was not originally designed with much security in mind.
 - Original vision: "A group of mutually trusting users attached to a transparent network"
+
+A compromised host can be enrolled in a network of thousands of similarly compromised devices in what is collectively known as a **botnet**.
+
+One broad class of security threats are known as **denial-of-service (DoS) attacks**. These attacks render a network or host unusable by legitimate users. In a **distributed denial-of-service (DDoS) attack**, the attacker controls multiple sources that it uses.
+
+**Packet sniffers** can detect any packets sent over a network and passively record any information sent.
+
+The ability to inject packets into the Internet with a false source address is called **IP spoofing**.
 
 ## 1.7 - History of Computer Networking and the Internet
 
