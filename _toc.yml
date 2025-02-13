@@ -118,11 +118,11 @@ parts:
       - file: classes/st531/ml3-decisions-trees
       - file: classes/st531/ml4-neural-networks
       - file: classes/st531/ml6-assessment-deployment
-    - file: classes/st545/overview
-      sections:
-      - file: classes/st545/1-intro
-      - file: classes/st545/2-statistical-learning
-      - file: classes/st545/3-linear-regression
+    # - file: classes/st545/overview
+    #   sections:
+    #   - file: classes/st545/1-intro
+    #   - file: classes/st545/2-statistical-learning
+    #   - file: classes/st545/3-linear-regression
     - file: classes/st552/overview
       sections:
       - file: classes/st552/1-intro
