@@ -278,19 +278,24 @@ Note that the throughput is determined by the link with the smallest transmissio
 
 ### 1.5.1 - Layered Architecture
 
-**Layers** are actions taken at a certain step, which rely on previous steps.
+Network protocols are designed to fit in certain **layers**. This is part of the **service model**, wherein each layer provides a specific service. These protocol layers are defined by a combination of hardware and software. The collection of protocol layers is called the **protocol stack**.
+
+Protocol layering simplifies the process of understanding complex interactions over networks, but has the drawback of potentially causing redundancies.
 
 Layered Internet protocol stack:
 
 1. **Application Layer**: supporting network applications
    - HTTP, IMAP, SMTP, DNS
+   - A packet of information at this layer is called a **message**.
 2. **Transport Layer**: process-process data transfer
     - TCP, UDP
+    - A packet of information at this layer is called a **segment**.
 3. **Network Layer**: routing of datagrams from source to destination
     - IP, routing protocols
 4. **Link Layer**: data transfer between neighboring network elements
     - Ethernet, 802.11 (WiFi), PPP
 5. **Physical Layer**: bits "on the wire"
+    - Copper wire, Coaxial cable, fiber optic cable
 
 ### 1.5.2 - Encapsulation
 
