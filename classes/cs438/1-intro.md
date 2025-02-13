@@ -229,47 +229,50 @@ In *Network Structure 2*, there are multiple global transit ISPs that compete wi
 
 ### 1.4.1 - Overview of Delay in Packet-Switched Networks
 
-How do packets delay and loss occur?
-- Packets queue in router buffers, waiting for turn in transmission
-  - Queue length grows when arrival rate to link (temporarily) exceeds output link capacity
-- Packet loss occurs when memory to hold queued packets fills up
-
-### 1.4.2 - Queueing Delay and Packet Loss
-
-Four sources of packet delay:
+As a packet travels from its source to its destination, it suffers several types of delays at each node along the path.
 
 $$ d_{\text{nodal}} = d_{\text{proc}} + d_{\text{queue}} + d_{\text{trans}} + d_{\text{prop}} $$
 
-- $d_{\text{proc}}$: **Nodal processing delay**
-  - Check bit errors
-  - Determine output link
-  - Typically fewer than microseconds
-- $d_{\text{queue}}$: **Queueing delay**
-  - Time waiting at output link for transmission
-  - Depends on congestion level of router
-- $d_{\text{trans}}$: **Transmission delay**
-  - $L$: packet length (bits)
-  - $R$: link transmission rate (bps)
-  - $d_{\text{trans}} = L/R$
-- $d_{\text{prop}}$: **Propagation delay**
-  - $d$: length of physical link
-  - $s$: propagation speed (about $2 \times 10^8$ m/s)
+- The time required to examine the packet's header and determine where to direct it is part of the **processing delay**. It can also include the time needed to check for bit-level errors in the packet. These delays are typically microseconds or less.
+- A packet experiences **queuing delay** as it waits to be transmitted onto the link. The queuing delay depends on the number of items in the queue when the packet arrives, and is zero if it is empty.
+- Denote the length of the packet (in bits) as $L$ and the transmission rate (in bits/second) $R$. The **transmission delay** is the amount time it takes to push the packet's contents to the link, and is $L/R$.
+- The time required to travel across the physical links is called the **propagation delay**, which is equal to or just a little more than the distance between the nodes divided by the speed of light. This can be expressed as $d/s$, where $d$ is the distance between the links and $s$ is the speed of light.
 
-#### Packet Loss
+### 1.4.2 - Queueing Delay and Packet Loss
 
-- Queue (aka buffer) preceding link in buffer has finite capacity.
-- Packet arriving to full queue dropped (aka lost).
-- Lost packet may be retransmitted by previous node, by source end system, or not at all.
+The most interesting component of nodal delay is the queuing delay.
+
+If a packet arrives to a router with a full queue, the router will **drop** the packet, resulting in **packet loss**.
 
 ### 1.4.3 - End-to-End Delay
 
+End-to-end delay considers the full delay of a packet as it travels from its source to its destination, rather than just at a node.
 
+Suppose there are $N-1$ routers on the packet's path. If we suppose that there are no queuing delays, we can say
+
+$$ d_{\text{end-to-end} = N (d_{\text{proc}} + d_{\text{trans}} + d_{\text{prop}})} $$
+
+Note that Traceroute is a program that sends a message back to the source with the name and address of each router it encounters.
+
+It can be run in Windows with:
+
+```sh
+tracert mtmoen.com
+```
+
+Or in Linux with
+
+```bash
+traceroute mtmoen.com
+```
 
 ### 1.4.4 - Throughput in Computer Networks
 
 **Throughput** is the rate (bits/time) at which bits are being sent from sender to receiver.
 - **Instantaneous**: Rate at given point in time
 - **Average**: Rate over long period of time
+
+Note that the throughput is determined by the link with the smallest transmission rate along the entire path. This link is called the **bottleneck link**. Note that this bottleneck link may be due to a shared link.
 
 ## 1.5 - Protocol Layers and Their Service Models
 
