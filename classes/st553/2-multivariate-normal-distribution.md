@@ -119,20 +119,41 @@ For any multivariate normal random vector $\bm{X}$:
 
 ## 2.5 - Sampling from a Multivariate Normal Distribution and Maximum Likelihood Estimation
 
+Let $\bm{X}_j \sim N_p (\bm{\mu}, \bm{\Sigma}), j = 1, \dots, n$ represent a random sample.
+
+Since the $\bm{X}_j$'s are mutually independent and each have distribution $N_p (\bm{\mu}, \bm{\Sigma})$, their joint density is the product of the marginal densities, i.e.,
+
+$$ \begin{align*} \{ \text{joint density of } \bm{X}_1, \bm{X}_2, \dots, \bm{X}_n \}
+&= \prod^n_{j=1} \frac{1}{(2\pi)^{p/2} |\bm{\Sigma}|^{1/2}} e^{[-(\bm{x}_j - \bm{\mu})' \bm{\Sigma}^{-1}(\bm{x}_j - \bm{\mu})]/2}  \\
+&= \frac{1}{(2\pi)^{np/2} |\bm{\Sigma}|^{n/2}} e^{- \sum^n_{j=1}[(\bm{x}_j - \bm{\mu})' \bm{\Sigma}^{-1}(\bm{x}_j - \bm{\mu})]/2}
+\end{align*} $$
+
+**Maximum likelihood estimation**: Estimation of parameter values by finding estimates that maximize the likelihood of the sample data on which they are based (select estimated values for parameters that best explain the sample data collected).
+
+**Maximum likelihood estimates**: The estimates of parameter values that maximize the likelihood of the sample data on which they are based.
+
+We would like to obtain the maximum likelihood estimates of the parameters $\bm{\mu}$ and $\bm{\Sigma}$ given the sample data $\bm{X}$ we have collected. To simplify our efforts we will need to utilize some properties of the trace to rewrite the likelihood function in another form.
+
 
 
 ## 2.6 - The Sampling Distributions of $\bm{\bar{X}}$ and $\bm{S}$
 
+For the multivariate case where $\bm{X} \sim N_p(\bm{\mu}, \bm{\Sigma})$, the sample mean is distributed as such
 
+$$ \bar{\bm{X}} \sim N_p(\bm{\mu}, \frac{1}{n} \bm{\Sigma}) $$
 
-## 2.7 - Assessing the Assumption of Normality
-
-
-
-## 2.8 - Outlier Detection
+## 2.7 - Large Sample Behavior of $\bar{\bm{X}}$ and $\bm{S}$
 
 
 
-## 2.9 - Transformations to Near Normality
+## 2.8 - Assessing the Assumption of Normality
+
+
+
+## 2.9 - Outlier Detection
+
+
+
+## 2.10 - Transformations to Near Normality
 
 
