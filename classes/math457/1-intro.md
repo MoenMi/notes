@@ -37,3 +37,7 @@ This is a discrete-time stochastic process.
 In general, we cannot assume that random variables $X_1, X_2, \dots$ in a discrete-time stochastic process are independent.
 
 A stochastic process is **Markovian** if its future states depend only possibly on the present states.
+
+The following examples are Markovian:
+- *Bernoulli processes* are Markovian because the outcome at each step is not affected by the history (e.g., the outcome of the 5th coin flip is not affected by the previous 4).
+- *Gambler's ruin* is Markovian because only the current state affects the outcome, and the history does not.

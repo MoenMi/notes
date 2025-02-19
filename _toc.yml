@@ -109,6 +109,10 @@ parts:
       sections:
       - file: classes/math457/1-intro
       - file: classes/math457/2-review
+      - file: classes/math457/3-markov-chains
+      - file: classes/math457/4-qualitative-behavior
+      - file: classes/math457/5-probabilistic-qualitative
+      - file: classes/math457/6-long-term-behavior
   - caption: APPLIED STATISTICS
     chapters:
     - file: classes/st531/overview
