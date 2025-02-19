@@ -318,20 +318,41 @@ The ability to inject packets into the Internet with a false source address is c
 
 ### 1.7.1 - The Development of Packet Switching: 1961-1972
 
+In the early 1960s, as computers became more prevalent, researchers sought efficient ways to connect them, moving beyond traditional circuit-switched telephone networks. Three independent research groups—Leonard Kleinrock at MIT, Paul Baran at Rand, and Donald Davies at the National Physical Laboratory—developed the foundational concepts of packet switching, which proved more efficient for bursty computer traffic.
 
+This work led to the creation of ARPAnet, the first packet-switched network, funded by the Advanced Research Projects Agency (ARPA). The first node was installed at UCLA in 1969, with additional nodes soon following. By 1972, ARPAnet had grown to 15 nodes, with Robert Kahn demonstrating its capabilities publicly. The network-control protocol (NCP), ARPAnet’s first host-to-host protocol, was also introduced, enabling applications such as Ray Tomlinson’s pioneering email program.
 
 ### 1.7.2 - Proprietary Networks and Internetworking: 1972-1980
 
+In the early to mid-1970s, multiple independent packet-switched networks emerged, including ALOHANet in Hawaii, DARPA’s packet-satellite and packet-radio networks, and commercial networks like Telenet and Cyclades. This proliferation of networks highlighted the need for an overarching architecture to enable inter-network communication.
 
+Vinton Cerf and Robert Kahn, funded by DARPA, pioneered the concept of internetting, leading to the development of TCP. Initially, TCP combined both transport and forwarding functions, but later, IP was separated from TCP, and the lightweight UDP protocol was introduced. By the late 1970s, TCP, IP, and UDP were established as the foundational Internet protocols.
+
+During this period, key innovations also emerged in local networking. Norman Abramson’s ALOHAnet introduced a multiple-access protocol for wireless communication, which influenced the development of Ethernet by Robert Metcalfe and David Boggs. Ethernet became the dominant protocol for local area networks (LANs), providing the foundation for modern PC networking.
 
 ### 1.7.3 - A Proliferation of Networks: 1980-1990
 
+During the 1980s, the number of hosts connected to the Internet grew exponentially, from a few hundred to over 100,000. This expansion was driven by efforts to link universities and research institutions, including BITNET for email and file transfers, CSNET for computer science researchers, and NSFNET, which provided access to supercomputing centers with an upgraded 1.5 Mbps backbone by the decade’s end.
 
+Key advancements in Internet architecture occurred in this period. On January 1, 1983, ARPAnet officially transitioned from the NCP protocol to TCP/IP, standardizing modern Internet communication. TCP was also enhanced with host-based congestion control, and the Domain Name System (DNS) was introduced to map human-readable names to IP addresses.
+
+Outside the U.S., France developed the Minitel network, a public packet-switched system based on the X.25 protocol. Launched in 1984, Minitel provided online services, including home banking and research databases, and was widely adopted in French households—predating widespread Internet use in the U.S. by a decade.
 
 ### 1.7.4 - The Internet Explosion: The 1990s
 
+The 1990s marked the transition of the Internet from a research network to a commercialized, global infrastructure. ARPAnet was decommissioned, and in 1991, NSFNET lifted restrictions on commercial use, allowing private Internet Service Providers (ISPs) to handle backbone traffic. By 1995, NSFNET was fully decommissioned, solidifying the Internet’s commercial expansion.
 
+The defining event of the decade was the emergence of the World Wide Web, invented by Tim Berners-Lee at CERN between 1989 and 1991. The Web, built on HTML, HTTP, browsers, and servers, quickly gained traction. By 1993, only 200 Web servers existed, but the development of GUI-based browsers like Netscape Navigator in 1994 accelerated adoption. By the mid-1990s, companies began using the Web for commerce, leading to a rapid expansion of online businesses. The so-called "browser wars" between Netscape and Microsoft began, with Microsoft ultimately dominating by the late 1990s.
+
+The second half of the decade saw unprecedented innovation and investment in the Internet. By 2000, the Internet supported key applications, including email with attachments, Web browsing and e-commerce, instant messaging, and peer-to-peer file sharing, popularized by Napster. The late 1990s also saw the rise and subsequent collapse of the dot-com bubble, where numerous startups, many without profits, gained and lost billions in market valuation. Despite the crash in 2000-2001, major tech giants such as Microsoft, Cisco, Yahoo, eBay, Google, and Amazon emerged as long-term winners.
 
 ### 1.7.5 - The New Millenium
 
+The 21st century has seen the Internet and Internet-connected smartphones revolutionize society. Advances in networking continue at a rapid pace, with faster routers, higher transmission speeds, and expanded access networks. Several key developments stand out:
+- **Broadband Expansion & Video Applications:** The deployment of broadband Internet (cable modems, DSL, fiber, and now 5G fixed wireless) has enabled widespread video applications, including user-generated content (YouTube), on-demand streaming (Netflix), and video conferencing (Skype, FaceTime, Google Meet).
+- **Wireless Internet & Mobile Devices:** High-speed wireless connectivity has made continuous, on-the-go Internet access a reality, fostering location-based applications such as Yelp, Tinder, and Waze. By 2011, the number of wireless Internet-connected devices surpassed wired devices, leading to the explosion of smartphones, tablets, and other mobile devices.
+- **Rise of Social Networks:** Platforms like Facebook, Instagram, Twitter, and WeChat have transformed communication and social interaction, often becoming the primary online environment for users. Their APIs have enabled new applications, including mobile payments and social gaming.
+- **Private Network Infrastructure:** Tech giants like Google and Microsoft have built extensive private networks, directly peering with ISPs to optimize performance. This infrastructure enables near-instant search results, seamless email access, and efficient global data center operations.
+- **Cloud Computing:** The rise of cloud services (Amazon EC2, Microsoft Azure, Alibaba Cloud) has transformed how businesses and institutions deploy applications. Cloud platforms offer scalable computing and storage while leveraging high-performance private networks for speed and reliability.
 
+These advancements have shaped the modern digital landscape, driving innovations in communication, commerce, and entertainment.
