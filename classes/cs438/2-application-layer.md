@@ -23,7 +23,13 @@ In the Internet, the host is identified by its **IP address**, which is a 32-bit
 
 ### 2.1.3 - Transport Services Available to Applications
 
+The socket is the interface between the application process and the transport-layer protocol. On the sending side, the application pushes messages through the socket. On the receiving sidde, the transport-layer protocol has the responsibility of getting the messages to the socket of the receiving process.
 
+There are a variety of transport-layer protocols available, and the following are some of the factors that go into considering which to use:
+- *Reliable Data Transfer*: If a protocol provides a guaranteed data delivery service, it is said to provide **reliable data transfer**. This may not be needed in **loss-tolerant applications**.
+- *Throughput*: 
+- *Timing*: 
+- *Security*: 
 
 ### 2.1.4 - Transport Services Provided by the Internet
 
