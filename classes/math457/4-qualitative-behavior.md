@@ -38,5 +38,4 @@ We can see that $P = P^2 = \dots = P^n$ where $n$ is an integer.
 
 ## 4.2 - Long Term and Short Term Behavior of the Chain
 
-It is difficult to determine the long-term behavior of a chain based on the matrix computation of $q_0 \times P^n$:
-- a
+It is difficult to determine the long-term behavior of a chain based on the matrix computation of $q_0 \times P^n$.
