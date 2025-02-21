@@ -20,4 +20,10 @@ $$ P(A \cup B) = P(A) + P(B) $$
 
 ## 2.3 - Conditional Probability
 
+$$ P(A|B) = \frac{P(A \cap B)}{P(B)} $$
 
+where $P(B) > 0$.
+
+We say that $A$ and $B$ are **pairwise independent** if
+
+$$ P(A) = P(A|B) \Longleftrightarrow P(B) = P(B|A) \Longleftrightarrow P(A \cap B) = P(A)P(B) $$
