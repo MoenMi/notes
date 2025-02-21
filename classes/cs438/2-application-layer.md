@@ -27,13 +27,18 @@ The socket is the interface between the application process and the transport-la
 
 There are a variety of transport-layer protocols available, and the following are some of the factors that go into considering which to use:
 - *Reliable Data Transfer*: If a protocol provides a guaranteed data delivery service, it is said to provide **reliable data transfer**. This may not be needed in **loss-tolerant applications**.
-- *Throughput*: 
-- *Timing*: 
-- *Security*: 
+- *Throughput*: Some applications may need to guarantee a certain throughput/transfer rate. Such applications that have throughput requirements are called **bandwidth-sensitive applications**. Alternatively, **elastic applications** can make use of as much or as little throughput as happens to be available.
+- *Timing*: A transport-layer protocol can provide timing guarantees. For example, there might be a guarantee that the receiver socket receives a message within 100 ms of the sender socket sending it.
+- *Security*: A transport protocol can manage encryption, data integrity, and end-point authentication.
 
 ### 2.1.4 - Transport Services Provided by the Internet
 
-
+The Internet make the TCP and UDP transport-level protocols available for applications.
+- **Transmission Control Protocol (TCP)** is a connection-oriented reliable data transfer service.
+  - TCP has the client and server exchange transport-layer control information with each other before the application-level messages flow. After the handshake, a **TCP connection** is said to exist between the sockets of the two processes. This connection is a full-duplex connection, meaning both sockets can send each other messages over this connection at the same time. The connection must be closed when the sockets are done sending messages.
+  - The communicating processes can rely on TCP to deliver all data sent without error and in the proper order.
+  - TCP also has a congestion-control mechanism that attempts to limit each connection to its fair share of bandwidth.
+- **User Datagram Protocol (UDP)** is a lightweight transfer protocol that is connectionless and provides unreliable data transfer.
 
 ### 2.1.5 - Application-Layer Protocols
 
