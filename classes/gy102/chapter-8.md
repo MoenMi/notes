@@ -17,4 +17,8 @@ The length of time that a drop of water remains in a store is called its **resid
 
 The **climatic water balance** is an accounting of the amount of water in each store and its flux through the hydrologic cycle.
 
+## 8.8 - What Are Problems Associated with Groundwater Pumping?
 
+As groundwater is overpumped, groundwater around the well cannot flow in fast enough to replenish what is pumped out. This causes the local water table to drop, forming a **cone of depression** around the well.
+
+Overpumping near oceans or seas can draw salt water into the well in a process known as **saltwater incursion** or **saltwater intrusion**.
