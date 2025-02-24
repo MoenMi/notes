@@ -42,25 +42,78 @@ The Internet make the TCP and UDP transport-level protocols available for applic
 
 ### 2.1.5 - Application-Layer Protocols
 
+An **application-layer protocol** defines how an application's processes, running on different end systems, pass messages to each other.
 
+Some application-layer protocols are in the public domain, such as HTTP, while others are proprietary, such as Skype.
 
-### 2.1.6 - Network Applications Covered in this Book
-
-
+It is important to note that application-layer protocols are only one part of network applications. For example, the Web is made up of web servers, standard document formats (HTML), and a application-layer protocols (HTTP/HTTPS).
 
 ## 2.2 - The Web and HTTP
 
 ### 2.2.1 - Overview of HTTP
 
+The **HyperText Transfer Protocol (HTTP)** is the Web's application-layer protocol and is implemented in a client program and a server program. HTTP defines the structure of the messages sent between these two programs.
 
+The HTTP client first initiates a TCP connection with the server. Once the connection is established, the client and server access TCP through their client interfaces. Note that it is the job of TCP to ensure that each message arrives intact.
+
+HTTP is said to be a **stateless protocol** because it does not store any information about the client. Instead, it just returns whatever resource is requested.
+
+The original version of HTTP was HTTP/1.0, but the majority of requests today use HTTP/1.1. Some browsers and servers have begun to use HTTP/2.0.
 
 ### 2.2.2 - Non-Persistent and Persistent Connections
 
+In many Internet applications, the client and server communicate for an extended period of time. When these sorts of client-server interactions occur over TCP, the application developer must decide whether to send each request/response pair over the same **persistent connection** or to close and re-establish **non-persistent connections**. HTTP uses persistent connections in its default mode, but can be configured to use non-persistent connections.
 
+#### HTTP with Non-Persistent Connections
+
+Let's consider a web page that consists of a base HTML file and 10 JPEG images, totally to 11 objects. Suppose the URL of the HTML file is `http://www.someSchool.edu/someDepartment/home.index`.
+
+1. The client process initiates a TCP connection with the server `www.someSchool.edu` at port 80, which is the default for HTTP. Sockets associated with the client and server are created.
+2. The client process sends an HTTP request to the server via its socket. This message includes the path `/someDepartment/home.index`.
+3. The server process receives the request message, retrieves the the object `/someDepartment/home.index` from its storage (RAM or disk), encapsulates the object in an HTTP response message, and sends the response message to the client.
+4. The server process tells TCP to close the connection.
+5. The client receives the response message. The TCP connection terminates. The client extracts the HTML file from the response and finds referrences to the 10 JPEG images.
+6. The first 4 steps are repeated for each image.
+
+The **round-trip time (RTT)** is the time it takes for a small packet to travel from the client to the server and back to the client.
+
+It takes two RTTs plus the transmission time at the server to complete the "three-way handshake." The client first sends a small TCP segment to the server, which the server acknowledges with a response. This takes one RTT. The client then sends the request for the object and receives it in the response, composing the second RTT.
+
+#### HTTP with Persistent Connections
+
+With HTTP/1.1 persistent connections, a request to close the connection is not sent along with the results. This leaves the connection open for a configurable amount of time, allowing resources and other web pages from the same server to be sent over the same connection, reducing the overhead of establishing more TCP connections.
 
 ### 2.2.3 - HTTP Message Format
 
+The HTTP specifications include the definitions of the HTTP message formats.
 
+#### HTTP Request Message
+
+Below is the typical HTTP request message:
+
+```
+GET /somedir/page.html HTTP/1.1
+Host: www.someschool.edu
+Connection: close
+User-agent: Mozilla/5.0
+Accept-language: fr
+```
+
+The first line of the request is called the **request line**, and the subsequent lines are called **header lines**.
+- The `Connection: close` line indicates that there will be a non-persistent connection.
+- The server can handle different `User-agent`s differently (e.g. sending different data to different browsers).
+- The `Accept-language` header is one many content negotiation headers available in HTTP.
+
+The entity body of a GET request is empty, but it may be populated when using a POST method.
+
+The HEAD method can be used to retrieve only an HTTP response with no object. The PUT method can be used to upload objects to web servers. The DELETE method can be used to delete an object on a web server. 
+
+#### HTTP Response Message
+
+```
+HTTP/1.1 200 OK
+
+```
 
 ### 2.2.4 - User-Server Interaction: Cookies
 
