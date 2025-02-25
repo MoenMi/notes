@@ -165,14 +165,20 @@ SMTP is older than HTTP and has certain archaic characteristics as a result. Not
 Here is an example involving a simple ASCII message:
 1. The user provides a user agent for his email and an email address for the recipient. The user composes a message and instructs the user agent to send a message.
 2. The user agent sends the message to the sender's email server, where it is placed in the message queue.
-3. The SMTP client opens a TCP connection with the recipient's mail server.
+3. The SMTP client opens a TCP connection with the recipient's mail server. This uses **port 25**, which is the default for SMTP.
 4. After an SMTP handshake, the client sends the message over the TCP connection.
 5. The recipient mail server receives the message and places it in the recipient's mailbox.
 6. The recipient invokes his user agent to read the message.
 
 ### 2.3.2 - Mail Message Formats
 
+The response begins with the headers, and then a blank line (`CRLF`/`\r\n`) separates the headers from the returned data. Every SMTP message must have the following headers: `From`, `To`, and `Subject`.
 
+```
+From: user@mtmoen.com
+To: user2@gmail.com
+Subject: Pondering the implications of fried rice
+```
 
 ### 2.3.3 - Mail Access Protocols
 
