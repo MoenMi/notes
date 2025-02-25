@@ -182,7 +182,11 @@ Subject: Pondering the implications of fried rice
 
 ### 2.3.3 - Mail Access Protocols
 
+Email infrastructure requires a server that is always on to receive messages. The sender's mail server also sends requests to the receiver's mail server so that it can resend requests if the receiver's mail server is unavailable.
 
+There are two ways that a user can retrieve their emails from the mail server:
+- Using HTTP, which is how Gmail works.
+- Using the **Internet Mail Access Protocol (IMAP)**, which is what Outlook uses.
 
 ## 2.4 - DNS: The Internet's Directory Service
 
