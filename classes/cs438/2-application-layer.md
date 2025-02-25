@@ -170,8 +170,6 @@ Here is an example involving a simple ASCII message:
 5. The recipient mail server receives the message and places it in the recipient's mailbox.
 6. The recipient invokes his user agent to read the message.
 
-[TEST!!!!!!!!!!!!!](https://mtmoen.com){target="_blank"}
-
 ### 2.3.2 - Mail Message Formats
 
 
