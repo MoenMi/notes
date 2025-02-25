@@ -112,22 +112,51 @@ The HEAD method can be used to retrieve only an HTTP response with no object. Th
 
 ```
 HTTP/1.1 200 OK
-
+Connection: close
+Date: Tue, 18 Aug 2015 12:44:04 GMT
+Server: Apache/2.2.3 (CentOS)
+Last-Modified: Tue, 18 Aug 2015 15:11:03 GMT
+Content-Length: 6821
+Content-Type: text/html
+(data data data data data ...)
 ```
+
+The response has a **status line**, six **header lines**, and an **entity body**.
+
+Some common response codes include:
+- `200 OK`: Request succeeded and info is returned in response.
+- `301 Moved Permanently`: Requested object has been moved permanently, and the new URL is available in the `Location` response header. Web browsers should automatically go to this new site.
+- `400 Bad Request`: A generic error code indicating the request cannot be understood by the server.
+- `404 Not Found`: Requested document does not exist on the server.
+- `505 HTTP Version Not Supported`: Requested HTTP protocol version is not supported by the server.
 
 ### 2.2.4 - User-Server Interaction: Cookies
 
-
+Cookies allow sites to keep track of users despite HTTP being a stateless protocol. Cookie technology has 4 components:
+1. A cookie header (`Set-cookie`) in the HTTP response.
+2. A cookie header (`Cookie`) in the HTTP request.
+3. A cookie file on the client managed by the browser.
+4. A back-end database at the website.
 
 ### 2.2.5 - Web Caching
 
+A **web cache**, also called a **proxy server**, is a network entity that keeps copies of recently requested objects in its storage. A browser can be configured so that all of the user's HTTP requests are first directed toward the web cache. If this is set up, then this is what happens when a browser sends a request using caching:
+1. The browser establishes a TCP connection to the cache and sends an HTTP request for the object to the cache.
+2. The cache checks to see if it has a copy of the object stored locally. If it does, the web cache returns the object within an HTTP response message to the client browser.
+3. If the object is not in the cache, the cache opens a TCP connection to the origin server. The cache then sends an HTTP request for the object.
+4. The cache stores a copy of the object and sends a copy to the client browser in an HTTP response.
 
+A web cache is typically configured by an ISP. An enterprise network may also set up an inexpensive web cache using open-source software.
+
+A **conditional GET** request can be used to determine if the object in the cache is stale using the `If-Modified-Since` header. When a web cache sends a request to the origin server with this header, the server will only return the object if the object has been modified more recently than the data given. Otherwise, it returns `304 Not Modified`.
 
 ### 2.2.6 - HTTP/2
 
-
+HTTP/2 allows browsers to multiplex multiple requests for resources, allowing parallel HTTP requests over the same TCP connection. This helps prevent the **Head of Line (HOL) blocking** problem, since a large object does not delay future requests over a persistent connection (multiple TCP connections would otherwise be required).
 
 ## 2.3 - Electronic Mail in the Internet
+
+The 3 main components of email are **user agents**, **mail servers**, and the **Simple Mail Transfer Protocol (SMTP)**.
 
 ### 2.3.1 - SMTP
 
