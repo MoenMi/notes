@@ -160,7 +160,17 @@ The 3 main components of email are **user agents**, **mail servers**, and the **
 
 ### 2.3.1 - SMTP
 
+SMTP is older than HTTP and has certain archaic characteristics as a result. Notably, the body of SMTP messages is confined to 7-bit ASCII characters, requiring binary data to be encoded as ASCII when it is sent and received.
 
+Here is an example involving a simple ASCII message:
+1. The user provides a user agent for his email and an email address for the recipient. The user composes a message and instructs the user agent to send a message.
+2. The user agent sends the message to the sender's email server, where it is placed in the message queue.
+3. The SMTP client opens a TCP connection with the recipient's mail server.
+4. After an SMTP handshake, the client sends the message over the TCP connection.
+5. The recipient mail server receives the message and places it in the recipient's mailbox.
+6. The recipient invokes his user agent to read the message.
+
+[TEST!!!!!!!!!!!!!](https://mtmoen.com){target="_blank"}
 
 ### 2.3.2 - Mail Message Formats
 
