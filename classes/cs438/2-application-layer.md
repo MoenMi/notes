@@ -249,7 +249,7 @@ A **registrar** is a commercial entity that verifies the uniqueness of the domai
 
 ## 2.5 - Peer-to-Peer File Distribution
 
-
+P2P architecture is beneficial since it is not dependant on always-on servers. In this section, we consider an application that distributes a single large file from one server to a large number of hosts (called peers).
 
 ## 2.6 - Video Streaming and Content Distribution Networks
 
