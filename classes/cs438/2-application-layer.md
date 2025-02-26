@@ -190,17 +190,62 @@ There are two ways that a user can retrieve their emails from the mail server:
 
 ## 2.4 - DNS: The Internet's Directory Service
 
+A **hostname** is a generally human-readable alias for locations on the Internet.
+
+An **IP address** is a unique ID for hosts on the Internet. It consists of 4 numbers in the range from 0 to 255 separated by periods (e.g. 121.7.106.83).
+
 ### 2.4.1 - Services Provided by DNS
 
+The **domain name service (DNS)** translates hostnames to IP addresses. DNS is a distributed database implemented in a hierarchy of **DNS servers** and an application-layer protocol that allows hosts to query the distributed database.
+- The DNS servers are typically UNIX machines running the Berkeley Internet Name Domain (BIND) software.
+- The DNS protocol runs over UDP and uses port 53.
 
+In order to find the IP address associated with a domain name,
+1. The user runs the client side of the DNS application.
+2. The browser extracts the hostname from the URL and passes the hostname to the client side DNS application.
+3. The DNS client client sends a query containing the hostname to a DNS server.
+4. The DNS client receives a reply, which includes the IP address for the given hostname.
+
+DNS lookup adds an additional delay, but common IP addresses are often cached to avoid this, reducing DNS network traffic and average DNS delay.
+
+DNS provides a few other services:
+- **Host aliasing**: A long hostname could have aliases, where the original hostname is called the **canonical hostname**.
+- **Mail server aliasing**: Aliasing for email address domains.
+- **Load distribution**: Busy sites can be replicated over multiple servers to reduce load on each server.
 
 ### 2.4.2 - Overview of How DNS Works
 
+All DNS query and reply messages are sent within UDP datagrams to port 53.
 
+There are 3 classes of DNS servers in the DNS hierarchy:
+- **Root DNS servers**: There are over 1000 root server instances that are copies of 13 different root servers. They contain IP addresses of TLDs.
+- **Top-level domain (TLD) servers**: Top-level domain servers are managed by various companies, and include things like com, gov, edu, us, and more. These servers manage the IP addresses for the authoritative servers.
+- **Authoritative DNS servers**: Organizations with publicly accessible hosts have authoritative hosts to manage their DNS records. These are often handled by a third-party company.
+
+Each ISP has a **local DNS server**, which receives outgoing DNS queries from a user and sends them on through the DNS hierarchy. The query from the client to the local DNS server is an **recursive query**, but the local DNS server typically sends **iterative queries** to root DNS, the TLD server, and the authoritative DNS server. **DNS caching** on this server reduces traffic.
 
 ### 2.4.3 - DNS Records and Messages
 
+The DNS servers store **resource records (RRs)** to implement DNS lookup. An RR is a four-tuple that contains the following fields: `(Name, Value, Type, TTL)`. `TTL` specifies when a resource should be removed from a cache, and it is largely ignored for our purposes. The meaning of `Name` and `Value` depend on the `Type`:
+- If `Type=A`, then `Name` is a hostname and `Value` is the IP address for the hostname. For example, `(relay1.bar.foo.com, 145.37.93.126, A)`.
+- If `Type=NS`, then `Name` is a domain and `Value` is the hostname of an authoritative DNS server that knows how to obtain the IP addresses for hosts in the domain.
+- If `Type=CNAME`, then `Value` is a canonical hostname for the alias hostname `Name`.
+- If `Type=MX`, then `Value` is the canonical name of a mail server that has an alias hostname `Name`. For example, `(foo.com, mail.bar.foo.com, MX)`.
 
+If a DNS server is authoritative for a particular hostname, then the DNS server will contain a Type A record for the hostname. If it is not authoritative for a hostname, it will contain a Type NS record for the domain that includes the hostname. Consider the edu TLD server when resolving `gaia.cs.umass.edu`. We would expect it to contain both `(umass.edu, dns.umass.edu, NX)` and `(dns.umass.edu, 128.119.40.111, A)`.
+
+#### DNS Messages
+
+Both query and reply messages have the same format:
+- The first 12 bytes is the *header section* that contain various bits of metadata.
+- The *question section* contains the `Name` and `Type` fields of the query.
+- In a reply, the *answer section* contains the resource records for the name that was originally queried. Multiple RRs can be returned in a single query.
+- The **authority section* contains records of other authoritative servers.
+- The *additional section* contains other helpful records. For example, the answer section in an MX request might contain the canonical name of the mail server while this section includes the Type A record containing the IP address.
+
+#### Inserting Records into the DNS Database
+
+A **registrar** is a commercial entity that verifies the uniqueness of the domain name, enters the domain name into the DNS database, and collects a small fee for these services. The Internet Corporation for Assigned Names and Numbers (ICANN) accredits the various registrars. The registrar ensures that a Type NS and a Type A record are added to the TLD servers.
 
 ## 2.5 - Peer-to-Peer File Distribution
 
