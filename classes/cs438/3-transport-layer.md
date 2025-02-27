@@ -58,17 +58,48 @@ UDP at the sender side performs the 1s complement of the sum of all the 16-bit w
 
 ## 3.4 - Principles of Reliable Data Transfer
 
+The layer below TCP is IP, which is unreliable.
+
+The `rdt` protocol is the reliable data transfer protocol.
+
 ### 3.4.1 - Building a Reliable Data Transfer Protocol
 
+#### Reliable Data Transfer over a Perfectly Reliable Channel: `rdt1.0`
 
+The sending side of `rdt1.0` simply accepts data from the upper layer via the `rdt_send(data)` event, creates a packet containing the data using `make_pkt(data)`, and sends the packet into the channel.
+
+On the receiving side, rdt receives the packet from the underlying channel via `rdt_rcv(packet)`, removes the data from the packet via `extract(packet, data)`, and passes the data up to the upper layer via `deliver_data(data)`.
+
+#### Reliable Data Transfer over a Channel with Bit Errors: `rdt2.0`
+
+The protocol uses positive and negative acknowledgements that allow the receiver to let the sender know that the messages were received correctly. Reliable data transfer protocols based on retransmission are known as **Automatic Repeat reQuest (ARQ) protocols**. To achieve this, 3 mechanisms are required:
+- *Error detection*: A mechanism is needed to allow the receiver to detect when bit errors have occurred
+- *Receiver feedback*: Positive (ACK) and negative (NAK) acknowledgement replies are sent from the receiver to the sender.
+- *Retransmission*: A packet that is received in error will be retransmitted by the sender.
+
+The send side of `rdt2.0` has two states:
+1. Waiting for data to be passed down from the upper level. When it is received, a packet is created and sent to the receiver. We then go to state 2.
+2. Waiting for an ACK or NAK from the receiver. If an ACK is received, we return to state 1. If a NAK is received, we retransmit the last packet and stay at state 2.
+
+The receiver side has one state:
+1. On packet arrival, respond with either ACK or NAK.
+
+This protocol has no way of handling corrupted ACK/NAK packets. A simple solution is to add a new field to the data packet and have the sender number its packets with a **sequence number**.
+
+#### Reliable Data Transfer over a Lossy Channel with Bit Errors: `rdt3.0`
+
+- Stop-and-wait, adds retransmission based on timeouts
 
 ### 3.4.2 - Pipelined Reliable Data Transfer Protocols
 
-
+- send multiple packets at a time, increasing throughput
+- makes acknowlegement more complicated, can't have a one-bit sequence number
+- Two basic approaches to handle errors: GBN and SR
 
 ### 3.4.3 - Go-Back-N (GBN)
 
-
+- Constrained to have at most $N$ unacknowledged packets in the pipeline.
+- If error/timeout, resend everything including it and after
 
 ### 3.4.4 - Selective Repeat (SR)
 
