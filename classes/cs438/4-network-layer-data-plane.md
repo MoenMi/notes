@@ -4,7 +4,11 @@
 
 ### 4.1.1 - Forwarding and Routing: The Data and Control Planes
 
+The primary role of the network layer is to move packets from a sending host to a receiving host. This involves two network-layer functions:
+1. **Forwarding** is the router-local action of transferring a packet from an input link interface to the appropriate output link interface. It takes place in nanoseconds and is typically implemented in hardware.
+2. **Routing** is the network-wide process that determines the end-to-end paths that packets take from source to destination.
 
+Every network router has a **forwarding table** which manages the forwarding using lookups.
 
 ### 4.1.2 - Network Service Model
 
