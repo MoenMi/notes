@@ -1,8 +1,0 @@
-repos:
-  - repo: local
-    hooks:
-      - id: strip-execution-count
-        name: Remove execution_count from Jupyter notebooks
-        entry: jq 'walk(if type == "object" and has("execution_count") then del(.execution_count) else . end)'
-        types: [text]
-        files: '\.ipynb$'

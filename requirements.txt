@@ -2,4 +2,3 @@ jupyter-book
 matplotlib
 numpy
 jupytext
-pre-commit

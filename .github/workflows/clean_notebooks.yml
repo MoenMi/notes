@@ -1,0 +1,27 @@
+name: Clean Notebooks
+
+on: [push, pull_request]
+
+jobs:
+  clean-execution-count:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Remove execution_count from notebooks
+        run: |
+          for notebook in $(find . -name "*.ipynb"); do
+            jq 'walk(if type == "object" and has("execution_count") then del(.execution_count) else . end)' "$notebook" > "$notebook.tmp" && mv "$notebook.tmp" "$notebook"
+          done
+
+      - name: Commit changes if necessary
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git add .
+          if ! git diff --cached --exit-code; then
+            git commit -m "Remove execution_count from notebooks"
+            git push
+          fi
