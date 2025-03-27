@@ -203,6 +203,7 @@ parts:
       - file: classes/gy102/chapter-10
       - file: classes/gy102/chapter-12
       - file: classes/gy102/chapter-13
+      - file: classes/gy102/chapter-14
   - caption: OTHER
     chapters:
     - file: classes/other/youtube-to-mp3
