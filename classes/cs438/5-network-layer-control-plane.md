@@ -113,4 +113,8 @@ An access ISP is one that can be reached via the Internet, but is not used for r
 
 ## 5.6 - ICMP: The Internet Control Message Protocol
 
+The **Internet Control Message Protocol (ICMP)** is used by hosts and routers to communicate network-layer information to each other. The most typical use of it is for error reporting, such as notifying a source that a destination IP is unreachable.
 
+ICMP is generally considered as port of IP, but it actually lies just above it (i.e., ICMP messages are carried as part of an IP payload), just like TCP and UDP messages.
+
+Note that Traceroute is implemented in ICMP messages.
