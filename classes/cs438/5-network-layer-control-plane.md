@@ -47,7 +47,21 @@ Here is a quick comparison of some of the attributes:
 
 ## 5.3 - Intra-AS Routing in the Internet: OSPF
 
+What we have looked at so far ignores the scale of the Internet and the administrative autonomy desired by the ISPs. These problems can be solved by organizing routers into **autonomous systems (ASs)**, with each AS consisting of a group of routers that are under the same administrative control. An autonomous system is identified by a unique autonomous system number (ASN), which is assigned by ICANN.
 
+Routers within the same AS run the same routing algorithm and have information about each other. The routing algorithm running within an AS is called an **intra-autonomous system routing protocol**.
+
+#### Open Shortest Path First (OSPF)
+
+OSPF is a link-state protocol that uses flooding of link-state information and a Dijkstra's least-cost path algorithm. With OSPF, each router constructs a complete topological map of the entire AS. Each router then locally runs Dijkstra's algorithm to determine a shortest-path tree to all subnets. The network administrator decides how to configure the link costs.
+
+Under OSPF, a router broadcasts routing information to all other routers in the AS, not just to the neighboring routers. It also broadcasts a link's state periodically, even if it has not changed.
+
+Some of the advances embodied in OSPF include the following:
+- *Security:* Exchanges between OSPF routers can be authenticated
+- *Multiple same-cost paths:* When multiple paths to the same destination have the same cost, OSPF allows multiple paths to be used.
+- *Integrated support for unicast and multicast routing*
+- *Support for hierarchy within a single AS:* An OSPF AS can be configured hierarchically into areas.
 
 ## 5.4 - Routing Among the ISPs: BGP
 
