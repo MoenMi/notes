@@ -99,19 +99,73 @@ First-in-First-out (FIFO), priority queuing, and round robin and weighted fair q
 
 ### 4.3.1 - IPv4 Datagram Format
 
-
+Network-layer packets in the Internet are called datagrams. The key fields of these datagrams in IPv4 include:
+- *Version number:* 4 bits that determine the IP protocol version of the datagram.
+- *Header length:* Gives the starting location of the payload, since the datagram can have a variable number of headers.
+- *Type of service:* These bits allow different types of IPv4 datagrams to be distinguished from each other.
+- *Datagram length:* Total length of the datagram.
+- *Identifier, flags, fragmentation offset:* These fields have to do with IP fragmentation, where a large datagram is broken into several smaller datagrams that are then forwarded independently to their destination.
+- *Time-to-live:* Ensures that datagrams do not circulate forever; it is decremented by one each time it encounters a router and terminated when it reaches zero.
+- *Protocol:* Indicates TCP, UDP, or some other transport-layer protocol.
+- *Header checksum:* Used for detecting bit errors in an IP datagram.
+- *Source and destination IP addresses*
+- *Options:* Meant to be used rarely and not included in IPv6.
+- *Data (payload)*
 
 ### 4.3.2 - IPv4 Addressing
 
+An **interface** is the connection between a host and the network. Each IP address is technically associated with an interface rather than the host or router containing that interface.
 
+A network that connects multiple host interfaces with one router interface can be called a **subnet**. IP addressing assigns an address to a subnet, which may be denoted like the following: 223.1.1.0/24, which indicates that the first 24 bits are the subnet address and the /24, called the **subnet mask**, indicates that the first 24 bits are this subnet address.
+
+The Internet's address assignment strategy is called **Classless Interdomain Routing (CIDR)** and uses the form $a.b.c.d/x$, where the first $x$ bits are often referred to as the **prefix** of the address. Only the $x$ first bits are considered by routers outside the address's network.
+
+Before CIDR, the network portions of an IP address were constrained to 8, 16, or 24 bits in length, in an addressing scheme known as **classful addressing**. This meant that a class C (/24) subnet could only accomodate 254 hosts (2 of the addresses are reserved for special use).
+
+The IP broadcast address 255.255.255.255 delivers a message to all hosts on a subnet.
+
+#### Obtaining a Block of Addresses
+
+An organization can obtain a block of IP addresses from their ISP. ICANN is responsible for providing blocks of IP addresses to the ISPs.
+
+#### Obtaining a Host Address: The Dynamic Host Configuration Protocol
+
+The **Dynamic Host Configuration Protocol (DHCP)** allows a host to be allocated an IP address dynamically. A network administrator can configure DHCP so that a host is given the same IP address each time it connects to a network, or a host can be given a **temporary IP address**.
+
+DHCP is often called a **plug-and-play** or **zeroconf** (zero-configuration) protocol.
+
+DHCP is a client-server protocol, whose client is typically a newly arriving host wanting to obtain network configuration information. In the simplest case, each subnet will have a DHCP server.
+
+For a newly arriving host, the DHCP protocol is a 4-step process:
+- *DHCP server discovery:* A **DHCP discover message**, which a client sends within a UDP packet to port 67, is used to find a DHCP server. This message is send with the destination IP address of 255.255.255.255 and a source IP address of 0.0.0.0.
+- *DHCP server offer(s):* The DHCP server responds with a **DHCP offer message** that is broadcast to all nodes on the subnet using 255.255.255.255.
+- *DHCP request:* The newly arriving client will choose from its server offers and respond to its selected offer with a **DHCP request message**, echoing the configuration parameters.
+- *DHCP ACK:* The server responds to the DHCP request message with a **DHCP ACK message**, confirming the requested parameters.
 
 ### 4.3.3 - Network Address Translation (NAT)
 
+**Network Adress Translation (NAT)** allows a router to behave as a single device with a single IP address to the outside world, while each device on its network has a private address.
 
+Each NAT-enabled router has a **NAT translation table** that can be used to know which internal host to forward a program to, using port numbers to track the internal hosts. When the NAT-enabled router receives an outgoing request, it indexes the destination IP address, destination port, source IP address, and source port. Then, it rewrites the source IP address and port before sending the request out to the destination.
+
+NAT has some issues, such as interfering with servers running on home networks.
 
 ### 4.3.4 - IPv6
 
+The primary motivation for the development of IPv6 was the realization that the number of available IPv4 IP addresses would run low eventually.
 
+#### IPv6 Datagram Format
+
+The most important additions in the IPv6 format are as follows:
+- *Expanded addressing capabilities:* IPv6 increases the size of the IP address from 32 bits to 128 bits. It also introduces **anycast addresses**, which allow a datagram to be delivered by any one of a group of hosts.
+- *A stream-lined 40-byte header:* Smaller headers allow for faster processing by routers.
+- *Flow labeling:* **Flow** is an elusive term without a clear definition.
+
+#### Transitioning from IPv4 to IPv6
+
+IPv6 compatible devices are backwards compatible with IPv4, but IPv4 devices cannot handle IPv6.
+
+The approach that has been taking to handle the IPv4 to IPv6 transition is called **tunneling**, which involves putting an entire IPv6 message as the payload of an IPv4 message in order to get it through IPv4 devices.
 
 ## 4.4 - Generalized Forwarding and SDN
 
