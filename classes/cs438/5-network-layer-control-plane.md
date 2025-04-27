@@ -65,17 +65,39 @@ Some of the advances embodied in OSPF include the following:
 
 ## 5.4 - Routing Among the ISPs: BGP
 
+All ASs in the Internet run the same inter-autonomous system routing protocol, which is known as the **Border Gateway Protocol (BGP)**.
+
 ### 5.4.1 - The Role of BGP
 
+In BGP, packets are not routed to a specific destination address, but to CIDRized prefixes that represent subnets or collections of subnets.
 
+BGP provides each router a means to:
+- *Obtain prefix reachability information from neighboring ASs:* BGP allows each subnet to advertise its existence to the rest of the Internet.
+- *Determine the "best" routes to the prefixes:* A router may learn about multiple different routes to a specific prefix. To determine the best route, the router will locally run a BGP route-selection procedure.
 
 ### 5.4.2 - Advertising BGP Route Information
 
+For each AS, each router is either a **gateway router** or a **internal router**.
 
+A **BGP connection** is a semi-permanent TCP connection over port 179 that routers use to exchange routing information. A BGP connection that spans two ASs is called an **external BGP (eBGP)** connection, and a BGP connection between two routers on the same AS is called an **internal BGP (iBGP)** connection.
+
+Both eBGP and iBGP are used when advertising the existence of a prefix across different ASs.
 
 ### 5.4.3 - Determining the Best Routes
 
+When a router advertises a prefix across a BGP connection, it includes with the prefix several **BGP attributes**. A prefix along with its attributes is called a **route**. Two of the more important attributes are AS-PATH, which contains a list of the ASs through which the advertisement has passed, and NEXT-HOP, which is the IP address of the router interface that begins the AS-PATH. The AS-PATH attribute can be used to identify loops.
 
+#### Hot Potato Routing
+
+Using **hot potato routing**, the route chosen is the one with the least cost to NEXT-HOP. This is a selfish algorithm, since it only considers the cost to the router's own AS.
+
+#### Route-Selection Algorithm
+
+In reality, BGP uses a route selection algorithm more complex than hot potato routing. If there are 2 or more routes to the same prefix, the following elimination rules are used sequentially until one route remains:
+1. A route is assigned a **local preference** value as one of its attributes, and the routes with the highest local preference values are selected.
+2. From the remaining routes, the route with the shortest AS-PATH is selected.
+3. From the remaining routes, hot potato routing is used.
+4. If more than one route remains, the router uses BGP identifiers to select the route.
 
 ### 5.4.4 - IP-Anycast
 
