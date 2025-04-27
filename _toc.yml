@@ -63,6 +63,8 @@ parts:
       - file: classes/cs438/3-transport-layer
       - file: classes/cs438/4-network-layer-data-plane
       - file: classes/cs438/5-network-layer-control-plane
+      - file: classes/cs438/6-link-layer
+      - file: classes/cs438/8-security
     - file: classes/cs470/overview
       sections:
       - file: classes/cs470/1-big-o-notation
