@@ -2,13 +2,19 @@
 
 ## 6.1 - Introduction to the Link Layer
 
+We'll refer to any device that runs a link-layer protocol a **node**, which includes hosts, routers, switches, and WiFi access points. The communication channels that connect nodes are called **links**. Over a given link, a transmitting node encapsulates a datagram in a **link-layer frame** and transmits the frame into the link.
+
 ### 6.1.1 - The Services Provided by the Link Layer
 
-
+Possible services that can be offered by a link-layer protocol include:
+- *Framing:* Almost all link-layer protocols encapsulate each network-layer datagram in a link-layer frame before transmission over the link. A frame consists of a data field and a number of headers.
+- *Link access:* A median access control (MAC) protocol specifies the rules by which a frame is transmitted onto the link.
+- *Reliable delivery:* A link-layer protocol can guarantee to move each network-layer datagram across the link without error.
+- *Error detection and correction:* Hardware can cause bit errors, and these can be identified and corrected here.
 
 ### 6.1.2 - Where Is the Link Layer Implemented?
 
-
+For the most part, the link layer is implemented on a chip called **network adapter**, also sometimes known as a **network interface controller (NIC)**. As such, many of the link-layer services are implemented in hardware.
 
 ## 6.2 - Error-Detection and -Correction Techniques
 
