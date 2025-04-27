@@ -101,15 +101,15 @@ In reality, BGP uses a route selection algorithm more complex than hot potato ro
 
 ### 5.4.4 - IP-Anycast
 
+Consider a CDN that has servers at different places around the world. If a host is accessing this system, it is desirable to only access the nearest server. BGP enables this.
 
+To set this up, the CDN assigns the same IP address to each of the servers, and has each of the servers advertise their location using BGP.
+
+In reality, IP-anycast is not often used by CDNs, because it can result in different packets of the same TCP connection ending up at multiple servers. However, it is used extensively for DNS.
 
 ### 5.4.5 - Routing Policy
 
-
-
-### 5.4.6 - Putting the Pieces Together: Obtaining Internet Presence
-
-
+An access ISP is one that can be reached via the Internet, but is not used for routing (i.e., it is either the source or destination of all of its traffic). A **multi-homed access ISP** can be accessed from multiple provider networks, but has routing policies that prevent it from forwarding traffic between them. It does this by not advertising this connection.
 
 ## 5.6 - ICMP: The Internet Control Message Protocol
 
