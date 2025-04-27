@@ -1,4 +1,4 @@
-# 4 - The Network Layer: Data Plane
+# 4 - Network Layer: Data Plane
 
 ## 4.1 - Overview of Network Layer
 

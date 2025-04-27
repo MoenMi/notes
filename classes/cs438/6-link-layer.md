@@ -1,4 +1,4 @@
-# 6 - The Link Layer and LANs
+# 6 - Link Layer and LANs
 
 ## 6.1 - Introduction to the Link Layer
 

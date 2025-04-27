@@ -1,4 +1,4 @@
-# 5 - The Network Layer: Control Plane
+# 5 - Network Layer: Control Plane
 
 ## 5.1 - Introduction
 
