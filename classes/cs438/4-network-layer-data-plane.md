@@ -166,21 +166,3 @@ The most important additions in the IPv6 format are as follows:
 IPv6 compatible devices are backwards compatible with IPv4, but IPv4 devices cannot handle IPv6.
 
 The approach that has been taking to handle the IPv4 to IPv6 transition is called **tunneling**, which involves putting an entire IPv6 message as the payload of an IPv4 message in order to get it through IPv4 devices.
-
-## 4.4 - Generalized Forwarding and SDN
-
-### 4.4.1 - Match
-
-
-
-### 4.4.2 - Action
-
-
-
-### 4.4.3 - OpenFlow Examples of Match-plus-action in Action
-
-
-
-## 4.5 - Middleboxes
-
-
