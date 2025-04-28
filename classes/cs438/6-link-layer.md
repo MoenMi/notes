@@ -65,15 +65,69 @@ A multiple access protocol for a broadcast channel of rate $R$ bits per second s
 
 ### 6.3.1 - Channel Partitioning Protocols
 
+Time-division multiplexing (TDM) can be used to fairly divide a broadcast channel's bandwidth among all nodes. However, it can be wasteful when there is only one broadcasting node. Frequency-division multiplexing (FDM) shares the same downsides.
 
+A third channel partitioning protocol is **code division multiple access (CDMA)**. CDMA assigns a code to each node, which the node uses to encode the messages it sends. If the codes are chosen carefully, CDMA networks can have different nodes that transmit simultaneously and yet have their respective receivers receive a sender's encoded data bits.
 
 ### 6.3.2 - Random Access Protocols
 
+In a random access protocol, nodes always transmit at the full rate of the channel. When there is a collision, each node involved in the collision repeatedly retransmits its frame until it gets through without collision. The transmitter waits a random delay before retransmitting the frame.
 
+#### Slotted ALOHA
+
+We assume the following:
+- All frames consist of exactly $L$ bits.
+- Time is divided into slots of size $L/R$ seconds (a slot is the time to transmit one frame).
+- Nodes start to transmit frames only at the beginnings of slots.
+- The nodes are synchronized so that each node knows when the slots begin.
+- If two or more frames collide in a slot, then all nodes detect the collision event before the slot ends.
+
+A probability $p$ is selected to determine the chance that a frame is retransmitted in each slot.
+
+Slotted ALOHA allows nodes to transmit at their full rate, is highly decentralized, and is also very simple. However, it does require synchronization of all the nodes.
+
+The **efficiency** of a slotted multiple access protocol is defined to be the long-run fraction of successful slots in the case when there are a large number of active nodes, each always having a large number of frames to send. The maximum efficiency of slotted ALOHA works itself out to be about 37%.
+
+#### ALOHA
+
+The unslotted version of ALOHA does not require synchronization. Instead, the transmitting node will immediately retransmit in the case of a collision, and then retransmits after a frame time with probability $p$.
+
+The efficiency of unslotted ALOHA is half that of slotted ALOHA.
+
+#### Carrier Sense Multiple Access (CSMA)
+
+In both versions of ALOHA, the nodes' decisions to transmit is made independently of other nodes.
+
+The following two rules are considered in the family of **carrier sense multiple access (CSMA)** and **CSMA with collision detection (CSMA/CD)** protocols:
+- **Carrier sensing** is when a node listens to the channel before transmitting, waiting for any current transmissions to stop.
+- **Collision detection** is when a transmitting node listens to the channel while it is transmitting. If it detects that another node is transmitting, it stops and waits a random amount of time before repeating.
+
+**Channel propagation delay** is the time it takes for a signal to propogate from one of the nodes to another. This plays an important role in determining the performance of a broadcast channel.
+
+#### Carrier Sense Multiple Access with Collision Detection (CSMA/CD)
+
+Here is the operation of the CSMA/CD protocol from the perspective of an adapter attached to a broadcast channel:
+1. The adapter obtains a datagram from the network layer, prepares a link-layer frame, and puts the frame adapter buffer.
+2. If the adapter senses that the channel is idle, it starts to transmit the frame. If the channel is busy, it instead waits.
+3. While transmitting, the adapter monitors for the presence of signal energy coming from other adapters.
+4. If the adapter transmits the entire frame, it is finished with the frame. If it detects a collision, it aborts the transmission.
+5. After aborting, the adapter waits a random amount of time and then returns to step 2.
+
+The **binary exponential backoff** algorithm, used in Ethernet and DOCSIS, tells a node has exerienced $n$ collisions to wait somewhere from $\{ 0, 1, 2, \dots, 2^n - 1 \}$.
+
+#### CSMA/CD Efficiency
+
+The efficiency of CSMA/CD is given as follows:
+
+$$ \text{Efficiency} = \frac{1}{1 + 5d_\text{prop}/d_\text{trans}} $$
 
 ### 6.3.3 - Taking-Turns Protocols
 
+The **polling protocol** requires one of the nodes to be designated as the master node. The master node **polls** each of the nodes in a round-robin fashion. It tells each node that it can transmit, and then moves on to the next node when it is done transmitting.
 
+The polling protocol introduces polling delay and has the initial drawback that the master node going down takes the whole systm down. Bluetooth uses the polling protocol.
+
+The **token-passing protocol** has no master node. Instead, a **token** is passed between the nodes in a fixed order. This protocol is decentralized, but the failure of any node can break the system.
 
 ### 6.3.4 - DOCSIS: The Link-Layer Protocol for Cable Internet Access
 
