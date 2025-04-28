@@ -42,6 +42,27 @@ All CRC calculations are done in modulo-2 arithmetic without carries in addition
 
 ## 6.3 - Multiple Access Links and Protocols
 
+There are 2 types of network links:
+1. A **point-to-point link** consists of a single sender at one end of the link and a single receiver at the other end of the link.
+2. A **broadcast link** can have multiple sending and receiving nodes all connected to the same, single, shared broadcast channel.
+
+The issue of coordinating the access of multiple sending and receiving nodes to a shared broadcast channel is called the **multiple access problem**.
+
+Computer networks have protocols called **multiple access protocols** that nodes use to regulate their transmission into the shared broadcast channel.
+
+Because all nodes are capable of transmitting frames, more than two nodes can transmit frames at the same time. When this happens, all of the nodes receive multiple frames at the same time (i.e., the transmitted frames **collide** at all of the receivers). Typically, when there is a collision, all of the colliding frames become tangled and lost.
+
+Multiple access protocols can generally be classified into the following categories:
+1. Channel partitioning protocols
+2. Random access protocols
+3. Taking-turns protocols
+
+A multiple access protocol for a broadcast channel of rate $R$ bits per second should have the following desirable traits:
+1. When only one node has data to send, that node has a throughput of $R$ bps.
+2. When $M$ nodes have data to send, each of these nodes have a throughput of $R/M$ bps.
+3. The protocol is decentralized.
+4. The protocol is simple and inexpensive to implement.
+
 ### 6.3.1 - Channel Partitioning Protocols
 
 
