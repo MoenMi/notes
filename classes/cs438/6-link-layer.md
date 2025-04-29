@@ -129,30 +129,28 @@ The polling protocol introduces polling delay and has the initial drawback that 
 
 The **token-passing protocol** has no master node. Instead, a **token** is passed between the nodes in a fixed order. This protocol is decentralized, but the failure of any node can break the system.
 
-### 6.3.4 - DOCSIS: The Link-Layer Protocol for Cable Internet Access
-
-
-
 ## 6.4 - Switched Local Area Networks
 
 ### 6.4.1 - Link-Layer Addressing and ARP
 
+#### MAC Addresses
 
+The interfaces of hosts and routers have link-layer addresses. Note that switches, which only pass data between routers and hosts, do not have addresses.
 
-### 6.4.2 - Ethernet
+A link-layer address is called a **LAN address**, a **physical address**, or a **MAC address**. For most LANs, the MAC address is 6 bytes long, typically expressed in hexadecimal.
 
+The IEEE manages MAC addresses to ensure that all MAC addresses are unique. Companies purchase blocks of MAC address space for a fee from the IEEE.
 
+When an adapter wants to send a frame to a destination over the link layer, it includes destination adapter's MAC address in the frame. The MAC **broadcast address** is FF-FF-FF-FF-FF-FF.
 
-### 6.4.3 - Link-Layer Switches
+#### Address Resolution Protocol (ARP)
 
+The **Address Resolution Protocol (ARP)** is designed to translate between network-layer addresses and link-layer addresses.
 
+An ARP module takes in an IP address on the same LAN as the input and returns the corresponding MAC address. ARP can only resolve IP addresses for hosts on the same network.
 
-### 6.4.4 - Virtual Local Area Networks (VLANs)
+Each host and router has an **ARP table** in memory, containing mappings of IP addresses to MAC addresses and a time-to-live (TTL) value.
 
+If the desired MAC address is not in the ARP table, the sender uses the ARP protocol to find the MAC address. To do this, the sender constructs an **ARP packet**, containing the sending and receiving IP and MAC addresses.
 
-
-## 6.5 - Link Virtualization: A Network as a Link Layer
-
-### 6.5.1 - Multiprotocol Label Switching (MPLS)
-
-
+Note that the query ARP message is sent within a broadcast frame, while the response is sent in a regular frame.
