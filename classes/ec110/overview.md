@@ -1,17 +1,12 @@
-EC 110: Microeconomics
-%%%%%%%%%%%%%%%%%%%
+# EC 110: Microeconomics
 
-.. sectionauthor:: Michael T. Moen <moenmichael02@gmail.com>
-
-Course Description
-****************
+## Course Description
 
 Introduction to microeconomic analysis concentrating on consumer and producer behavior, competitive and imperfect markets, public policy and regulation, and income distribution.
 
 The course and notes are based on the 10th edition of N. Gregory Mankiw's *Principle's of Microeconomics* through Cengage.
 
-Course Objectives
-****************
+## Course Objectives
 
 - Apply comparative advantage analysis to identify the gains from trade.
 - List the factors that influence Quality Demand, Demand, Quality Supply, and Supply.
