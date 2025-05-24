@@ -3,213 +3,220 @@ root: index
 parts:
   - caption: COMPUTER SCIENCE
     chapters:
-    - file: classes/cs300/overview
-      sections:
-      - file: classes/cs300/ostep-30
-      - file: classes/cs300/zybooks-10_1
-    - file: classes/cs301/overview
-      sections:
-      - file: classes/cs301/18-relational-algebra
-      - file: classes/cs301/24-nosql
-      - file: classes/cs301/25-nosql
-      - file: classes/cs301/26-mongodb
-      - file: classes/cs301/27-mongodb
-      - file: classes/cs301/28-mongodb
-      - file: classes/cs301/29-indexes
-      - file: classes/cs301/37-api
-      - file: classes/cs301/39-api
-    - file: classes/cs403/overview
-      sections:
-      - file: classes/cs403/1-intro
-      - file: classes/cs403/2-intro
-      - file: classes/cs403/3-syntax
-      - file: classes/cs403/4-semantics
-      - file: classes/cs403/5-parser
-      - file: classes/cs403/6-variables
-      - file: classes/cs403/7-types
-      - file: classes/cs403/8-types
-      - file: classes/cs403/9-assign
-      - file: classes/cs403/10-selection
-      - file: classes/cs403/11-loop
-      - file: classes/cs403/12-subprogram
-      - file: classes/cs403/13-subprogram
-      - file: classes/cs403/14-implementation
-      - file: classes/cs403/16-implementation
-      - file: classes/cs403/18-adt
-      - file: classes/cs403/19-adt
-      - file: classes/cs403/20-oop
-      - file: classes/cs403/21-oop
-      - file: classes/cs403/22-smalltalk
-      - file: classes/cs403/23-smalltalk
-      - file: classes/cs403/24-smalltalk
-      - file: classes/cs403/25-smalltalk
-      - file: classes/cs403/26-functional
-      - file: classes/cs403/27-functional
-      - file: classes/cs403/29-functional
-      - file: classes/cs403/30-functional
-      - file: classes/cs403/32-functional
-      - file: classes/cs403/33-functional
-      - file: classes/cs403/34-logical
-      - file: classes/cs403/35-logical
-      - file: classes/cs403/36-logical
-      - file: classes/cs403/37-concurrency
-      - file: classes/cs403/38-concurrency
-      - file: classes/cs403/39-exception-handling
-      - file: classes/cs403/copl-3
-    - file: classes/cs438/overview
-      sections:
-      - file: classes/cs438/1-intro
-      - file: classes/cs438/2-application-layer
-      - file: classes/cs438/3-transport-layer
-      - file: classes/cs438/4-network-layer-data-plane
-      - file: classes/cs438/5-network-layer-control-plane
-      - file: classes/cs438/6-link-layer
-    - file: classes/cs470/overview
-      sections:
-      - file: classes/cs470/1-big-o-notation
-      - file: classes/cs470/2-divide-and-conquer
-      - file: classes/cs470/3-computational-geometry
-      - file: classes/cs470/4-dynamic-programming
-      - file: classes/cs470/5-graph-algorithms
-      - file: classes/cs470/6-np-completeness
-    - file: classes/cs491/overview
-      sections:
-      - file: classes/cs491/ros-tutorials
-      - file: classes/cs491/xbox-controller-setup
+      - file: classes/cs300/overview
+        sections:
+          - file: classes/cs300/ostep-30
+          - file: classes/cs300/zybooks-10_1
+      - file: classes/cs301/overview
+        sections:
+          - file: classes/cs301/18-relational-algebra
+          - file: classes/cs301/24-nosql
+          - file: classes/cs301/25-nosql
+          - file: classes/cs301/26-mongodb
+          - file: classes/cs301/27-mongodb
+          - file: classes/cs301/28-mongodb
+          - file: classes/cs301/29-indexes
+          - file: classes/cs301/37-api
+          - file: classes/cs301/39-api
+      - file: classes/cs403/overview
+        sections:
+          - file: classes/cs403/1-intro
+          - file: classes/cs403/2-intro
+          - file: classes/cs403/3-syntax
+          - file: classes/cs403/4-semantics
+          - file: classes/cs403/5-parser
+          - file: classes/cs403/6-variables
+          - file: classes/cs403/7-types
+          - file: classes/cs403/8-types
+          - file: classes/cs403/9-assign
+          - file: classes/cs403/10-selection
+          - file: classes/cs403/11-loop
+          - file: classes/cs403/12-subprogram
+          - file: classes/cs403/13-subprogram
+          - file: classes/cs403/14-implementation
+          - file: classes/cs403/16-implementation
+          - file: classes/cs403/18-adt
+          - file: classes/cs403/19-adt
+          - file: classes/cs403/20-oop
+          - file: classes/cs403/21-oop
+          - file: classes/cs403/22-smalltalk
+          - file: classes/cs403/23-smalltalk
+          - file: classes/cs403/24-smalltalk
+          - file: classes/cs403/25-smalltalk
+          - file: classes/cs403/26-functional
+          - file: classes/cs403/27-functional
+          - file: classes/cs403/29-functional
+          - file: classes/cs403/30-functional
+          - file: classes/cs403/32-functional
+          - file: classes/cs403/33-functional
+          - file: classes/cs403/34-logical
+          - file: classes/cs403/35-logical
+          - file: classes/cs403/36-logical
+          - file: classes/cs403/37-concurrency
+          - file: classes/cs403/38-concurrency
+          - file: classes/cs403/39-exception-handling
+          - file: classes/cs403/copl-3
+      - file: classes/cs438/overview
+        sections:
+          - file: classes/cs438/1-intro
+          - file: classes/cs438/2-application-layer
+          - file: classes/cs438/3-transport-layer
+          - file: classes/cs438/4-network-layer-data-plane
+          - file: classes/cs438/5-network-layer-control-plane
+          - file: classes/cs438/6-link-layer
+      - file: classes/cs470/overview
+        sections:
+          - file: classes/cs470/1-big-o-notation
+          - file: classes/cs470/2-divide-and-conquer
+          - file: classes/cs470/3-computational-geometry
+          - file: classes/cs470/4-dynamic-programming
+          - file: classes/cs470/5-graph-algorithms
+          - file: classes/cs470/6-np-completeness
+      - file: classes/cs483/overview
+        sections:
+          - file: classes/cs483/1-intro
+          - file: classes/cs483/2-probability-univariate-models
+          - file: classes/cs483/3-probability-multivariate-models
+          - file: classes/cs483/4-statistics
+          - file: classes/cs483/13-neural-networks-tabular
+      - file: classes/cs491/overview
+        sections:
+          - file: classes/cs491/ros-tutorials
+          - file: classes/cs491/xbox-controller-setup
   - caption: MATHEMATICS
     chapters:
-  #   - file: classes/math311/overview
-  #     sections:
-  #     - file: classes/math311/1-class
-  #     - file: classes/math311/2-class
-  #     - file: classes/math311/3-class
-  #     - file: classes/math311/4-class
-  #     - file: classes/math311/5-class
-  #     - file: classes/math311/6-class
-  #     - file: classes/math311/7-class
-  #     - file: classes/math311/8-class
-  #     - file: classes/math311/9-class
-  #     - file: classes/math311/10-class
-  #     - file: classes/math311/11-class
-  #     - file: classes/math311/12-class
-  #     - file: classes/math311/13-class
-  #     - file: classes/math311/14-class
-  #     - file: classes/math311/15-class
-  #     - file: classes/math311/16-class
-  #     - file: classes/math311/17-class
-  #     - file: classes/math311/18-class
-  #     - file: classes/math311/final-review
-  #     - file: classes/math311/hw1
-  #     - file: classes/math311/hw2
-  #     - file: classes/math311/hw3
-  #     - file: classes/math311/hw4
-  #     - file: classes/math311/hw5
-  #     - file: classes/math311/hw6
-  #     - file: classes/math311/hw7
-  #     - file: classes/math311/hw8
-  #     - file: classes/math311/hw9
-    - file: classes/math457/overview
-      sections:
-      - file: classes/math457/1-intro
-      - file: classes/math457/2-review
-      - file: classes/math457/3-markov-chains
-      - file: classes/math457/4-qualitative-behavior
-      - file: classes/math457/5-probabilistic-qualitative
-      - file: classes/math457/6-long-term-behavior
+      #   - file: classes/math311/overview
+      #     sections:
+      #     - file: classes/math311/1-class
+      #     - file: classes/math311/2-class
+      #     - file: classes/math311/3-class
+      #     - file: classes/math311/4-class
+      #     - file: classes/math311/5-class
+      #     - file: classes/math311/6-class
+      #     - file: classes/math311/7-class
+      #     - file: classes/math311/8-class
+      #     - file: classes/math311/9-class
+      #     - file: classes/math311/10-class
+      #     - file: classes/math311/11-class
+      #     - file: classes/math311/12-class
+      #     - file: classes/math311/13-class
+      #     - file: classes/math311/14-class
+      #     - file: classes/math311/15-class
+      #     - file: classes/math311/16-class
+      #     - file: classes/math311/17-class
+      #     - file: classes/math311/18-class
+      #     - file: classes/math311/final-review
+      #     - file: classes/math311/hw1
+      #     - file: classes/math311/hw2
+      #     - file: classes/math311/hw3
+      #     - file: classes/math311/hw4
+      #     - file: classes/math311/hw5
+      #     - file: classes/math311/hw6
+      #     - file: classes/math311/hw7
+      #     - file: classes/math311/hw8
+      #     - file: classes/math311/hw9
+      - file: classes/math457/overview
+        sections:
+          - file: classes/math457/1-intro
+          - file: classes/math457/2-review
+          - file: classes/math457/3-markov-chains
+          - file: classes/math457/4-qualitative-behavior
+          - file: classes/math457/5-probabilistic-qualitative
+          - file: classes/math457/6-long-term-behavior
   - caption: APPLIED STATISTICS
     chapters:
-    - file: classes/st531/overview
-      sections:
-      - file: classes/st531/ml1-intro
-      - file: classes/st531/ml2-data-preprocessing
-      - file: classes/st531/ml3-decisions-trees
-      - file: classes/st531/ml4-neural-networks
-      - file: classes/st531/ml6-assessment-deployment
-    # - file: classes/st545/overview
-    #   sections:
-    #   - file: classes/st545/1-intro
-    #   - file: classes/st545/2-statistical-learning
-    #   - file: classes/st545/3-linear-regression
-    - file: classes/st552/overview
-      sections:
-      - file: classes/st552/1-intro
-      - file: classes/st552/2-slr
-      - file: classes/st552/3-mlr
-      - file: classes/st552/tb1-intro
-      - file: classes/st552/tb2-slr
-      - file: classes/st552/tb6-diagnostics-mlr
-      - file: classes/st552/tb7-variable-selection
-      - file: classes/st552/tb8-logistic-regression
-    - file: classes/st553/overview
-      sections:
-      - file: classes/st553/0-matrix-algebra-primer
-      - file: classes/st553/1-sample-geometry-and-random-sampling
-      - file: classes/st553/2-multivariate-normal-distribution
-    - file: classes/st554/overview
-      sections:
-      - file: classes/st554/discrete-uniform-distributions
-      - file: classes/st554/hypergeometric-distribution
-      - file: classes/st554/bernoulli-distribution
-      - file: classes/st554/binomial-distribution
-      - file: classes/st554/geometric-distribution
-      - file: classes/st554/negative-binomial-distribution
-      - file: classes/st554/poisson-distribution
-      - file: classes/st554/continuous-uniform-distribution
-      - file: classes/st554/gamma-distribution
-      - file: classes/st554/exponential-distribution
-      - file: classes/st554/chi-squared-distribution
-      - file: classes/st554/beta-distribution
-      - file: classes/st554/normal-distribution
-      - file: classes/st554/joint-distributions
-      - file: classes/st554/covariance-and-correlation
-      - file: classes/st554/formulas
-      - file: classes/st554/homework-problems
-    - file: classes/st555/overview
-      sections:
-      - file: classes/st555/multivariate-distributions
-      - file: classes/st555/homework-1
-    - file: classes/st560/overview
-      sections:
-      - file: classes/st560/mindtap-8
-      - file: classes/st560/mindtap-9
-      - file: classes/st560/mindtap-10
-      - file: classes/st560/mindtap-11
-      - file: classes/st560/mindtap-13
-      - file: classes/st560/mindtap-14
+      - file: classes/st531/overview
+        sections:
+          - file: classes/st531/ml1-intro
+          - file: classes/st531/ml2-data-preprocessing
+          - file: classes/st531/ml3-decisions-trees
+          - file: classes/st531/ml4-neural-networks
+          - file: classes/st531/ml6-assessment-deployment
+      # - file: classes/st545/overview
+      #   sections:
+      #   - file: classes/st545/1-intro
+      #   - file: classes/st545/2-statistical-learning
+      #   - file: classes/st545/3-linear-regression
+      - file: classes/st552/overview
+        sections:
+          - file: classes/st552/1-intro
+          - file: classes/st552/2-slr
+          - file: classes/st552/3-mlr
+          - file: classes/st552/tb1-intro
+          - file: classes/st552/tb2-slr
+          - file: classes/st552/tb6-diagnostics-mlr
+          - file: classes/st552/tb7-variable-selection
+          - file: classes/st552/tb8-logistic-regression
+      - file: classes/st553/overview
+        sections:
+          - file: classes/st553/0-matrix-algebra-primer
+          - file: classes/st553/1-sample-geometry-and-random-sampling
+          - file: classes/st553/2-multivariate-normal-distribution
+      - file: classes/st554/overview
+        sections:
+          - file: classes/st554/discrete-uniform-distributions
+          - file: classes/st554/hypergeometric-distribution
+          - file: classes/st554/bernoulli-distribution
+          - file: classes/st554/binomial-distribution
+          - file: classes/st554/geometric-distribution
+          - file: classes/st554/negative-binomial-distribution
+          - file: classes/st554/poisson-distribution
+          - file: classes/st554/continuous-uniform-distribution
+          - file: classes/st554/gamma-distribution
+          - file: classes/st554/exponential-distribution
+          - file: classes/st554/chi-squared-distribution
+          - file: classes/st554/beta-distribution
+          - file: classes/st554/normal-distribution
+          - file: classes/st554/joint-distributions
+          - file: classes/st554/covariance-and-correlation
+          - file: classes/st554/formulas
+          - file: classes/st554/homework-problems
+      - file: classes/st555/overview
+        sections:
+          - file: classes/st555/multivariate-distributions
+          - file: classes/st555/homework-1
+      - file: classes/st560/overview
+        sections:
+          - file: classes/st560/mindtap-8
+          - file: classes/st560/mindtap-9
+          - file: classes/st560/mindtap-10
+          - file: classes/st560/mindtap-11
+          - file: classes/st560/mindtap-13
+          - file: classes/st560/mindtap-14
   - caption: GENERAL
     chapters:
-    - file: classes/ec110/overview
-      sections:
-      - file: classes/ec110/chapter-1
-      - file: classes/ec110/chapter-3
-      - file: classes/ec110/chapter-4
-      - file: classes/ec110/chapter-5
-      - file: classes/ec110/chapter-6
-      - file: classes/ec110/chapter-7
-      - file: classes/ec110/chapter-8
-      - file: classes/ec110/chapter-9
-      - file: classes/ec110/chapter-10
-      - file: classes/ec110/chapter-14
-      - file: classes/ec110/chapter-15
-      - file: classes/ec110/chapter-16
-      - file: classes/ec110/chapter-17
-    - file: classes/gy101/overview
-      sections:
-      - file: classes/gy101/chapter-1
-      - file: classes/gy101/chapter-2
-      - file: classes/gy101/chapter-3
-      - file: classes/gy101/chapter-4
-    - file: classes/gy102/overview
-      sections:
-      - file: classes/gy102/chapter-8
-      - file: classes/gy102/chapter-9
-      - file: classes/gy102/chapter-10
-      - file: classes/gy102/chapter-12
-      - file: classes/gy102/chapter-13
-      - file: classes/gy102/chapter-14
-      - file: classes/gy102/chapter-16
-      - file: classes/gy102/chapter-17
-      - file: classes/gy102/chapter-18
+      - file: classes/ec110/overview
+        sections:
+          - file: classes/ec110/chapter-1
+          - file: classes/ec110/chapter-3
+          - file: classes/ec110/chapter-4
+          - file: classes/ec110/chapter-5
+          - file: classes/ec110/chapter-6
+          - file: classes/ec110/chapter-7
+          - file: classes/ec110/chapter-8
+          - file: classes/ec110/chapter-9
+          - file: classes/ec110/chapter-10
+          - file: classes/ec110/chapter-14
+          - file: classes/ec110/chapter-15
+          - file: classes/ec110/chapter-16
+          - file: classes/ec110/chapter-17
+      - file: classes/gy101/overview
+        sections:
+          - file: classes/gy101/chapter-1
+          - file: classes/gy101/chapter-2
+          - file: classes/gy101/chapter-3
+          - file: classes/gy101/chapter-4
+      - file: classes/gy102/overview
+        sections:
+          - file: classes/gy102/chapter-8
+          - file: classes/gy102/chapter-9
+          - file: classes/gy102/chapter-10
+          - file: classes/gy102/chapter-12
+          - file: classes/gy102/chapter-13
+          - file: classes/gy102/chapter-14
+          - file: classes/gy102/chapter-16
+          - file: classes/gy102/chapter-17
+          - file: classes/gy102/chapter-18
   - caption: OTHER
     chapters:
-    - file: classes/other/youtube-to-mp3
+      - file: classes/other/youtube-to-mp3
