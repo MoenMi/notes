@@ -1,4 +1,4 @@
-# 13 - Neural Networks and Tabular Data
+# 13 - Neural Networks for Tabular Data
 
 ## 13.1 - Introduction
 

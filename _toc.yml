@@ -79,6 +79,7 @@ parts:
           - file: classes/cs483/3-probability-multivariate-models
           - file: classes/cs483/4-statistics
           - file: classes/cs483/13-neural-networks-tabular
+          - file: classes/cs483/16-exemplar-based-methods
       - file: classes/cs491/overview
         sections:
           - file: classes/cs491/ros-tutorials
