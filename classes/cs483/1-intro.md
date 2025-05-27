@@ -130,10 +130,12 @@ The **no free lunch theorem** describes that there is no one general model that 
 
 ### 1.6.1 - The relationship between ML and other fields
 
+The field of **predictive analytics** is similar to supervised learning, but focuses more on business applications. **Data mining** covers both supervised and unsupervised machine learning, but focuses more on structured data. **Data science** uses techniques from machine learning and statistics, but also focuses on other topics.
 
-
-### 1.6.2 - Structure of this book
-
-
+Machine learning is related to the field of **artificial intelligence (AI)**, as it is the way that AI systems often obtain knowledge.
 
 ### 1.6.3 - Caveats
+
+It is hard to design a loss function that correctly specifies our preferences, resulting in **reward hacking**, where the machine optimizes the reward function we give it. This is part of the larger **alignment problem** , which is the potential discrepancy between what we ask our algorithms to optimize and what we actually want them to do.
+
+The two main views of AI are as **artificial general intelligence (AGI)**, which makes decisions on its own without a human in the loop, and **augmented intelligence (IA)**, which views AI as a process for creating smart tools.
