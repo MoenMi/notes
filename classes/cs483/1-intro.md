@@ -108,11 +108,23 @@ The **no free lunch theorem** describes that there is no one general model that 
 
 ### 1.5.1 - Some common image datasets
 
+The following are some common small image datasets:
+- **MNIST** is a dataset of 60k training images and 10k test images, each of size 28 x 28 (grayscale), illustrating handwritten digits.
+- **EMNIST** (extended MNIST) is MNIST, but but with lower and upper case letters as well.
+- **Fashion-MNIST** has the same size as MNIST, but each picture represents an article of clothing.
+- **CIFAR** is a dataset of 60k images, each of size 32 x 32 x 3, representing everyday objects from 10 or 100 classes.
 
+**ImageNet** is a dataset of about 14 million images of size 256 x 256 x 3 illustrating images from 20000 different classes.
 
 ### 1.5.2 - Some common text datasets
 
+When machine learning is applied to text to solve tasks, it is known as **natural language processing (NLP)**.
 
+A simple NLP task is text classification, which can be used for spam classification, sentiment analysis, and much more. A common dataset for evaluating such methods is the **IMDB movie review dataset**.
+
+A more difficult NLP task is map a sentence $\boldsymbol{x}$ in one language to a semantically equivalent sentence $\boldsymbol{y}$ in another language, which is called **machine translation**.
+
+A **seq2seq model** is a mapping of one sequence $\boldsymbol{x}$ to another sequence $\boldsymbol{y}$. This can include document summarization, question summarization, and more.
 
 ### 1.5.3 - Preprocessing discrete input data
 
