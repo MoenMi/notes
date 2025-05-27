@@ -102,7 +102,7 @@ The **no free lunch theorem** describes that there is no one general model that 
 
 ## 1.4 - Reinforcement learning
 
-
+**Reinforcement learning (RL)** is a third type of ML that in which the agent has to learn how to interact with its environment. It differs from supervised learning in that the system does not receive a response for each input, but rather an intermittent reward/punishment.
 
 ## 1.5 - Data
 
