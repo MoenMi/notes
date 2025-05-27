@@ -128,9 +128,37 @@ A **seq2seq model** is a mapping of one sequence $\boldsymbol{x}$ to another seq
 
 ### 1.5.3 - Preprocessing discrete input data
 
+When we have categorical features, we need to convert them to a numerical scale so that computing weighted combinations of inputs makes sense. The standard way to preprocess such categorical variables is to use a **one-hot encoding** (or a **dummy encoding**). If a variable $x$ has $K$ values, we denote its dummy encoding as follows: $\text{one-hot}(x) = [\mathbb{I}(x = 1), \dots, \mathbb{I}(x = K)]$.
 
+A linear model using dummy encoding for each categorical variable can capture the main effects, but not the interaction effects between them. We can fix this by computing **feature crosses**, which contain each combination of multiple categories. Note that the use of feature crosses converts the dataset into a wide format with many more columns.
 
 ### 1.5.4 - Preprocessing text data
+
+Words that were not encountered in the training data are called **out-of-vocabulary (OOV)** words.
+
+#### Bag of words model
+
+On approach to parsing variable-length text documents is to interpret them as a **bag of words**, in which we ignore word order. To convert this to a vector, we first map each word to a token from some vocabulary.
+
+To reduce the number of tokens, we often use various preprocessing techniques, such as dropping punctuation, converting everything to lower case, dropping common but uninformative words (called **stop word removal**), and replacing words with their base form (called **word stemming**).
+
+Let $x_{nt}$ be the token at location $t$ in the $n$th document. If there are $D$ unique tokens in the vocabulary We can represent the $n$th document as a $D$-dimensional vector $\boldsymbol{x}_n$, where $\boldsymbol{x}_{nv}$ is the number of times that word $v$ occurs in document $n$:
+
+$$ \boldsymbol{x}_{nv} = \sum^T_{t=1} \mathbb{I}(x_{nt} = v) $$
+
+where $T$ is the length of document $n$. This is called the **vector space model** of text.
+
+We typically store input data in an $N \times D$ matrix denoted by $\textbf{X}$, where $D$ is the number of features. In the context of vector space models, it is more common to represent the input data as a $D \times N$ **term frequency matrix**, where $\text{TF}_{ij}$ is the frequenct of term $i$ in document $j$.
+
+#### TF-IDF
+
+
+
+#### Word embeddings
+
+
+
+#### Dealing with novel words
 
 
 
@@ -140,13 +168,9 @@ A **seq2seq model** is a mapping of one sequence $\boldsymbol{x}$ to another seq
 
 ## 1.6 - Discussion
 
-### 1.6.1 - The relationship between ML and other fields
-
 The field of **predictive analytics** is similar to supervised learning, but focuses more on business applications. **Data mining** covers both supervised and unsupervised machine learning, but focuses more on structured data. **Data science** uses techniques from machine learning and statistics, but also focuses on other topics.
 
 Machine learning is related to the field of **artificial intelligence (AI)**, as it is the way that AI systems often obtain knowledge.
-
-### 1.6.3 - Caveats
 
 It is hard to design a loss function that correctly specifies our preferences, resulting in **reward hacking**, where the machine optimizes the reward function we give it. This is part of the larger **alignment problem** , which is the potential discrepancy between what we ask our algorithms to optimize and what we actually want them to do.
 
