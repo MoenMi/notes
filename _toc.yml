@@ -220,4 +220,7 @@ parts:
           - file: classes/gy102/chapter-18
   - caption: OTHER
     chapters:
+      - file: other/fastapi/0-intro
+        section:
+          - file: other/1-first-steps
       - file: classes/other/youtube-to-mp3
