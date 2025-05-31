@@ -152,11 +152,13 @@ We typically store input data in an $N \times D$ matrix denoted by $\textbf{X}$,
 
 #### TF-IDF
 
+To reduce the impact of words that appear many times in general, we compute a quantity called the **inverse document frequency**, defined as $\text{IDF}_i \triangleq \log\frac{N}{1 + \text{DF}_i}$, where $\text{DF}_i$ is the number of documents with term $i$. We can combine these transformations to compute the **TF-IDF** matrix as follows:
 
+$$ \text{TFIDF}_{ij} = \log(\text{TF}_{ij} + 1) \times \text{IDF}_i $$
 
 #### Word embeddings
 
-
+**Word embeddings** map each sparse one-hot vector, $\boldsymbol{x}_{nt} \in \{0, 1\}^V$, to a lower-dimensional dense vector, $\boldsymbol{e}_{nt} \in \mathbb{R}^K$ using $\boldsymbol{e}_{nt} = \textbf{E} \boldsymbol{x}_{nt}$, where $\textbf{E} \in \mathbb{R}^{K \times V}$ is learned such that 
 
 #### Dealing with novel words
 
