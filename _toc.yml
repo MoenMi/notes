@@ -222,5 +222,5 @@ parts:
     chapters:
       - file: other/fastapi/0-intro
         sections:
-          - file: other/1-first-steps
+          - file: other/fastapi/1-first-steps
       - file: classes/other/youtube-to-mp3
