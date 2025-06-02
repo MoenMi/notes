@@ -72,6 +72,36 @@ This can be minimized to compute the **maximum likelihood estimate (MLE)**.
 
 ### 1.2.2 - Regression
 
+If we want to predict a real-valued quantity $y \in \mathbb{R}$ instead of a class label $y \in \{ 1, \dots, C \}$, this is known as **regression**.
+
+Regression is very similar to classification, but we need to use a different loss function. The most common choice is to use quadratic loss:
+
+$$ \ell_2(y, \hat{y}) = (y - \hat{y})^2 $$
+
+The empirical risk when using quadratic loss is equal to the **mean squared error (MSE)**:
+
+$$ \text{MSE}(\boldsymbol{\theta}) = \frac{1}{N} \sum^N_{n=1} (y_n - f(\boldsymbol{x}_n; \boldsymbol{\theta}))^2 $$
+
+In regression problems, we typically assume that the output distribution is normal.
+
+#### Linear Regression
+
+A **simple linear regression (SLR)** model model takes the following form:
+
+$$ f(x; \boldsymbol{\theta}) = \beta_0 + \beta_1 x $$
+
+We can adjust $\beta_0$ and $\beta_1$ to find the values that minimize the squared errors.
+
+If we have multiple input features, we can use a **multiple linear regression (MLR)** model:
+
+$$ f(x; \boldsymbol{\theta}) = \beta_0 + \beta_1 x_1 + \dots + \beta_n x_n $$
+
+#### Polynomial Regression
+
+
+
+#### Deep Neural Networks
+
 
 
 ### 1.2.3 - Overfitting and generalization
