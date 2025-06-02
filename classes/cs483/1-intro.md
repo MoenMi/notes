@@ -158,11 +158,19 @@ $$ \text{TFIDF}_{ij} = \log(\text{TF}_{ij} + 1) \times \text{IDF}_i $$
 
 #### Word embeddings
 
-**Word embeddings** map each sparse one-hot vector, $\boldsymbol{x}_{nt} \in \{0, 1\}^V$, to a lower-dimensional dense vector, $\boldsymbol{e}_{nt} \in \mathbb{R}^K$ using $\boldsymbol{e}_{nt} = \textbf{E} \boldsymbol{x}_{nt}$, where $\textbf{E} \in \mathbb{R}^{K \times V}$ is learned such that 
+**Word embeddings** map each sparse one-hot vector, $\boldsymbol{x}_{nt} \in \{0, 1\}^V$, to a lower-dimensional dense vector, $\boldsymbol{e}_{nt} \in \mathbb{R}^K$ using $\boldsymbol{e}_{nt} = \textbf{E} \boldsymbol{x}_{nt}$, where $\textbf{E} \in \mathbb{R}^{K \times V}$ is learned such that semantically similar words are placed close by. Once we have an embedding matrix, we can represent a variable-length text document as a **bag of word embeddings**. We can then convert this to a fixed length vector by summing the embeddings
+
+$$ \bar{\boldsymbol{e}}_n = \sum^T_{t=1} \boldsymbol{e}_{nt} = \textbf{E} \tilde{\boldsymbol{x}}_n $$
+
+where $\tilde{\boldsymbol{x}}_n$ is the bag of words representation. We can use this inside of a logistic regression classifier. The overall model has the form
+
+$$ p(y = c | \boldsymbol{x}_n, \boldsymbol{\theta}) = \text{softmax}_c(\textbf{WE} \tilde{\boldsymbol{x}}_n) $$
+
+We often use a **pre-trained word embedding** matrix $\textbf{E}$, in which case the model is linear in $\textbf{W}$, which simplifies parameter estimation.
 
 #### Dealing with novel words
 
-
+If the model encounters a novel word at test time, it is known as **out of vocabulary (OOV)**. A standard heuristic to solve this problem is to replace all novel words with the special symbol **UNK**. This loses information, since we may be able to deduce info from suffixes/root words. To address this, we can break the words down into their substructure, and then take **subword units** or **wordpieces**. These are often created using a method called **byte-pair encoding**, which is a form of data compression that creates new symbols to represent common substrings.
 
 ### 1.5.5 - Handling missing data
 
