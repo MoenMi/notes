@@ -227,7 +227,13 @@ parts:
           - file: other/fastapi/2-request-body
           - file: other/fastapi/3-query-parameters-and-string-validation
           - file: other/fastapi/4-path-parameters-and-numeric-validations
+          - file: other/fastapi/5-query-parameter-models
+          - file: other/fastapi/6-body-multiple-parameters
+          - file: other/fastapi/7-body-fields
+          - file: other/fastapi/9-declare-request-example-data
       - file: other/pytest/overview
         sections:
           - file: other/pytest/1-get-started
+          - file: other/pytest/2-invoking-pytest
+          - file: other/pytest/3-assertions
       - file: classes/other/youtube-to-mp3
