@@ -231,6 +231,10 @@ parts:
           - file: other/fastapi/6-body-multiple-parameters
           - file: other/fastapi/7-body-fields
           - file: other/fastapi/9-declare-request-example-data
+          - file: other/fastapi/10-extra-data-types
+          - file: other/fastapi/11-cookie-parameters
+          - file: other/fastapi/12-header-parameters
+          - file: other/fastapi/15-response-model-return-type
       - file: other/pytest/overview
         sections:
           - file: other/pytest/1-get-started

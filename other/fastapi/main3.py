@@ -1,5 +1,5 @@
-from typing import Annotated, Literal
-from fastapi import FastAPI, Query, Path, Body
+from typing import Annotated, Literal, Any
+from fastapi import FastAPI, Query, Path, Body, Header
 import random
 from pydantic import AfterValidator, BaseModel, Field
 
@@ -173,3 +173,49 @@ class Item3(BaseModel):
 async def update_item(item_id: int, item: Item3):
     results = {"item_id": item_id, "item": item}
     return results
+
+@app.get("/items13/")
+async def read_items(user_agent: Annotated[str | None, Header()] = None):
+    return {"User-Agent": user_agent}
+
+class Item14(BaseModel):
+    name: str
+    description: str | None = None
+    price: float
+    tax: float | None = None
+    tags: list[str] = []
+
+@app.post("/items14/")
+async def create_item(item: Item14) -> Item14:
+    return item
+
+@app.get("/items14/")
+async def read_items() -> list[Item14]:
+    return [
+        Item14(name="Portal Gun", price=42.0),
+        Item14(name="Plumbus", price=32.0),
+    ]
+
+@app.post("/items15/", response_model=Item14)
+async def create_item(item: Item14) -> Any:
+    return item
+
+@app.get("/items15/", response_model=list[Item14])
+async def read_items() -> Any:
+    return [
+        {"name": "Portal Gun", "price": 42.0},
+        {"name": "Plumbus", "price": 32.0},
+    ]
+
+class UserIn(BaseModel):
+    username: str
+    password: str
+    full_name: str | None = None
+
+class UserOut(BaseModel):
+    username: str
+    full_name: str | None = None
+
+@app.post("/user/", response_model=UserOut)
+async def create_user(user: UserIn) -> Any:
+    return user
