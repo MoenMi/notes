@@ -221,8 +221,9 @@ parts:
           - file: classes/gy102/chapter-18
   - caption: OTHER
     chapters:
-      - file: other/fastapi/0-intro
+      - file: other/fastapi/overview
         sections:
+          - file: other/fastapi/0-intro
           - file: other/fastapi/1-first-steps
           - file: other/fastapi/2-request-body
           - file: other/fastapi/3-query-parameters-and-string-validation
