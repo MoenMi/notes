@@ -221,6 +221,7 @@ parts:
           - file: classes/gy102/chapter-18
   - caption: OTHER
     chapters:
+      - file: other/docker/overview
       - file: other/fastapi/overview
         sections:
           - file: other/fastapi/0-intro
