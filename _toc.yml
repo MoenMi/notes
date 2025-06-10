@@ -242,4 +242,5 @@ parts:
           - file: other/pytest/1-get-started
           - file: other/pytest/2-invoking-pytest
           - file: other/pytest/3-assertions
+      - file: other/sqlalchemy/overview
       - file: classes/other/youtube-to-mp3
