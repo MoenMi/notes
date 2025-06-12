@@ -221,6 +221,9 @@ parts:
           - file: classes/gy102/chapter-18
   - caption: OTHER
     chapters:
+      - file: other/designing-ml-systems/overview
+        sections:
+          - file: other/designing-ml-systems/1-overview
       - file: other/docker/overview
       - file: other/fastapi/overview
         sections:
