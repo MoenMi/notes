@@ -224,6 +224,7 @@ parts:
       - file: other/designing-ml-systems/overview
         sections:
           - file: other/designing-ml-systems/1-overview
+          - file: other/designing-ml-systems/2-intro-design
       - file: other/docker/overview
       - file: other/fastapi/overview
         sections:
