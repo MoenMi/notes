@@ -114,13 +114,15 @@ The **no free lunch theorem** describes that there is no one general model that 
 
 ## 1.3 - Unsupervised learning
 
+**Unsupervised learning** has no output targets and seeks to make sense of data.
+
 ### 1.3.1 - Clustering
 
-
+The goal of clustering is to partition the inputs into regions that contain similar points. Note that the number of clusters is determined by balancing model complexity and fit to the data.
 
 ### 1.3.2 - Discovering latent "factors of variation"
 
-
+When dealing with high-dimensional data, it is often useful to reduce the dimensionality by projecting it to a lower dimensional subspace that captures the essence of the data.
 
 ### 1.3.3 - Self-supervised learning
 
