@@ -1,0 +1,13 @@
+# Set default behavior to automatically normalize line endings
+* text=auto
+
+# Explicitly declare text files you want to always use LF
+*.yml text eol=lf
+*.md  text eol=lf
+*.py  text eol=lf
+*.ipynb text eol=lf
+
+# For binary files, ensure no conversion
+*.jpg binary
+*.png binary
+*.exe binary

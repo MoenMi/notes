@@ -35,8 +35,8 @@ ML solutions shine if the problem has the following characteristics:
 
 ### 1.2.1 - ML in Research Versus in Production
 
-
+Interpretability can be really important in many cases.
 
 ### 1.2.2 - ML Systems Versus Traditional Software
 
-
+Speed is very important in many real-world cases.

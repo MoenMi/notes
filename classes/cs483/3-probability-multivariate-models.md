@@ -4,23 +4,23 @@
 
 ### 3.1.1 - Covariance
 
+The **covariance** between two random variables $X$ and $Y$ measures the degree to which $X$ and $Y$ are linearly related:
 
+$$ \text{Cov}[X, Y] \triangleq E[(X - E[X])(Y - E[Y])] = E[XY] - E[X]E[Y] $$
 
 ### 3.1.2 - Correlation
 
+The **Pearson correlation coefficient** between $X$ and $Y$ is defined as
 
+$$ \rho \triangleq \text{corr}[X, Y] = \frac{\text{Cov}[X, Y]}{\sqrt{\text{Var}[X]\text{Var}[Y]}} $$
 
 ### 3.1.3 - Uncorrelated does not imply independent
 
-
-
-### 3.1.4 - Correlation does not imply causation
-
-
+Independence implies uncorrelated, but uncorrelated does not imply independent.
 
 ### 3.1.5 - Simpson’s paradox
 
-
+Simpson's paradox says that a statistical trend can disappear or reverse signs when these groups are combined.
 
 ## 3.2 - The multivariate Gaussian (normal) distribution
 
