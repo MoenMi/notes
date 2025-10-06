@@ -98,11 +98,15 @@ $$ f(x; \boldsymbol{\theta}) = \beta_0 + \beta_1 x_1 + \dots + \beta_n x_n $$
 
 #### Polynomial Regression
 
+A **polynomial regression** model of degree $D$ has the form $f(x;\boldsymbol{\omega}) = \omega^T \phi(x)$, where $\phi(x)$ is a feature vector derived from the input, which has the following form:
 
+$$ \phi(x) = [1, x, x^2, \dots, x^D] $$
+
+Note that we can have multi-dimensional inputs and interaction terms in polynomial regression models.
 
 #### Deep Neural Networks
 
-
+We can create powerful models by having the feature extraction be performed automatically. This is the key idea behind deep neural networks (DNNs), convolutional neural networks (CNNs), and recurrent neural networks (RNNs).
 
 ### 1.2.3 - Overfitting and generalization
 

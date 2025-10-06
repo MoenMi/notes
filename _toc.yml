@@ -117,6 +117,8 @@ parts:
       #     - file: classes/math311/hw7
       #     - file: classes/math311/hw8
       #     - file: classes/math311/hw9
+      - file: classes/math420/overview
+        sections: classes/math420/1-intro
       - file: classes/math457/overview
         sections:
           - file: classes/math457/1-intro
